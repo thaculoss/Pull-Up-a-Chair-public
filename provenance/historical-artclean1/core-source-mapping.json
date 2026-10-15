@@ -1,0 +1,929 @@
+{
+  "release": "artclean1",
+  "compared_files": [
+    "config/embedded_surfaces.tsv",
+    "config/foods.tsv",
+    "config/inn_artwork.tsv",
+    "config/inn_titles.tsv",
+    "config/inn_titles_zh.tsv",
+    "config/props.tsv",
+    "config/PullUpAChairOrdering.ini",
+    "config/PullUpAChairOrderingSettingsUI.ini",
+    "config/PullUpAChairOrderingUI.ini",
+    "config/specialties.tsv",
+    "config/suppliers.tsv",
+    "config/tables.tsv",
+    "config/table_registry.tsv",
+    "include/InnServiceAPI.h",
+    "include/InnServiceBackend.h",
+    "preview/main.cpp",
+    "preview/samples.inc",
+    "src/Artwork.h",
+    "src/BarterPolicy.h",
+    "src/BarterPricing.cpp",
+    "src/BarterPricing.h",
+    "src/BundlePolicy.h",
+    "src/BundleSelection.inl",
+    "src/CallFocus.cpp",
+    "src/CallFocus.h",
+    "src/CallFocusPolicy.h",
+    "src/CallPolicy.h",
+    "src/CallService.cpp",
+    "src/CallService.h",
+    "src/CallSettingsUI.cpp",
+    "src/CallSettingsUI.h",
+    "src/Catalog.h",
+    "src/CleanupPolicy.h",
+    "src/DailyMenus.cpp",
+    "src/DailyMenus.h",
+    "src/DailyPolicy.h",
+    "src/DiningAPI.h",
+    "src/DiningClaims.h",
+    "src/ExtensionAPI.h",
+    "src/Gamepad.inl",
+    "src/InnScenePolicy.h",
+    "src/InnServices.cpp",
+    "src/InnServices.h",
+    "src/Localization.h",
+    "src/main.cpp",
+    "src/MenuLayout.h",
+    "src/MenuTypeface.h",
+    "src/NativeBindings.inl",
+    "src/Navigation.h",
+    "src/OrderPolicy.h",
+    "src/OrderSession.inl",
+    "src/ParchmentMenu.inl",
+    "src/PCH.h",
+    "src/Policy.h",
+    "src/RecordedSounds.h",
+    "src/RequiredUi.h",
+    "src/RuntimePolicy.h",
+    "src/ServiceApproach.cpp",
+    "src/ServiceApproach.h",
+    "src/ServiceControlPolicy.h",
+    "src/ServiceLease.h",
+    "src/ServicePolicy.h",
+    "src/ServicePriority.cpp",
+    "src/ServicePriority.h",
+    "src/ServiceScenePolicy.h",
+    "src/ServiceSceneReservation.cpp",
+    "src/ServiceSceneReservation.h",
+    "src/ServiceSceneReservationPolicy.h",
+    "src/ServiceSelection.h",
+    "src/ServingRetirement.h",
+    "src/ServingSize.cpp",
+    "src/ServingSize.h",
+    "src/ServingSizePolicy.h",
+    "src/SettingsStore.cpp",
+    "src/SettingsStore.h",
+    "src/SettingsUiLayout.h",
+    "src/SettingsUiWidgets.h",
+    "src/SkyPromptCall.cpp",
+    "src/SkyPromptCall.h",
+    "src/Specialties.cpp",
+    "src/Specialties.h",
+    "src/SupplierPolicy.h",
+    "src/SupplierServices.cpp",
+    "src/SupplierServices.h",
+    "src/SurfacePolicy.h",
+    "src/TableCleanup.cpp",
+    "src/TableCleanup.h",
+    "src/TableDiscovery.cpp",
+    "src/TableDiscovery.h",
+    "src/TableGeometry.h",
+    "src/TableManager.cpp",
+    "src/TableManager.h",
+    "src/TablePolicy.h",
+    "src/ThumbnailAppearance.h",
+    "src/ThumbnailBounds.h",
+    "src/Thumbnails.inl",
+    "src/TopicVisibility.cpp",
+    "src/TopicVisibility.h",
+    "src/Transaction.h",
+    "src/UiLayout.h",
+    "tests/adapter_tests.cpp",
+    "tests/call_tests.cpp",
+    "tests/confirmation_tests.cpp",
+    "tests/core_tests.cpp",
+    "tests/dining_core_tests.cpp",
+    "tests/dining_tests.cpp",
+    "tests/food_pack_tests.cpp",
+    "tests/inn_routine_tests.cpp",
+    "tests/low_table_tests.cpp",
+    "tests/menu_typeface_tests.cpp",
+    "tests/mesh_probe.cpp",
+    "tests/retirement_tests.cpp",
+    "tests/scene_reservation_tests.cpp",
+    "tests/service_bridge_tests.cpp",
+    "tests/service_scene_tests.cpp",
+    "tests/serving_size_tests.cpp",
+    "tests/settings_store_tests.cpp",
+    "tests/supplier_tests.cpp",
+    "tools/build_service_package.py",
+    "adapter/src/DiningInteraction.h",
+    "adapter/src/InteractionRuntime.h",
+    "adapter/src/main.cpp",
+    "adapter/src/NativeObserver.h",
+    "adapter/src/PCH.h",
+    "adapter/src/Policy.h",
+    "config/food_packs/cc-fishing.tsv",
+    "config/food_packs/cooking-reseasoned.tsv",
+    "config/food_packs/gourmet.tsv",
+    "config/locales/en.tsv",
+    "config/locales/zh.tsv",
+    "third_party/minhook/AUTHORS.txt",
+    "third_party/minhook/LICENSE.txt",
+    "third_party/minhook/README.md",
+    "third_party/SkyPromptAPI/LICENSE",
+    "third_party/minhook/cmake/minhook-config.cmake.in",
+    "third_party/minhook/dll_resources/MinHook.def",
+    "third_party/minhook/dll_resources/MinHook.rc",
+    "third_party/minhook/include/MinHook.h",
+    "third_party/minhook/src/buffer.c",
+    "third_party/minhook/src/buffer.h",
+    "third_party/minhook/src/hook.c",
+    "third_party/minhook/src/trampoline.c",
+    "third_party/minhook/src/trampoline.h",
+    "third_party/minhook/src/hde/hde32.c",
+    "third_party/minhook/src/hde/hde32.h",
+    "third_party/minhook/src/hde/hde64.c",
+    "third_party/minhook/src/hde/hde64.h",
+    "third_party/minhook/src/hde/pstdint.h",
+    "third_party/minhook/src/hde/table32.h",
+    "third_party/minhook/src/hde/table64.h",
+    "third_party/SkyPromptAPI/include/SkyPrompt/API.hpp"
+  ],
+  "portable_CMake_preserved": true,
+  "changed_since_paper3": [
+    "src/Artwork.h",
+    "config/inn_artwork.tsv",
+    "preview/main.cpp"
+  ],
+  "source_files": [
+    {
+      "path": "adapter/src/DiningInteraction.h",
+      "size": 1021,
+      "sha256": "e8131e29517f899cb8991bca8f9ed46b32366c502845602e5636dc0cba2d90c1"
+    },
+    {
+      "path": "adapter/src/InteractionRuntime.h",
+      "size": 302,
+      "sha256": "b810c9b50411e2ae093450cdcf0520296269dca0c1d48d4364b83e4374df7cd5"
+    },
+    {
+      "path": "adapter/src/main.cpp",
+      "size": 45544,
+      "sha256": "bf21163fdd602f4325e37638d4d7b404a0fa63020e37ee90ed405e47e2b82eb7"
+    },
+    {
+      "path": "adapter/src/NativeObserver.h",
+      "size": 6677,
+      "sha256": "bd45494de69fdd15d65288d25c8f00f451c7545f0afd2c2a17e18169ac9f82a5"
+    },
+    {
+      "path": "adapter/src/PCH.h",
+      "size": 514,
+      "sha256": "476705a470b8186efd04e11aaa925d5cbde3bc51f5da2ab1deded4e6f726ae55"
+    },
+    {
+      "path": "adapter/src/Policy.h",
+      "size": 4798,
+      "sha256": "9ee1adb5c698b6b5ff1365f44cdbd9cef83e484de430621cdd91d9caaf2c4b55"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "size": 10500,
+      "sha256": "8516f7ff8395bb1646cba622a9a8a7425207f5dadba31b8e06d51dd7c899180b"
+    },
+    {
+      "path": "config/embedded_surfaces.tsv",
+      "size": 898,
+      "sha256": "8a6cc2e46531e6748bd2f6b50f6c4157006787c6889a2753736c49bddc224511"
+    },
+    {
+      "path": "config/food_packs/cc-fishing.tsv",
+      "size": 7096,
+      "sha256": "a7df64f480d1a48eeff7322c59e18de32b1b65b149f9b6249bbc68b43e167ca6"
+    },
+    {
+      "path": "config/food_packs/cooking-reseasoned.tsv",
+      "size": 5589,
+      "sha256": "e879d04876ba372e4a994c55d84c33950b7d62540c5c5cd6117554cbb0a22120"
+    },
+    {
+      "path": "config/food_packs/gourmet.tsv",
+      "size": 6611,
+      "sha256": "f0ed96595d530d7fbf3436a3ac7ecaf147c95c8f64d3c761f53a382e5ecc7b57"
+    },
+    {
+      "path": "config/foods.tsv",
+      "size": 11846,
+      "sha256": "d83f4ce8b5b7a081d9414ac2ecec366956131e601d5ef27990fed9bd6a407a32"
+    },
+    {
+      "path": "config/inn_artwork.tsv",
+      "size": 2967,
+      "sha256": "3e4f2ee1aa6639f1f0d8c3ba64e48ea9e9e8db5f97a0eaa6eb3d158945fa7101"
+    },
+    {
+      "path": "config/inn_titles.tsv",
+      "size": 3757,
+      "sha256": "c462f3f3ee722d484e93468eef0159f272face6110df28db6ede0f99d9f5d7c7"
+    },
+    {
+      "path": "config/inn_titles_zh.tsv",
+      "size": 3255,
+      "sha256": "7d5c95153a408304823cfea1cea57e9830cf5e3f8923817999d7716493839a9f"
+    },
+    {
+      "path": "config/locales/en.tsv",
+      "size": 11398,
+      "sha256": "16545fce4e8d60160273dd3515399fad3c4f9737b18fc94ef25c878fd7a8d226"
+    },
+    {
+      "path": "config/locales/zh.tsv",
+      "size": 11087,
+      "sha256": "c881de71d33ab2f65d8db3827991656dbc3e9112cbe723fd6ca11ab1c0ba8a63"
+    },
+    {
+      "path": "config/props.tsv",
+      "size": 2047,
+      "sha256": "c0c2b2064ce283c62740631225d434b2af07b1b7da6dc34cf9f632dcadcd1443"
+    },
+    {
+      "path": "config/PullUpAChairOrdering.ini",
+      "size": 1107,
+      "sha256": "edeecc9891fe7b0ddaa9621e5810fbb1cafd57acc9a387388ca110cc1a89103f"
+    },
+    {
+      "path": "config/PullUpAChairOrderingSettingsUI.ini",
+      "size": 403,
+      "sha256": "73c9448eaab4fdde730e48116d3d6aaa37ffdbf7957cd65b041b888e8016ba99"
+    },
+    {
+      "path": "config/PullUpAChairOrderingUI.ini",
+      "size": 2590,
+      "sha256": "d89baeda6daa285ecb837a5d87da54c8753fcc4cdb41e159822bc1c1d487cb70"
+    },
+    {
+      "path": "config/specialties.tsv",
+      "size": 1043,
+      "sha256": "5ab0aff3a40fc135573f9113a0c56134ddb0827b9a0712e05629446d6dac1f31"
+    },
+    {
+      "path": "config/suppliers.tsv",
+      "size": 5236,
+      "sha256": "5fd8bad281282aad16c28efd953dc0988e0e63c7297a2f94b5a4334a54374f0a"
+    },
+    {
+      "path": "config/table_registry.tsv",
+      "size": 19917,
+      "sha256": "587418003a80b1681cf34a12eef2cf1cfe23f8ec420a754eea09711d665ba2d6"
+    },
+    {
+      "path": "config/tables.tsv",
+      "size": 7454,
+      "sha256": "4b1dce1b6de7499d5177146c8372ac411c2bf046eebeab12f1278b0444891cf4"
+    },
+    {
+      "path": "include/InnServiceAPI.h",
+      "size": 1692,
+      "sha256": "f03591cb89c68b78b889442f32ff7bfb8d82723a267bdc06c817a97617201550"
+    },
+    {
+      "path": "include/InnServiceBackend.h",
+      "size": 1417,
+      "sha256": "82c1a103fe19e7ac17f6b2a2e2e1701e2e781b40c15b5bab2e6dd9b34d318584"
+    },
+    {
+      "path": "preview/main.cpp",
+      "size": 46989,
+      "sha256": "fe08527a97410bdb827d4c6a31493777e37aa05f0c228392e5f0313269408539"
+    },
+    {
+      "path": "preview/samples.inc",
+      "size": 1631,
+      "sha256": "2e7a33089b1a9e344941426928d32ea4e9b2e25f7953a0ef3ef18fe8ea0b22bc"
+    },
+    {
+      "path": "src/Artwork.h",
+      "size": 5039,
+      "sha256": "3249973b21e9594987d8586e273703660a31a1f3b34673da0607430c14fe0733"
+    },
+    {
+      "path": "src/BarterPolicy.h",
+      "size": 1117,
+      "sha256": "1d61dab86207506e69c7def5687a53299c4d8431270852d606a0fa8d3de7fe0b"
+    },
+    {
+      "path": "src/BarterPricing.cpp",
+      "size": 2548,
+      "sha256": "0384e523f795c8bf544e7c2977bed95556c5b7bc6f12020402fddd9a8d9ab4a8"
+    },
+    {
+      "path": "src/BarterPricing.h",
+      "size": 186,
+      "sha256": "25fa9764c2999606a960c76b96c6cd9fbd36218d8eecf5610463eb0d26ea4c33"
+    },
+    {
+      "path": "src/BundlePolicy.h",
+      "size": 1204,
+      "sha256": "6863f3f075f332f1a60cb78830e05022244422ba5e05487d4b4b5f6e019c0caa"
+    },
+    {
+      "path": "src/BundleSelection.inl",
+      "size": 1365,
+      "sha256": "8633b0e0d5b35daa9a0874aba32fdea3443bc62ca8cd788772f31b4058934257"
+    },
+    {
+      "path": "src/CallFocus.cpp",
+      "size": 19282,
+      "sha256": "51bbaf3d3ee613faa2e4e319e5503abc95b80dbbb4eb279a865b5e71f5ea7de2"
+    },
+    {
+      "path": "src/CallFocus.h",
+      "size": 298,
+      "sha256": "4a3a7b76760b51c42945324ead0cbd965a88d04539baeb48be0f61e3a404fcc9"
+    },
+    {
+      "path": "src/CallFocusPolicy.h",
+      "size": 3419,
+      "sha256": "3aa377b7d9dc4846a94f3805d5b72c0e905bf27e16b0d33cd3cf40204a6b0e9e"
+    },
+    {
+      "path": "src/CallPolicy.h",
+      "size": 5239,
+      "sha256": "580489b4d26da48c343c07df86cbb55ca470fedb31318a095204a28ba8755eca"
+    },
+    {
+      "path": "src/CallService.cpp",
+      "size": 15975,
+      "sha256": "edf89c5dd311d81ceca35840d774212775705a6f17ce85f25cc4192b29f6e397"
+    },
+    {
+      "path": "src/CallService.h",
+      "size": 434,
+      "sha256": "4f0a9611cdc2f472f8a1f9a2cb6ac121b8d77c49dffcf962a541277405761c98"
+    },
+    {
+      "path": "src/CallSettingsUI.cpp",
+      "size": 14287,
+      "sha256": "2ee83cf8993c6cef7dd314c41ec698ea6c27c3b01509c3ab2fc66e236aefaca0"
+    },
+    {
+      "path": "src/CallSettingsUI.h",
+      "size": 370,
+      "sha256": "52c68dea6b08ff049aa7c665eeb28708f23228e92069ae42d714c74d83e7e436"
+    },
+    {
+      "path": "src/Catalog.h",
+      "size": 12105,
+      "sha256": "a94748ad813878b762161d3e20f48be6ad7c33fad1b886e2b136723f534b8993"
+    },
+    {
+      "path": "src/CleanupPolicy.h",
+      "size": 192,
+      "sha256": "450402e02e26f497b0644a2d031c7c499ba2b56b24b9267cbed4e17706409c28"
+    },
+    {
+      "path": "src/DailyMenus.cpp",
+      "size": 2923,
+      "sha256": "dab87a2a748ebb89c8ce81e5618f32e77b8e96f1413afaba0d56ce7f91d38b35"
+    },
+    {
+      "path": "src/DailyMenus.h",
+      "size": 412,
+      "sha256": "7d21d7c3ad00febe61d06048abfb6907d78f04ba3eb5690e9dc488a84aec0f78"
+    },
+    {
+      "path": "src/DailyPolicy.h",
+      "size": 2270,
+      "sha256": "4950da0293463707979ca7f426e3821cdf015dc1f51924aa99bb7e3c21017043"
+    },
+    {
+      "path": "src/DiningAPI.h",
+      "size": 1282,
+      "sha256": "85bd2502ae93b7fc29fb01c7c17fcc52a96ec4668e5dc4ed690b2e78a5d57243"
+    },
+    {
+      "path": "src/DiningClaims.h",
+      "size": 1332,
+      "sha256": "ada4c8b191af57dff014c72e5d70ecc324a36841b58861e1a54c0395405161a0"
+    },
+    {
+      "path": "src/ExtensionAPI.h",
+      "size": 628,
+      "sha256": "25029978eff90adcfe613fbc9c9e5bb61306a248c212aa82c41df1033a86966b"
+    },
+    {
+      "path": "src/Gamepad.inl",
+      "size": 1335,
+      "sha256": "78a008eb5f9644dd39303c954ec193d72f6bc2275adf40c6203d8e79f7cd6db6"
+    },
+    {
+      "path": "src/InnScenePolicy.h",
+      "size": 3384,
+      "sha256": "632663c40330ae36b347e91e4489f9b98007a608dc5659543263ae37d9b4cf42"
+    },
+    {
+      "path": "src/InnServices.cpp",
+      "size": 2541,
+      "sha256": "c973b9640a95583bd3144801c8426ede278cabdfa6f2af5d920dd4361c0274a4"
+    },
+    {
+      "path": "src/InnServices.h",
+      "size": 216,
+      "sha256": "a5c451331ed3119e967cd88e4b1489cf6f511c786ef66a1719b75aa6ceb9cd24"
+    },
+    {
+      "path": "src/Localization.h",
+      "size": 3122,
+      "sha256": "371be9e7f888954f1386b19ef3d4983913c2572e285977d6353ec24bd4d1f895"
+    },
+    {
+      "path": "src/main.cpp",
+      "size": 13919,
+      "sha256": "8744b923b61288ca0e8cfd797e4af700a81cb05541d1b58ee47cd4f598722c9f"
+    },
+    {
+      "path": "src/MenuLayout.h",
+      "size": 1132,
+      "sha256": "2b4d74cfc90887dfd60d3ca3df9872332a737ba02aeee81aa09f0140eb5cb199"
+    },
+    {
+      "path": "src/MenuTypeface.h",
+      "size": 6343,
+      "sha256": "9caec2f133067c497bd30f933afc008bfb638f47555c122ecb850f1f0683a080"
+    },
+    {
+      "path": "src/NativeBindings.inl",
+      "size": 7078,
+      "sha256": "a65ec7841b1c38dfa79671eeda440667b5ef7f73af3bc08196759ada105639b0"
+    },
+    {
+      "path": "src/Navigation.h",
+      "size": 1015,
+      "sha256": "b08f2aaf76b6a054615a620d570e0381a9679af7947efc1664b50fbd6d78a554"
+    },
+    {
+      "path": "src/OrderPolicy.h",
+      "size": 2986,
+      "sha256": "8cd87ee9a86102c50b2f489feda537652a0fc3db4e69257bad7f9253ef0a009d"
+    },
+    {
+      "path": "src/OrderSession.inl",
+      "size": 16544,
+      "sha256": "294899850b3a09d5c46d6ee7f09470bb1ca0965309d1cf3e638076ab071182de"
+    },
+    {
+      "path": "src/ParchmentMenu.inl",
+      "size": 35800,
+      "sha256": "0d864c40763f182b79335c4bb561e1ba18054254d7ca6dc9c9f2431633421761"
+    },
+    {
+      "path": "src/PCH.h",
+      "size": 466,
+      "sha256": "cc603c080a54366adaa193399749965e7afa308ac729e8c5338d19795a562b26"
+    },
+    {
+      "path": "src/Policy.h",
+      "size": 334,
+      "sha256": "6bf1d2eef9d280cab4b95082c9eedbb7dc60d5dca9eb2c5accd5b3699689bc76"
+    },
+    {
+      "path": "src/RecordedSounds.h",
+      "size": 1888,
+      "sha256": "7b60272d1a5b6f28780db24885fb81a064b22a24e1b78cd1bbd169010c4b99fd"
+    },
+    {
+      "path": "src/RequiredUi.h",
+      "size": 1729,
+      "sha256": "531ed01d8731c47f4efdf248435806d46edb93ac00f2609f33b53ead9f859dd1"
+    },
+    {
+      "path": "src/RuntimePolicy.h",
+      "size": 1047,
+      "sha256": "2d156a0c212b95b90352ef2d9c8bdfac1e7dee6332d9cbea01b7c104ce2bcf2d"
+    },
+    {
+      "path": "src/ServiceApproach.cpp",
+      "size": 35978,
+      "sha256": "767e890fa52675b8db98dfd79310ca29af7b5f43746f7555045bfa6ba3dab250"
+    },
+    {
+      "path": "src/ServiceApproach.h",
+      "size": 719,
+      "sha256": "2ab9d3abfd2dec272b6e19f3a1a80a6436a967fa2ce5ed412f3bd06e8c853a7a"
+    },
+    {
+      "path": "src/ServiceControlPolicy.h",
+      "size": 2229,
+      "sha256": "250d8e371abbe8abb924eadec6ce1c7197205c3c3aa66ebb7ad16a1a9ca9f383"
+    },
+    {
+      "path": "src/ServiceLease.h",
+      "size": 2105,
+      "sha256": "226c350af9963def3276d6d2ff81b8bab4347ead9a01d9dc98533fde669143d7"
+    },
+    {
+      "path": "src/ServicePolicy.h",
+      "size": 2920,
+      "sha256": "cfbc76d49f99448893b7a060b27b847a0a0a82978c8e39ea4e8c7071f22d9a6b"
+    },
+    {
+      "path": "src/ServicePriority.cpp",
+      "size": 15377,
+      "sha256": "a27e18660bf49db9e25cfd7b3ecb196bbe9bf4cee34dfeaafa82fe5da74574a3"
+    },
+    {
+      "path": "src/ServicePriority.h",
+      "size": 660,
+      "sha256": "99df75148957a4a8cbfe3dbf10f5b73a9c18d683879026c61aef64c7c0f40bc7"
+    },
+    {
+      "path": "src/ServiceScenePolicy.h",
+      "size": 2400,
+      "sha256": "e0398cc0aba99453fba86b8e1c164f1170fcc92b525762f789a9e0bc6529bd7e"
+    },
+    {
+      "path": "src/ServiceSceneReservation.cpp",
+      "size": 6594,
+      "sha256": "e9e708a336081a9d8a244d25078965881c9addeec120786087a9599a24fcd8cc"
+    },
+    {
+      "path": "src/ServiceSceneReservation.h",
+      "size": 232,
+      "sha256": "f0a924207ffb8d0b0b241ff68f7f674c65e403d0405d5cb42ad9d20cb30a5b88"
+    },
+    {
+      "path": "src/ServiceSceneReservationPolicy.h",
+      "size": 3182,
+      "sha256": "81a8636dc89b98ad18f12999de966f665ae0d25e2f6e393a2f27badd93b42822"
+    },
+    {
+      "path": "src/ServiceSelection.h",
+      "size": 1268,
+      "sha256": "611d84e14ac89300efef6d95472d3f815cca5054a1b25e87862fbdc3b41b51b7"
+    },
+    {
+      "path": "src/ServingRetirement.h",
+      "size": 917,
+      "sha256": "bb931b9f50cff2a499f79a0cce5922825b455fb18ba69a90b3c6313a5d634948"
+    },
+    {
+      "path": "src/ServingSize.cpp",
+      "size": 5345,
+      "sha256": "4d38791cab8f6052e411f8c75480d8bbc1d83d0f4dc87ecf8e3a2ecbe9a3aa83"
+    },
+    {
+      "path": "src/ServingSize.h",
+      "size": 215,
+      "sha256": "ff4d9b2c37f8e716a963072c89ef14c2004bf645a674257c10bbc8bae908c65f"
+    },
+    {
+      "path": "src/ServingSizePolicy.h",
+      "size": 1662,
+      "sha256": "89831512aa411b82444562ca6220727c217aec3cfd8f8cf4b790e29cde1bb206"
+    },
+    {
+      "path": "src/SettingsStore.cpp",
+      "size": 4903,
+      "sha256": "6c109e33b2377a66c4d871eebc9c0b5bf3e36a2ab8720344ac987b9fde8cda37"
+    },
+    {
+      "path": "src/SettingsStore.h",
+      "size": 1060,
+      "sha256": "770771fd5498cde9ccd4a109e00dea389e0f5d69cd0ec1e0e58fffe3ef487525"
+    },
+    {
+      "path": "src/SettingsUiLayout.h",
+      "size": 3896,
+      "sha256": "f6420cf12ec918a0d2aa86b2c5dca9db699c7b582ef72fabbb883c47fa44c384"
+    },
+    {
+      "path": "src/SettingsUiWidgets.h",
+      "size": 2552,
+      "sha256": "afdd7cf117296e563acaed19dfb75eda07a6cb671b18cbd8d3cd035124814cca"
+    },
+    {
+      "path": "src/SkyPromptCall.cpp",
+      "size": 3091,
+      "sha256": "9bf2a9ec2db91b6b6d9d9256626f3d4def984966f55d25a281260600e88bcdb5"
+    },
+    {
+      "path": "src/SkyPromptCall.h",
+      "size": 123,
+      "sha256": "49b7af900125326c43a52cc73337c802ae05dc3fd60b459a80eaf01b313b66b6"
+    },
+    {
+      "path": "src/Specialties.cpp",
+      "size": 1671,
+      "sha256": "a6dbe8c3ffde708dddc0119a8da7df7d43b74f79d29ea2f9390a26c383e8a5c2"
+    },
+    {
+      "path": "src/Specialties.h",
+      "size": 214,
+      "sha256": "ef87a3e67079f826ca58f1ae018b8537478e8289e875e2ee64350dd032dc43f6"
+    },
+    {
+      "path": "src/SupplierPolicy.h",
+      "size": 1576,
+      "sha256": "3f4926d9367ec13334a669b0948510a02f76d26aada84918208c53a1ab683837"
+    },
+    {
+      "path": "src/SupplierServices.cpp",
+      "size": 9362,
+      "sha256": "ab83de6635b66e8a9ee2c84a4cec81efbda5b628424482c77aebbd00154a0317"
+    },
+    {
+      "path": "src/SupplierServices.h",
+      "size": 453,
+      "sha256": "0395fe04a03c0f2dd29af860ec5e71674f459164b391cf4a02fdb85dd666a06c"
+    },
+    {
+      "path": "src/SurfacePolicy.h",
+      "size": 8411,
+      "sha256": "934b738ab8c92c6a649ab809bc9e33efc8eda541131f4602e282b19d3c979674"
+    },
+    {
+      "path": "src/TableCleanup.cpp",
+      "size": 15553,
+      "sha256": "0dad9b8fd1e0518433ec5479c9d4164850ee806676c1145c9a6133f101ca400a"
+    },
+    {
+      "path": "src/TableCleanup.h",
+      "size": 671,
+      "sha256": "51d1d93fb08e2589d42218505ca02db41a28d71c2e5a25cd95768f4e56f4d384"
+    },
+    {
+      "path": "src/TableDiscovery.cpp",
+      "size": 5328,
+      "sha256": "eaa78e672a7bf02cdfd587fea2ca6787f175590d6c4774a47e47882791fc1f25"
+    },
+    {
+      "path": "src/TableDiscovery.h",
+      "size": 352,
+      "sha256": "44372d2a1dfc22fd651745c353ba60aa18ff2b77ea28a77021aa3090db0542bb"
+    },
+    {
+      "path": "src/TableGeometry.h",
+      "size": 1260,
+      "sha256": "58fa7ab7a7325426464cd40c067811c5dae03071ef0920c7525762babc08f42d"
+    },
+    {
+      "path": "src/TableManager.cpp",
+      "size": 19891,
+      "sha256": "ef93f45f128376b12d2ea4df57101ce7a649abb2d1111fd95eccd112b0fe4f3e"
+    },
+    {
+      "path": "src/TableManager.h",
+      "size": 832,
+      "sha256": "2644ea2a3474041dc7e1eb0e163d351ba13666575ecc0b41d690ff058bf16abd"
+    },
+    {
+      "path": "src/TablePolicy.h",
+      "size": 1101,
+      "sha256": "fcdd1d4baf5fa12969878f1ac521e8ba94ba3975c9226deedef9beebf1f252d4"
+    },
+    {
+      "path": "src/ThumbnailAppearance.h",
+      "size": 2037,
+      "sha256": "da7a474f897f255ceb62262eb2e1eee14f512a946d7d699cfe628013db6b7ce8"
+    },
+    {
+      "path": "src/ThumbnailBounds.h",
+      "size": 2922,
+      "sha256": "268a2087bd9dfb2df3d01bc10548e8c8b4a5c0fe797a8b8597bda51e4747f1ca"
+    },
+    {
+      "path": "src/Thumbnails.inl",
+      "size": 6538,
+      "sha256": "1b83f5bf5ec8c31c8ae2c06a20d8d7aaefd45e921af67aff34c69013ac567fb5"
+    },
+    {
+      "path": "src/TopicVisibility.cpp",
+      "size": 4879,
+      "sha256": "972569959330fdda22662178134f97f291e6d9a6797ce3c9465606c87b899cb4"
+    },
+    {
+      "path": "src/TopicVisibility.h",
+      "size": 328,
+      "sha256": "c3197f7a0ce61818b01f01a4e3286c42592222e3a10194c5416391650f5050ed"
+    },
+    {
+      "path": "src/Transaction.h",
+      "size": 1243,
+      "sha256": "9e9b0bc89e02083ad4f6aad0d204195779a3f3861c7cf736dc297b34ea5f1a3e"
+    },
+    {
+      "path": "src/UiLayout.h",
+      "size": 6770,
+      "sha256": "b033293ce5d2d9f5d58b16908ba3ba5037826f91a686ec8bba2b02e1b25db057"
+    },
+    {
+      "path": "tests/adapter_tests.cpp",
+      "size": 7476,
+      "sha256": "baaf7e0c0ad8afba5ad6e9e9ace0e5339f3707cdb8ee3b9fb3c0f99198a0d391"
+    },
+    {
+      "path": "tests/call_tests.cpp",
+      "size": 40989,
+      "sha256": "b4775f948ded2bcebae6eb7df5e2e403b48832b0ffe786b7b821f2d97130900a"
+    },
+    {
+      "path": "tests/confirmation_tests.cpp",
+      "size": 4884,
+      "sha256": "d992a1055792564d2e24193cdc5e04a4e8f1a5f26e8c90a44d4617c81f26012b"
+    },
+    {
+      "path": "tests/core_tests.cpp",
+      "size": 37356,
+      "sha256": "f3f2bf796ba753abdc0a407e3c0914cdc472ce5b9481f4b68797246747466914"
+    },
+    {
+      "path": "tests/dining_core_tests.cpp",
+      "size": 6071,
+      "sha256": "0eaf483efc395886c7534b19343d1c7fd00f6da1cf96f9bd289502a1d10392d0"
+    },
+    {
+      "path": "tests/dining_tests.cpp",
+      "size": 4215,
+      "sha256": "668c35c2d686d54029ee9d614ba98d894af39696461afac7e3ae3c1f697de79d"
+    },
+    {
+      "path": "tests/food_pack_tests.cpp",
+      "size": 4684,
+      "sha256": "c6acaae5ea39783b9053803850ff18b190255402773ac180733bcfca3b9fe873"
+    },
+    {
+      "path": "tests/inn_routine_tests.cpp",
+      "size": 2987,
+      "sha256": "2e41a213b7c989fcc3b210e4f11cebec64618e87a0d1c5072cd86921f2540808"
+    },
+    {
+      "path": "tests/low_table_tests.cpp",
+      "size": 6388,
+      "sha256": "077ce098e2495c6fcede575e9a33f735786ca0f8081bd0d579c7d889ea1ffef5"
+    },
+    {
+      "path": "tests/menu_typeface_tests.cpp",
+      "size": 4642,
+      "sha256": "daa941f0a88da6e28388261353d052ec2986a43f27aa7b15ec3dffc680c50dfc"
+    },
+    {
+      "path": "tests/mesh_probe.cpp",
+      "size": 2049,
+      "sha256": "ae8317550b7fe4ac2ef6cb497f7d4948143265a950a0c831244332636431d6e0"
+    },
+    {
+      "path": "tests/retirement_tests.cpp",
+      "size": 6377,
+      "sha256": "e448771ae5cab75a3b4de43cf788fe8b63370f58e41ba8ef331d800d7cac15b9"
+    },
+    {
+      "path": "tests/scene_reservation_tests.cpp",
+      "size": 5698,
+      "sha256": "cda93554a98b4af5783c22cb99409792546f0421c50faecc1f59e6d8e223e252"
+    },
+    {
+      "path": "tests/service_bridge_tests.cpp",
+      "size": 8275,
+      "sha256": "491947b63b4784ab82604bb2194e7b65aef8c90e8aa5779021177cbd2c8c1b02"
+    },
+    {
+      "path": "tests/service_scene_tests.cpp",
+      "size": 3167,
+      "sha256": "f8ac9022331998d827efc9fb603a9b2f5d786f46d896a26fb3c93dd0ec48095f"
+    },
+    {
+      "path": "tests/serving_size_tests.cpp",
+      "size": 4590,
+      "sha256": "55e2c51edfdbdb5d742ea798a4ed82227396f8c73af10520338f986b7f160f5e"
+    },
+    {
+      "path": "tests/settings_store_tests.cpp",
+      "size": 4832,
+      "sha256": "8f82fce5f635ddea3f25b9d20705b985e2676a9262546ab86562c2d2c673ad9f"
+    },
+    {
+      "path": "tests/supplier_tests.cpp",
+      "size": 4278,
+      "sha256": "e702b01ec68fbd4e32c809c84903a525c1fbf12c1d4756b86aadfa50777a052f"
+    },
+    {
+      "path": "third_party/minhook/AUTHORS.txt",
+      "size": 222,
+      "sha256": "264e92bdf94bf3af4606e05ea725c761c4b362577a5423cf88241eb9c771e5d3"
+    },
+    {
+      "path": "third_party/minhook/cmake/minhook-config.cmake.in",
+      "size": 1922,
+      "sha256": "621a3c479adfa3ec78639b1ffb4e3ef6b72055dfb292615dc50f835c48c74956"
+    },
+    {
+      "path": "third_party/minhook/CMakeLists.txt",
+      "size": 4345,
+      "sha256": "238f85ef7d9bc907f763370d8307ebe4d8463da9232decb88c113a2974f7717f"
+    },
+    {
+      "path": "third_party/minhook/dll_resources/MinHook.def",
+      "size": 266,
+      "sha256": "c27f9be30a81ddd55f6ecfa7ae3f6b7f7e2ef761e305a7b7217a09bfd10cd82e"
+    },
+    {
+      "path": "third_party/minhook/dll_resources/MinHook.rc",
+      "size": 879,
+      "sha256": "7bf72847f2c3559d9f4dd45ece24454e9352295d3f5be457bac364cbf1bd7012"
+    },
+    {
+      "path": "third_party/minhook/include/MinHook.h",
+      "size": 7715,
+      "sha256": "c3608e584bd9659aebdbb4c8c82585605989193623f240552d35c43311b3d31a"
+    },
+    {
+      "path": "third_party/minhook/LICENSE.txt",
+      "size": 4446,
+      "sha256": "4f21f857550d7be854da6ea5f2da4e6775ca4e3fbb535e4f3d961c47d0bf3335"
+    },
+    {
+      "path": "third_party/minhook/README.md",
+      "size": 4583,
+      "sha256": "7eb454bd671e16c850a19a8f7b808a4bb99e4c7bf7cd47a356d2a7a51e3028e3"
+    },
+    {
+      "path": "third_party/minhook/src/buffer.c",
+      "size": 10126,
+      "sha256": "69045b390e0f18cf149ea0451ae750f389654eb8d2ed7f2f89c7ff04b7909519"
+    },
+    {
+      "path": "third_party/minhook/src/buffer.h",
+      "size": 1862,
+      "sha256": "175ec5496c020509cf4c7670322b51b5bcd5b63a345bfefc4a19b43675857fa7"
+    },
+    {
+      "path": "third_party/minhook/src/hde/hde32.c",
+      "size": 9642,
+      "sha256": "2d4d7dd73d609028822aaf71ac05112b83fe6cc2ae2d6d71fa051b3fc6acfc43"
+    },
+    {
+      "path": "third_party/minhook/src/hde/hde32.h",
+      "size": 2555,
+      "sha256": "754579fbcec5f64fa229646ceecb241c0b7f31c8a0bb12370e604c316c569315"
+    },
+    {
+      "path": "third_party/minhook/src/hde/hde64.c",
+      "size": 9842,
+      "sha256": "06b588a5140e15f0a55e13ddadc7e3a4648f3223cefab2d5285b796a422bb9f5"
+    },
+    {
+      "path": "third_party/minhook/src/hde/hde64.h",
+      "size": 2714,
+      "sha256": "fd5b39e2865e12b9525ebda8fd9e9658b341ead5932d1bcb412a189f81ca42ca"
+    },
+    {
+      "path": "third_party/minhook/src/hde/pstdint.h",
+      "size": 1701,
+      "sha256": "975488009779ea99c7e04b83a160397d5cd7195cb5bf6ad79180805f756c7d00"
+    },
+    {
+      "path": "third_party/minhook/src/hde/table32.h",
+      "size": 3581,
+      "sha256": "e56f8641bd9133c1b99a1e6555b19eebe7ed663e5ea8de4edbe74ba461161ab4"
+    },
+    {
+      "path": "third_party/minhook/src/hde/table64.h",
+      "size": 3651,
+      "sha256": "0b6c69ad498e67907e0c574ab06123aee4ec30c99fa181099ea929a8d820bfc1"
+    },
+    {
+      "path": "third_party/minhook/src/hook.c",
+      "size": 27565,
+      "sha256": "4005d39875ca4b8a957aabba73bd053cba77e50a8b383d48e0cb44c13f26669b"
+    },
+    {
+      "path": "third_party/minhook/src/trampoline.c",
+      "size": 11038,
+      "sha256": "824ed887ec9da606960962af8973205d1f97cd03241e75517eba485280fb6377"
+    },
+    {
+      "path": "third_party/minhook/src/trampoline.h",
+      "size": 3864,
+      "sha256": "23681f7768d5dbd23ea14b45ba64e488a337501f23122253c532b05dbed4b85f"
+    },
+    {
+      "path": "third_party/SkyPromptAPI/include/SkyPrompt/API.hpp",
+      "size": 5076,
+      "sha256": "b06c5a009363588ec0317d114a1514ee631c1e9e0d39912c4f5f09b4761fcb5d"
+    },
+    {
+      "path": "third_party/SkyPromptAPI/LICENSE",
+      "size": 1111,
+      "sha256": "10209acb60bcab8e22a26e4b8737514b0f105f4cd344a45567861e8b07499e1b"
+    },
+    {
+      "path": "tools/build_service_package.py",
+      "size": 4831,
+      "sha256": "daa372c7c011c6e5e3a7b8d0765df46f6fd2a30d6a339c43db7f6d845b1cb275"
+    }
+  ]
+}

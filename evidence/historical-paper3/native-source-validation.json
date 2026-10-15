@@ -1,0 +1,26 @@
+{
+  "native_binaries": [
+    {
+      "package_entry": "00_Core/SKSE/Plugins/PullUpAChairOrdering.dll",
+      "sha256": "f76739112ae4fa0028cf0ef93273005b5ccd91395fc4ceab92693c6f6e3343b2",
+      "original_build": "pull-up-a-chair-0.9.9-beta-emptybottle1-20261015/build-core/Release/PullUpAChairOrdering.dll",
+      "binary_exact_match": true
+    },
+    {
+      "package_entry": "20_Service/SKSE/Plugins/PullUpAChairService.dll",
+      "sha256": "fc515795c38619c6170feb23877597966ede89e9bc1c780da985e4aea262d4c7",
+      "original_build": "pull-up-a-chair-0.9-beta-20261013/build-service/Release/PullUpAChairService.dll",
+      "binary_exact_match": true
+    },
+    {
+      "package_entry": "30_Dining/SKSE/Plugins/PullUpAChairEAS.dll",
+      "sha256": "88196ad0d20123a0710a3a6db5142bd932e4fa1e48b632a15acc1006120170ab",
+      "original_build": "eating-module-20261015/build-core/Release/PullUpAChairEAS.dll",
+      "binary_exact_match": true
+    }
+  ],
+  "production_cpp_files_changed": [],
+  "build_wiring_only_adapted": true,
+  "source_origins_verified": true,
+  "fresh_full_dll_rebuild_performed": false
+}

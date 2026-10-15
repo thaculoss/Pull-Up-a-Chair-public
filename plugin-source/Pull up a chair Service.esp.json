@@ -1,0 +1,329 @@
+{
+  "archive_path": "20_Service/Pull up a chair Service.esp",
+  "sha256": "17e725c9839941734a80444228ec85b26e48a8ac29ba33343d6f72addd3fc6f6",
+  "length": 1244,
+  "records": [
+    {
+      "kind": "record",
+      "tag": "TES4",
+      "formid": "00000000",
+      "header_tail_hex": "0002000000000000000000002c000000",
+      "subrecords": [
+        {
+          "tag": "HEDR",
+          "data_hex": "9a99d93f0400000004080000"
+        },
+        {
+          "tag": "CNAM",
+          "data_hex": "50756c6c2055702061204368616972205365727669636500",
+          "text_annotation": "Pull Up a Chair Service"
+        },
+        {
+          "tag": "SNAM",
+          "data_hex": "496e646570656e64656e7420696e6e20737461666620616e64207368617265642073746f636b2e204e6f206f72646572207265636f726473206f72204e5043206f76657272696465732e00",
+          "text_annotation": "Independent inn staff and shared stock. No order records or NPC overrides."
+        },
+        {
+          "tag": "MAST",
+          "data_hex": "536b7972696d2e65736d00",
+          "text_annotation": "Skyrim.esm"
+        },
+        {
+          "tag": "DATA",
+          "data_hex": "0000000000000000"
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "474c4f42000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "GLOB",
+          "formid": "01000802",
+          "header_tail_hex": "0000000002080001000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725365727669636541637469766500",
+              "text_annotation": "PullUpAChairServiceActive"
+            },
+            {
+              "tag": "FNAM",
+              "data_hex": "66"
+            },
+            {
+              "tag": "FLTV",
+              "data_hex": "00000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "51555354000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "QUST",
+          "formid": "01000800",
+          "header_tail_hex": "0000000000080001000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c557041436861697253657276696365517565737400",
+              "text_annotation": "PullUpAChairServiceQuest"
+            },
+            {
+              "tag": "VMAD",
+              "data_hex": "0500020001001a0050756c6c557041436861697253657276696365436f6e74726f6c000000"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "496e6e205365727669636500",
+              "text_annotation": "Inn Service"
+            },
+            {
+              "tag": "DNAM",
+              "data_hex": "110046ff0000000000000000"
+            },
+            {
+              "tag": "NEXT",
+              "data_hex": ""
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "ALST",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "ALID",
+              "data_hex": "496e7669746564456d706c6f79656500"
+            },
+            {
+              "tag": "FNAM",
+              "data_hex": "2a000c00"
+            },
+            {
+              "tag": "CTDA",
+              "data_hex": "000000000000803f4800000007000000000000000000000000000000ffffffff"
+            },
+            {
+              "tag": "CTDA",
+              "data_hex": "00000000000000004800000007000000000000000000000000000000ffffffff"
+            },
+            {
+              "tag": "ALPC",
+              "data_hex": "01080001"
+            },
+            {
+              "tag": "ALED",
+              "data_hex": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "5041434b000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "PACK",
+          "formid": "01000801",
+          "header_tail_hex": "0000000001080001000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c557041436861697253657276696365417070726f616368506c6179657200",
+              "text_annotation": "PullUpAChairServiceApproachPlayer"
+            },
+            {
+              "tag": "PKDT",
+              "data_hex": "0000000012000272ffff0000"
+            },
+            {
+              "tag": "PSDT",
+              "data_hex": "ffff00ffff00000000000000"
+            },
+            {
+              "tag": "CTDA",
+              "data_hex": "000000000000803f4a00000002080001000000000000000000000000ffffffff"
+            },
+            {
+              "tag": "QNAM",
+              "data_hex": "00080001"
+            },
+            {
+              "tag": "PKCU",
+              "data_hex": "060000002c9b010004000000"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "53696e676c6552656600"
+            },
+            {
+              "tag": "PTDA",
+              "data_hex": "000000001400000000000000"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "466c6f617400"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "0000f042"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "466c6f617400"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "00004843"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "426f6f6c00"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "01"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "426f6f6c00"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "00",
+              "text_annotation": ""
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "426f6f6c00"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "00",
+              "text_annotation": ""
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "00"
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "01"
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "02"
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "04"
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "06"
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "08"
+            },
+            {
+              "tag": "XNAM",
+              "data_hex": "09"
+            },
+            {
+              "tag": "POBA",
+              "data_hex": ""
+            },
+            {
+              "tag": "INAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "PDTO",
+              "data_hex": "0000000000000000"
+            },
+            {
+              "tag": "POEA",
+              "data_hex": ""
+            },
+            {
+              "tag": "INAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "PDTO",
+              "data_hex": "0000000000000000"
+            },
+            {
+              "tag": "POCA",
+              "data_hex": ""
+            },
+            {
+              "tag": "INAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "PDTO",
+              "data_hex": "0000000000000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "534e4452000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "SNDR",
+          "formid": "01000803",
+          "header_tail_hex": "0000000003080001000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725365727669636542656c6c5265636f7264656400",
+              "text_annotation": "PullUpAChairServiceBellRecorded"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "0a54ef1e"
+            },
+            {
+              "tag": "GNAM",
+              "data_hex": "a1720100"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "446174615c536f756e645c66785c50756c6c5570414368616972536572766963655c5365727669636542656c6c2e77617600"
+            },
+            {
+              "tag": "ONAM",
+              "data_hex": "dce50700"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "02000000"
+            },
+            {
+              "tag": "BNAM",
+              "data_hex": "000080000000"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

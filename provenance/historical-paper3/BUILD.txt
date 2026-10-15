@@ -1,0 +1,71 @@
+Pull Up a Chair paper3 — build and verification
+
+Requirements
+------------
+Windows x64, MSVC with the C++23 features used by the project, a Windows SDK,
+and CMake >= 3.25. The original toolchain was MSVC 19.51 / Visual Studio 18 2026.
+For full native rendering builds, the Windows SDK shader compiler fxc.exe is
+also required. Python 3.12 is used by the supplied record and validation tools.
+
+All native dependency snapshots are supplied under vendor/. No build step
+downloads dependencies or uses the author's old dependency workspace.
+
+Offline policy tests (no game or renderer build)
+----------------------------------------------
+From this source directory, with CMake in PATH:
+
+cmake -S . -B out/policy -G "Visual Studio 18 2026" -A x64 -DPUAC_POLICY_TESTS_ONLY=ON
+cmake --build out/policy --config Release --parallel 4
+ctest --test-dir out/policy -C Release --output-on-failure
+
+This mode builds the ordering/dining policy tests and service policy tests.
+It does not build CommonLib, the renderer, or any game plugin DLL. It verifies
+the copied project logic and test inputs can run from this standalone layout.
+Its result is recorded in the external verification report.
+
+Full native source build (provided, not executed in this preparation)
+-----------------------------------------------------------------
+cmake -S . -B out/native -G "Visual Studio 18 2026" -A x64 -DPUAC_POLICY_TESTS_ONLY=OFF
+cmake --build out/native --config Release --target PullUpAChairOrdering PullUpAChairService PullUpAChairEAS --parallel 4
+
+The vendor source wrapper supplies the original runtime/layout macros and fixed
+dependencies. It avoids upstream OpenVR writes into the source tree. Its
+OpenVR DLL/import library is a build intermediate, not an automatically added
+game payload. Inspect the rebuilt plugin imports before releasing replacements.
+No rebuilt DLL is automatically copied into Skyrim or the current FOMOD.
+
+This preparation did not run a full vendor/plugin rebuild. The supplied MRF
+source's AGENTS.md prohibits C++/CMake builds in its subtree; that instruction
+was respected. Therefore portable build definitions are provided but a clean
+full native rebuild is not claimed as passed. A future authorized build must
+verify the full wrapper and dependency integration before replacing binaries.
+
+The original release used a published CommonLib v11 prebuilt. Its public headers
+match the supplied v11 source after line-ending normalization. Complete private
+publisher CI logs/cache are unavailable; sources, baseline and dependency patches
+are recorded. Byte-identical reproduction of that prebuilt is not claimed.
+
+ESP and SEQ
+-----------
+python tools/plugin_records.py rebuild plugin-source out/plugins
+
+All three ESP and both SEQ are reproduced from the final record JSON, preserving
+record order, flags, subrecord bytes and compression. data_hex is authoritative;
+text annotations are aids. This path needs no game master files. The historical
+generator chain is retained separately and is not the portable build command.
+
+Papyrus
+-------
+Obtain Caprica and legally available Skyrim SE CK, SKSE and powerofthree Papyrus
+Extender script declarations. Supply TESV_Papyrus_Flags.flg in the import folder.
+The project uses Caprica 0.3.0 for the recorded comparison. Compiler binaries and
+external game script sources are not redistributed in this source archive.
+
+python tools/verify_papyrus.py --compiler C:/tools/Caprica.exe --imports C:/Papyrus/imports --archive C:/downloads/Pull-Up-a-Chair-0.9.9-beta-paper3-FOMOD.zip --output out/papyrus
+
+This recompiles all eight papyrus/*.psc files and compares functions, operands,
+variables, properties and states. Papyrus identifier/type case is normalized;
+literal strings and executable instructions are not discarded. Timestamps,
+source paths and debug line numbers are not expected to be byte-identical.
+
+Offline checks never replace game testing. See the external evidence report.

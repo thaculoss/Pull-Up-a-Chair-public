@@ -1,0 +1,5 @@
+# plugin	localFormID	model	segment	shape	kind	minX	minY	maxX	maxY	topZ	placementMinX	placementMinY	placementMaxX	placementMaxY	note
+RedBag's Morthal.esp	0198F6	RBMorthalMeshes/MorthalMoorsideInn16EXTRACTinterior.nif	1	ellipse	table	-240.5	170.8	-122.6	286.7	811.87	-240.5	170.8	-122.6	286.7	Moorside west round dining table
+RedBag's Morthal.esp	0198F6	RBMorthalMeshes/MorthalMoorsideInn16EXTRACTinterior.nif	2	ellipse	table	66.8	440.2	185.4	558.9	811.87	66.8	440.2	185.4	558.9	Moorside east round dining table
+RedBag's Morthal.esp	0198F6	RBMorthalMeshes/MorthalMoorsideInn16EXTRACTinterior.nif	3	rect	counter	110.0	62.5	182.5	255.0	827.79	116.0	75.0	180.0	255.0	Moorside embedded bar main surface
+RedBag's Morthal.esp	0198F6	RBMorthalMeshes/MorthalMoorsideInn16EXTRACTinterior.nif	4	rect	counter	156.0	255.0	182.5	284.5	827.79	156.0	255.0	180.0	280.0	Moorside embedded bar return beyond the cutout

@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.25)
+project(PullUpAChairService VERSION 0.9.0 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+if(NOT PUAC_POLICY_TESTS_ONLY)
+add_library(PullUpAChairService SHARED src/main.cpp src/Supply.cpp src/ServiceManager.cpp src/Settings.cpp src/BindingUI.cpp)
+target_include_directories(PullUpAChairService PRIVATE src include
+    "${PUAC_VENDOR_ROOT}/MeshRenderingFramework/include")
+target_link_libraries(PullUpAChairService PRIVATE CommonLibSSE)
+target_commonlibsse_properties(PullUpAChairService NAME "PullUpAChairService" AUTHOR "Pull Up a Chair Service" VERSION 0.9.0 USE_ADDRESS_LIBRARY)
+target_precompile_headers(PullUpAChairService PRIVATE src/PCH.h)
+target_compile_definitions(PullUpAChairService PRIVATE UNICODE _UNICODE NOMINMAX)
+target_compile_options(PullUpAChairService PRIVATE /utf-8 /Zc:preprocessor /permissive- /W4 /Zi /bigobj)
+target_link_options(PullUpAChairService PRIVATE /DEBUG /OPT:REF /OPT:ICF)
+endif() # native service
+
+enable_testing()
+add_executable(service_tests tests/service_tests.cpp)
+target_include_directories(service_tests PRIVATE src include)
+target_compile_options(service_tests PRIVATE /utf-8 /W4)
+target_compile_definitions(service_tests PRIVATE NOMINMAX)
+add_test(NAME service_selection_supply_context_input COMMAND service_tests)

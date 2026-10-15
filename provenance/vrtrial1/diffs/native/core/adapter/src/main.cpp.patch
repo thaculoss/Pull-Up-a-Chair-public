@@ -1,0 +1,24 @@
+--- artclean1/native/core/adapter/src/main.cpp
++++ vrtrial1/native/core/adapter/src/main.cpp
+@@ -1160,7 +1160,8 @@
+     FoodActivate::next =
+         food.write_vfunc(meal::activateSlot, FoodActivate::thunk);
+     FoodText::next = food.write_vfunc(meal::activateTextSlot, FoodText::thunk);
+-    DrinkPotion::next = player.write_vfunc(meal::drinkSlot, DrinkPotion::thunk);
++    DrinkPotion::next = player.write_vfunc(
++        meal::DrinkSlot(REL::Module::IsVR()), DrinkPotion::thunk);
+     PlateText::next =
+         misc.write_vfunc(meal::activateTextSlot, PlateText::thunk);
+     PlateActivate::next =
+@@ -1233,6 +1234,11 @@
+   if (!inn::Supported(
+           {version.major(), version.minor(), version.patch(), version.build()}))
+     return false;
++  logger::info("Runtime mode={}; gameplay validation required",
++               inn::ExperimentalVR({version.major(), version.minor(),
++                                    version.patch(), version.build()})
++                   ? "experimental VR (EAS animation observation unavailable)"
++                   : "flat runtime");
+   // CommonLib's default Init recreates/truncates the logger and resets its
+   // level/flush policy. Keep the diagnostic settings configured above.
+   SKSE::Init(skse, {.log = false});

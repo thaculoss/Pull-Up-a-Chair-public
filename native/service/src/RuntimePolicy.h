@@ -1,0 +1,28 @@
+#pragma once
+#include <array>
+#include <cstdint>
+namespace inn {
+struct RuntimeVersion {
+    std::uint16_t major, minor, patch, build;
+    constexpr auto operator<=>(const RuntimeVersion&) const = default;
+};
+// Existing flat-runtime targets. Experimental VR is kept separate below.
+inline constexpr std::array supportedRuntimes{
+    RuntimeVersion{1,5,97,0}, RuntimeVersion{1,6,318,0}, RuntimeVersion{1,6,323,0},
+    RuntimeVersion{1,6,342,0}, RuntimeVersion{1,6,353,0}, RuntimeVersion{1,6,629,0},
+    RuntimeVersion{1,6,640,0}, RuntimeVersion{1,6,659,0}, RuntimeVersion{1,6,1130,0},
+    RuntimeVersion{1,6,1170,0}, RuntimeVersion{1,6,1179,0},
+    RuntimeVersion{1,7,99,0}, RuntimeVersion{1,7,104,0}};
+constexpr bool ExperimentalVR(RuntimeVersion version) {
+    return version == RuntimeVersion{1,4,15,0};
+}
+constexpr bool Supported(RuntimeVersion version) {
+    if (ExperimentalVR(version)) return true;
+    for (auto candidate : supportedRuntimes) if (candidate == version) return true;
+    return false;
+}
+// Legacy flat-runtime constants; the service module installs none of these hooks.
+inline constexpr std::size_t activateSlot = 0x37;
+inline constexpr std::size_t activateTextSlot = 0x4C;
+inline constexpr std::size_t drinkSlot = 0x10F;
+}

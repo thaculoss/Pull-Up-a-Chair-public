@@ -1,0 +1,21 @@
+{
+  "release": "vrtrial1",
+  "author": "thaculoss",
+  "date": "2026-10-15",
+  "source_changes": [
+    "native/core/adapter/src/InteractionRuntime.h",
+    "native/core/adapter/src/main.cpp",
+    "native/core/src/RuntimePolicy.h",
+    "native/core/src/main.cpp",
+    "native/core/tests/core_tests.cpp",
+    "native/core/tests/dining_tests.cpp",
+    "native/service/src/RuntimePolicy.h",
+    "native/service/src/main.cpp",
+    "native/service/tests/service_tests.cpp"
+  ],
+  "remaining_media_count": 62,
+  "media_unchanged_vs_artclean1": true,
+  "no_new_artwork_or_generative_image_edit": true,
+  "runtime_change": "Skyrim VR 1.4.15.0 may attempt loading; not VR gameplay certification",
+  "source_licensing_unchanged": "GPL-3.0-only for eligible original code; third-party and media terms separate"
+}

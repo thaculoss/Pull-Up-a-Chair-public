@@ -1,0 +1,6 @@
+<fomod>
+  <Name>Pull Up a Chair</Name>
+  <Author>Pull Up a Chair project</Author>
+  <Version MachineVersion="0.9.9.14">0.9.9 beta vrtrial1</Version>
+  <Description>Complete FOMOD. Allows experimental loading on Skyrim VR 1.4.15 and selects the VR DrinkPotion virtual slot. VR gameplay, headset UI and motion-controller input remain unverified. Keeps the existing flat runtime allowlist, EAS observer restrictions, artclean1 asset removal, paper3 background and compatibility choices. English is recommended. Source, licenses and guides are supplied separately.</Description>
+</fomod>

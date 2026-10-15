@@ -1,0 +1,637 @@
+[
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/01_bannered_mare.png",
+    "size": 1573012,
+    "sha256": "f4e99083769d72a2b822cc90f3d25d84db6656ea495eac10732371180e627bf1"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/02_sleeping_giant_inn.png",
+    "size": 1551043,
+    "sha256": "e7f2fe655c85456590eca8904916079d822d4fbc2f812ffa4a33b0d77a32ee87"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/03_winking_skeever.png",
+    "size": 2415066,
+    "sha256": "a228c386a288f9de581e254f40574ccda825f925537546e3fe724260f067f98c"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/04_four_shields_tavern.png",
+    "size": 1452113,
+    "sha256": "7962421ca6325dcc6dd6c91100e96c543e576d138abf8cac576453c55d373ac5"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/05_bee_and_barb.png",
+    "size": 1468586,
+    "sha256": "53ab9cae35ac614800a8027d6975591535662e5a58924b6ad920b20e18fb5498"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/06_candlehearth_hall.png",
+    "size": 1566406,
+    "sha256": "ca31f160e62d72920de5f5d3ba76a2f364f0c362dc1c14968007c47e3f21cba1"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/07_silver_blood_inn.png",
+    "size": 1665714,
+    "sha256": "caa139e6df582e026ff9597ad7bbd4ab7a665514c1ac4cc157e0d790d80626aa"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/08_dead_man_s_drink.png",
+    "size": 1766011,
+    "sha256": "5efe0af92beaa08c844fd265466558fab5adfd66891f91c6490c871c270627ca"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/09_frozen_hearth.png",
+    "size": 2235571,
+    "sha256": "497829b7669ff81686073dcd99dc7a0f7a935d231369075ad502e5bbd8c5fd66"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/10_windpeak_inn.png",
+    "size": 1893909,
+    "sha256": "8681776af335565496195d13b01654504b831a49a262c6a9da87139395572d56"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/11_moorside_inn.png",
+    "size": 1060705,
+    "sha256": "80a91c5f61521fedde822e6235a44b5a56e996a8cc859ae3f95ce72e44488087"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/12_frostfruit_inn.png",
+    "size": 1459889,
+    "sha256": "235b80eed87834b3dd37230191439611019345fb40e18edffdb9e24a2bc394f9"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/13_braidwood_inn.png",
+    "size": 1511700,
+    "sha256": "9ab371a11b580262a3e1b955935e032d73b0645b6c362273c52a2b22757baee8"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/14_vilemyr_inn.png",
+    "size": 1110731,
+    "sha256": "6864b0ca1b0f61df8aa051e3f6cb7ac7a1e3dd0e87843e1268bee95a549ad28c"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/15_nightgate_inn.png",
+    "size": 1357833,
+    "sha256": "7a36586a7869c6948424df19b742c8346cb40c2f60b375ea187e50d7a3c36aa0"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/16_old_hroldan_inn.png",
+    "size": 1347403,
+    "sha256": "7893b6ee9a556cce20d0f6cfc773f71d5c5c0159ad63458d389e42c9f8ec7727"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/17_ragged_flagon.png",
+    "size": 1416749,
+    "sha256": "660629cdaf7c5a2156aadeddd0f7176b3a558031f26353ceb01da699a7e3115f"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/18_drunken_huntsman.png",
+    "size": 1330450,
+    "sha256": "bd4d02f54b647d87cf1038da1c26523f5bc25a11c23bfcff527758de40fddbc3"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/black_briar_tankard.png",
+    "size": 1084539,
+    "sha256": "0e142aa78e3d64d0be715a57ebc52c6210170129afd05f77730de385d1a4c837"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_bannered_mare_title.png",
+    "size": 186503,
+    "sha256": "4186bfd3d56207ea057471bcf52d7a941c9639f0844d711c621d8f885f0a8131"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_bee_and_barb_title.png",
+    "size": 206496,
+    "sha256": "33e932bb82dc67b5776b4fb8bd417700f47e21c380f7ebbb623df22a95f3e765"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_braidwood_title.png",
+    "size": 193249,
+    "sha256": "b210c194ee993dcb20d3757a19e9559d46117be77a647f827ddbc5019c22f396"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_candlehearth_title.png",
+    "size": 192442,
+    "sha256": "c9f60d105458923cbb9e141b884078d01c29bc3462b520f38f128253cb4baa4b"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_dead_mans_drink_title.png",
+    "size": 179490,
+    "sha256": "01b17c56375b01a8abb62cfaa6333a83908a3618a6e23388ee4d581f4c4b105c"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_drunken_huntsman_title.png",
+    "size": 194492,
+    "sha256": "f362d0a530f6cf7a497096fd9486fcb57bd89662b4bea039c00e4a9189383c81"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_four_shields_title.png",
+    "size": 171469,
+    "sha256": "46cdcb3aa18cd71fdc37cac3fff83af686b6baec763eb46ed254846e1be64e42"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_frostfruit_title.png",
+    "size": 195964,
+    "sha256": "db15418edd8238b1574bc3ab8c811f877793954e2c67487f5c767fa6da442f33"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_frozen_hearth_title.png",
+    "size": 187042,
+    "sha256": "88e413d02e1f24bf183f35040d16b4fffaa5145a208859db09f8241439494316"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_moorside_title.png",
+    "size": 199616,
+    "sha256": "8efa604fd2b2649f253c41397f4fce39c069c3a80429b6aa8fe687d5765adfc0"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_nightgate_title.png",
+    "size": 192088,
+    "sha256": "9d0baa843f36c3b41b938ebd89b7f83af47b953ff77c3dcfe4315484e58283b9"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_old_hroldan_title.png",
+    "size": 175328,
+    "sha256": "cbfba7013f5dca4a17794e9fed67c43873770ba9de908698ae442dbfc7c46a1d"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_ragged_flagon_title.png",
+    "size": 202850,
+    "sha256": "ccc851797b6444e535f8c5d80996fc0bb44f86ce53d4e32b98d7c9550cb9a538"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_retching_netch_title.png",
+    "size": 207921,
+    "sha256": "6aab588d233d99f234d09b9bbeb5197e592f76b42534f0912103ce168c3be692"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_silver_blood_title.png",
+    "size": 206001,
+    "sha256": "5bdc4eac50c0172ac7eb7f86959a36232b3720eab9443e92ca772e67152f2c64"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_sleeping_giant_title.png",
+    "size": 197966,
+    "sha256": "14ae3e8be696dc9a417e702ba7de2590b7120a86672c5d169f699a55b1e3f6e7"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_vilemyr_title.png",
+    "size": 201442,
+    "sha256": "cdaec1b70194bc31b2112379ac7b9e9831164fd97765df46b4e778b776a0412c"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/handwritten_en_windpeak_title.png",
+    "size": 200687,
+    "sha256": "eedf46a8ec4914b83f702c16bc242335366e9afcb3bed5d1776f05c166bccd62"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/morrowind_netch.png",
+    "size": 539237,
+    "sha256": "d717a985eb5e7b0236ac6e348af781ec1a9792b104f3a070962cedd9145a55ef"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/WenKai-OFL.txt",
+    "size": 4450,
+    "sha256": "66e75815b1bb90bdaede3649abf5ea029d0dc7d5e61b0534d3245db61a510b93"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_bannered_mare_title.png",
+    "size": 39902,
+    "sha256": "18858f8da20b636333c804fd7cc255722e1b243ab9811341194478497c818134"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_bee_and_barb_title.png",
+    "size": 56883,
+    "sha256": "7719c3bf2285773e9d1a06f80e3bfdf27f84f66cf15b333c1b1dc3d5a4af03b9"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_braidwood_title.png",
+    "size": 46422,
+    "sha256": "d2f6eea25b90ffeaecc1e8d50118d7b42431fff42b4993fd7131d24cf42b0552"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_candlehearth_title.png",
+    "size": 35216,
+    "sha256": "f02ef9db02971a568d5b67a84cc3e15c106a78398e59782ae862ec73d2e15968"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_dead_mans_drink_title.png",
+    "size": 32806,
+    "sha256": "83167ac4b09bb8de86d3f9779120d4c6816b957454a5d00e5f2a912e8475d108"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_drunken_huntsman_title.png",
+    "size": 41587,
+    "sha256": "57c417bff0cbad88b8144c46941e0712136e2f937fad73a9cc6c08a5e7ede93f"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_four_shields_title.png",
+    "size": 38408,
+    "sha256": "eb2e670ee473d86aaab949045f1b9028d894a7b7747b5ed671c57344e515ce9c"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_frostfruit_title.png",
+    "size": 46774,
+    "sha256": "75f2cb4df5f38567aed1900f349c35c6fa10156b6d91bfe3f2673d0611c510e3"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_frozen_hearth_title.png",
+    "size": 39245,
+    "sha256": "59b49fef346aa7047a514186a84a8ca9d62352d34b79c2abb6a2a00457a01904"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_moorside_title.png",
+    "size": 57790,
+    "sha256": "7f66e4dda9c1c5325d715f1aa36a19e216efa47fc73f81f24cc452367b5eb82c"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_nightgate_title.png",
+    "size": 41911,
+    "sha256": "987c2f1ef4294fc8f87b76ddf515a40265e274b44633355b88bff922cf0496d1"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_old_hroldan_title.png",
+    "size": 43443,
+    "sha256": "78e842e107dcc14de10560b2920eb9e572759de794e1ae337f21109c3099c46a"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_ragged_flagon_title.png",
+    "size": 44115,
+    "sha256": "4174242536d6c8a043d2c41b13877d565e0394ba4ed7bd15c22c2174329e3638"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_retching_netch_title.png",
+    "size": 32871,
+    "sha256": "bda812dc2c47a16ac809ec724c508d13cca89b4b38000dd6f83f1d2ff56630cf"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_silver_blood_title.png",
+    "size": 43385,
+    "sha256": "1bae81d2d4a3a85b5d9a831bc967acfedd9a7cc4851f2c56c59ac79db30c600b"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_sleeping_giant_title.png",
+    "size": 34091,
+    "sha256": "5b7d6fb1e3fba1a02ac0d83a2c4106510a3a9e55ef17063ff49df71f5c38bed7"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_vilemyr_title.png",
+    "size": 54280,
+    "sha256": "e4cc80a2dfe1f850f001ffdc50e1ad458e8e15e751615549a60cbec03a291701"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_windpeak_title.png",
+    "size": 46704,
+    "sha256": "ec3c5cca0aa6ccb4427b8e4d5e0d2de89bbe841d9667e358d64ed87b31d70988"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/wenkai_medium_winking_skeever_title.png",
+    "size": 44204,
+    "sha256": "d1f9b3bfa8626a3b6ba5e1a8c158815181a46b6667f70ac6657f0a7c9d89c48b"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/InnSigns/winking_skeever_title.png",
+    "size": 33239,
+    "sha256": "1834200ffd5be70c7c13e17e476f52ab094e17d8010b91e921781bde0898251a"
+  },
+  {
+    "path": "00_Core/Interface/PullUpAChairOrdering/parchment.png",
+    "size": 2283805,
+    "sha256": "e8041b75492fd1e0a2509379f62ee426cb96eabdb59297f71566e0ff28881013"
+  },
+  {
+    "path": "00_Core/Pull up a chair Ordering.esp",
+    "size": 15565,
+    "sha256": "2df28849e4742fcc66c5affc4cf54efeaa9fd5660f626fce1ce2aeb7be0ff4c9"
+  },
+  {
+    "path": "00_Core/Scripts/PullUpAChairCleanTopic.pex",
+    "size": 645,
+    "sha256": "024db6df3d4b22d8dd8fda3d2534a6416c1aa323e5dc1dbad2be5100ef75f05a"
+  },
+  {
+    "path": "00_Core/Scripts/PullUpAChairOrdering.pex",
+    "size": 1948,
+    "sha256": "20a35f7181a97ebf58b9dafcb16e42833069bf74265b56732f194750e2091dce"
+  },
+  {
+    "path": "00_Core/Scripts/PullUpAChairOrderingQuest.pex",
+    "size": 43963,
+    "sha256": "a66b2591de0ad72781ae0ddb7575a1548e909895204c80ba98625d1e9e9789aa"
+  },
+  {
+    "path": "00_Core/Scripts/PullUpAChairOrderingTopic.pex",
+    "size": 726,
+    "sha256": "ebba811807100996ed24fc40bcd8b87f035c20992cf3885a37ca58b2a9a33c99"
+  },
+  {
+    "path": "00_Core/Scripts/PullUpAChairRestoreTopic.pex",
+    "size": 651,
+    "sha256": "dda200da3dbf0eee4f41a13ce3861dd8b11c7f6bd7093537924dd5b5945fdcfa"
+  },
+  {
+    "path": "00_Core/SEQ/Pull up a chair Ordering.seq",
+    "size": 4,
+    "sha256": "81c8bf65bfc3307c444f593599c1fc58e61a0687cff014f48c0db21358f9465b"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/Fonts/PUAC-WenKai-Medium.ttf",
+    "size": 25745488,
+    "sha256": "b885c51ec0d3f325974013801dfcefda1a9ba0bf385c607cf5f2582dafa2e5ab"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/embedded_surfaces.tsv",
+    "size": 898,
+    "sha256": "8a6cc2e46531e6748bd2f6b50f6c4157006787c6889a2753736c49bddc224511"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/food_packs/cc-fishing.tsv",
+    "size": 7096,
+    "sha256": "a7df64f480d1a48eeff7322c59e18de32b1b65b149f9b6249bbc68b43e167ca6"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/food_packs/cooking-reseasoned.tsv",
+    "size": 5589,
+    "sha256": "e879d04876ba372e4a994c55d84c33950b7d62540c5c5cd6117554cbb0a22120"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/food_packs/gourmet.tsv",
+    "size": 6611,
+    "sha256": "f0ed96595d530d7fbf3436a3ac7ecaf147c95c8f64d3c761f53a382e5ecc7b57"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/foods.tsv",
+    "size": 11846,
+    "sha256": "d83f4ce8b5b7a081d9414ac2ecec366956131e601d5ef27990fed9bd6a407a32"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/inn_artwork.tsv",
+    "size": 3036,
+    "sha256": "749e02faea33dc71f302094e1b4c5226a2907042fbca1360d5a2cda0b4a4edb5"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/inn_titles.tsv",
+    "size": 3757,
+    "sha256": "c462f3f3ee722d484e93468eef0159f272face6110df28db6ede0f99d9f5d7c7"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/inn_titles_zh.tsv",
+    "size": 3255,
+    "sha256": "7d5c95153a408304823cfea1cea57e9830cf5e3f8923817999d7716493839a9f"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/props.tsv",
+    "size": 2047,
+    "sha256": "c0c2b2064ce283c62740631225d434b2af07b1b7da6dc34cf9f632dcadcd1443"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/specialties.tsv",
+    "size": 1043,
+    "sha256": "5ab0aff3a40fc135573f9113a0c56134ddb0827b9a0712e05629446d6dac1f31"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/suppliers.tsv",
+    "size": 5236,
+    "sha256": "5fd8bad281282aad16c28efd953dc0988e0e63c7297a2f94b5a4334a54374f0a"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/table_registry.tsv",
+    "size": 19917,
+    "sha256": "587418003a80b1681cf34a12eef2cf1cfe23f8ec420a754eea09711d665ba2d6"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/tables.tsv",
+    "size": 7454,
+    "sha256": "4b1dce1b6de7499d5177146c8372ac411c2bf046eebeab12f1278b0444891cf4"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/locales/en.tsv",
+    "size": 11398,
+    "sha256": "16545fce4e8d60160273dd3515399fad3c4f9737b18fc94ef25c878fd7a8d226"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering/locales/zh.tsv",
+    "size": 11087,
+    "sha256": "c881de71d33ab2f65d8db3827991656dbc3e9112cbe723fd6ca11ab1c0ba8a63"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrdering.dll",
+    "size": 2640896,
+    "sha256": "f76739112ae4fa0028cf0ef93273005b5ccd91395fc4ceab92693c6f6e3343b2"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrderingSettingsUI.ini",
+    "size": 403,
+    "sha256": "73c9448eaab4fdde730e48116d3d6aaa37ffdbf7957cd65b041b888e8016ba99"
+  },
+  {
+    "path": "00_Core/SKSE/Plugins/PullUpAChairOrderingUI.ini",
+    "size": 2590,
+    "sha256": "d89baeda6daa285ecb837a5d87da54c8753fcc4cdb41e159822bc1c1d487cb70"
+  },
+  {
+    "path": "00_Core/Sound/fx/PullUpAChairOrdering/PageTurn.wav",
+    "size": 56492,
+    "sha256": "baaef995d486a80c4ca7df699e89d5e828563f139b3ce855b0c54fca7d52270e"
+  },
+  {
+    "path": "00_Core/Sound/fx/PullUpAChairOrdering/ServiceBell.wav",
+    "size": 300806,
+    "sha256": "cee869e7fc3c6e36154855d2a2e24279af5c5c681218e276bca6a331cd109100"
+  },
+  {
+    "path": "20_Service/Pull up a chair Service.esp",
+    "size": 1244,
+    "sha256": "17e725c9839941734a80444228ec85b26e48a8ac29ba33343d6f72addd3fc6f6"
+  },
+  {
+    "path": "20_Service/Scripts/PullUpAChairService.pex",
+    "size": 703,
+    "sha256": "f54130c37b2b4e20d5662401ad208f91d73912248e01670292c8d3d4ca6c0c55"
+  },
+  {
+    "path": "20_Service/Scripts/PullUpAChairServiceControl.pex",
+    "size": 974,
+    "sha256": "8fd8f3d92a08a499c26bcb62520287738067a680db94986c9ba651c92ed8b9bf"
+  },
+  {
+    "path": "20_Service/SEQ/Pull up a chair Service.seq",
+    "size": 4,
+    "sha256": "004be5580012efcdec118fce2444cf2dab6a4709d71924066ed03b59a19969de"
+  },
+  {
+    "path": "20_Service/SKSE/Plugins/PullUpAChairService/bindings.tsv",
+    "size": 176,
+    "sha256": "13ed46aa329e6d37ebab4bbc4fc09c19c0410c5adc861942df1441980a848cc8"
+  },
+  {
+    "path": "20_Service/SKSE/Plugins/PullUpAChairService/locales/en.tsv",
+    "size": 2448,
+    "sha256": "2adc6cdaa1410df1d5b0d11ac0508b748b0125353e43f88955713cc1526a6b12"
+  },
+  {
+    "path": "20_Service/SKSE/Plugins/PullUpAChairService/locales/zh.tsv",
+    "size": 2378,
+    "sha256": "f9f551b5cf4dba926920fc8954e099b63e6788b5a01f9fe8bb6f88bf0b49f583"
+  },
+  {
+    "path": "20_Service/SKSE/Plugins/PullUpAChairService/roles.tsv",
+    "size": 144,
+    "sha256": "2501fea08ecd679f6c6d698741ec49ff56f8bebb420a564ab3065e061c30f4ee"
+  },
+  {
+    "path": "20_Service/SKSE/Plugins/PullUpAChairService.dll",
+    "size": 777216,
+    "sha256": "fc515795c38619c6170feb23877597966ede89e9bc1c780da985e4aea262d4c7"
+  },
+  {
+    "path": "20_Service/Sound/fx/PullUpAChairService/ServiceBell.wav",
+    "size": 300806,
+    "sha256": "cee869e7fc3c6e36154855d2a2e24279af5c5c681218e276bca6a331cd109100"
+  },
+  {
+    "path": "30_EAS/PullUpAChairOrdering_Specialties_KID.ini",
+    "size": 8287,
+    "sha256": "2fc5a9ff6200900ce467924b90fbbfa30940fa26551f465ecf500ae443ca4f6c"
+  },
+  {
+    "path": "30_EAS/SKSE/Plugins/PullUpAChairEAS.ini",
+    "size": 146,
+    "sha256": "4faea755cecd4918717a18315b4f384d28722f8fe6141b25f458f52dd7cabc5b"
+  },
+  {
+    "path": "40_SunHelm/SKSE/Plugins/SkyPatcher/formList/PullUpAChairOrderingSunHelm.ini",
+    "size": 2849,
+    "sha256": "19d877e82711f64dc46727df45afb9eaf544b580880f9eb37b83d7b6172a8880"
+  },
+  {
+    "path": "41_SunHelmFoodPacks/0/SKSE/Plugins/SkyPatcher/formList/PullUpAChairOrderingFoodPack0SunHelm.ini",
+    "size": 275,
+    "sha256": "76ee197e5d75e9e704f954cb47246257327080894debe4c03cc67ae2cc5b7ee4"
+  },
+  {
+    "path": "41_SunHelmFoodPacks/1/SKSE/Plugins/SkyPatcher/formList/PullUpAChairOrderingFoodPack1SunHelm.ini",
+    "size": 1207,
+    "sha256": "caf50d22a87ef4d288abc2939f2ddb2f0042d4b2a3b9e8f527caddf8466cab0d"
+  },
+  {
+    "path": "45_ChattyNPCs/Pull up a chair - Chatty NPCs Patch.esp",
+    "size": 15455,
+    "sha256": "1cdce518b9701b3dfc6c89d385d69e0880067e43e98fa9c3786c8b60142543f8"
+  },
+  {
+    "path": "60_FrameworkPreset/SKSE/Plugins/SKSEMenuFramework.ini",
+    "size": 634,
+    "sha256": "0be794ee03dc5cb45782faba8caa1395ab71f8b94567fb3c834c6efd63a324c8"
+  },
+  {
+    "path": "70_DAKHUD/0/SKSE/Plugins/PullUpAChairDAKHUD.ini",
+    "size": 180,
+    "sha256": "0652d253b96a38a337fbd912fba63045240c0a41a1270984d1a1278240d0434c"
+  },
+  {
+    "path": "70_DAKHUD/1/SKSE/Plugins/PullUpAChairDAKHUD.ini",
+    "size": 180,
+    "sha256": "0b3dec913a547f8eb255a732240d6bac0392342f8ded273e3f038bdeb90aff10"
+  },
+  {
+    "path": "90_Settings/en/0/0/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "6f055bb54414fd62a44734e71ddbf056b458082a87629f7916ea8eb6fe235077"
+  },
+  {
+    "path": "90_Settings/en/0/1/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "e85df1a2f34e93ff66d8b4458b611406e357ac1b4940d9af98cb32211498dce9"
+  },
+  {
+    "path": "90_Settings/en/1/0/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "09a179b0aa93041bb39b507a66389c571760564eac79ecfe81a8897e45872850"
+  },
+  {
+    "path": "90_Settings/en/1/1/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "60c16d3bbfa0959e53e304bca8a07147b0b601cb4c373767b0bd6fc81eacd47a"
+  },
+  {
+    "path": "90_Settings/en/2/0/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "02f8ca518d33deed677b681291c70e771e1d20b4b514e0d966c6c71559471df6"
+  },
+  {
+    "path": "90_Settings/en/2/1/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "d9e3cb40f64dd0fcd7c9451deb61ebc4a11c526c8055744d3407941ddd12c43c"
+  },
+  {
+    "path": "90_Settings/zh/0/0/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "99463cd359fa886e1943b14fb3a743e949ebc3b5de7b45b83e0fa4cf59f3fc03"
+  },
+  {
+    "path": "90_Settings/zh/0/1/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "5d5c4afcbd0556977b113702d452f0097336107cc41637a7962cd68480befe1d"
+  },
+  {
+    "path": "90_Settings/zh/1/0/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "7e30b18d5d3b51e2a44fe0758c7ca038f0bf9eb103501d7aeedfee3fc197329d"
+  },
+  {
+    "path": "90_Settings/zh/1/1/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "4f2c2f4044d6e80c3f6e257c8e59ed6469d4a4ce56761ee8f5bc75789a88adc0"
+  },
+  {
+    "path": "90_Settings/zh/2/0/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "4c50f5360e3c4984598e81ee2616a3ed3e8cdb440fc86db1a9b959abd3938b39"
+  },
+  {
+    "path": "90_Settings/zh/2/1/SKSE/Plugins/PullUpAChairOrdering.ini",
+    "size": 1199,
+    "sha256": "ba7648d31e92b64263ca851060f6d60152f5fe01946ca7c8739f787de2697bb4"
+  },
+  {
+    "path": "91_ServiceLanguage/en/SKSE/Plugins/PullUpAChairService.ini",
+    "size": 441,
+    "sha256": "1b0bc8c07067799c23d1da807449023b9e47e241db4e4f01478cf3471a90b09f"
+  },
+  {
+    "path": "91_ServiceLanguage/zh/SKSE/Plugins/PullUpAChairService.ini",
+    "size": 441,
+    "sha256": "deeb1faa7f85917867834fbeaa232ca74dbc890ca9a0bc617004ab207865f112"
+  },
+  {
+    "path": "fomod/info.xml",
+    "size": 569,
+    "sha256": "6cfc118c851fdc5e55e6645d539bcc5748e4605bf22fa990f4e388a21b345317"
+  },
+  {
+    "path": "fomod/ModuleConfig.xml",
+    "size": 20735,
+    "sha256": "15d51a87643a9607f5e1df6b0f9b9a6db04dfb68159cadcd56abe0e76399bbbb"
+  },
+  {
+    "path": "00_Core/Licenses/PullUpAChair-Third-Party-Notices.txt",
+    "size": 120711,
+    "sha256": "b29603d9387fba62c32ca699fe83a8d75162a154da7a883b0819cba3200a0b2b"
+  },
+  {
+    "path": "30_Dining/SKSE/Plugins/PullUpAChairEAS.dll",
+    "size": 747008,
+    "sha256": "88196ad0d20123a0710a3a6db5142bd932e4fa1e48b632a15acc1006120170ab"
+  },
+  {
+    "path": "30_Dining/Scripts/PullUpAChairEAS.pex",
+    "size": 730,
+    "sha256": "73f21d0325203b66295586df03cca42411973814d6bc16e135d4798a6501f1c3"
+  },
+  {
+    "path": "30_Dining/SKSE/Plugins/PullUpAChairEAS.ini",
+    "size": 146,
+    "sha256": "f0043d216d399cee2d5b8a599228c6960814f9a20df76a740b4626462068c406"
+  }
+]

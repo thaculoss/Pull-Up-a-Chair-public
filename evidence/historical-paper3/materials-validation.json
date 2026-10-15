@@ -1,0 +1,25 @@
+{
+  "author": "thaculoss",
+  "date": "2026-10-15",
+  "project_code_license": "GPL-3.0-only",
+  "license_explicitly_approved": true,
+  "original_fomod_sha256": "fbdff8fe999e04cbcea7aeae1773b02142f06b6e436fac0254edc4ef5c71a26a",
+  "original_fomod_unchanged": true,
+  "native_modules_source_mapped": 3,
+  "papyrus_semantic_matches": "8/8",
+  "esp_seq_byte_identical_rebuilds": "5/5",
+  "offline_policy_tests": "18/18",
+  "asset_origin_hash_matches": "63/63",
+  "dependency_groups": 19,
+  "dependency_source_files": 5849,
+  "vendor_binaries_included": false,
+  "fresh_full_native_rebuild": false,
+  "gameplay_tested": false,
+  "installation_zip_modified": false,
+  "nexus_uploaded": false,
+  "rights_boundaries": [
+    "Morrowind loading illustration cross-game redistribution permission not established",
+    "Personal media reuse grants are separate from code GPL",
+    "Audio provided by author; formal recording authorship confirmation remains recorded as pending"
+  ]
+}

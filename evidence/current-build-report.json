@@ -1,0 +1,70 @@
+{
+  "archive": "{workspace}\\pull-up-a-chair-0.9.9-beta-vrtrial1-20261015\\dist\\Pull-Up-a-Chair-0.9.9-beta-vrtrial1-FOMOD.zip",
+  "sha256": "d031bb152db693a922cf77b8a1beaf84fa13234e6b815d3de48f922eb731c166",
+  "bytes": 49539072,
+  "entries": 126,
+  "base_archive": "{workspace}\\pull-up-a-chair-0.9.9-beta-artclean1-20261015\\dist\\Pull-Up-a-Chair-0.9.9-beta-artclean1-FOMOD.zip",
+  "base_archive_sha256": "1bd5d0a4a553fcec6496801b80d6c48e7ef20c1ecf1771be27f14e372cb0930b",
+  "changed_entries": [
+    "00_Core/SKSE/Plugins/PullUpAChairOrdering.dll",
+    "20_Service/SKSE/Plugins/PullUpAChairService.dll",
+    "30_Dining/SKSE/Plugins/PullUpAChairEAS.dll",
+    "fomod/ModuleConfig.xml",
+    "fomod/info.xml"
+  ],
+  "added_entries": [],
+  "removed_entries": [],
+  "source_changes": {
+    "core": [
+      "adapter/src/InteractionRuntime.h",
+      "adapter/src/main.cpp",
+      "CMakeLists.txt",
+      "src/main.cpp",
+      "src/RuntimePolicy.h",
+      "tests/core_tests.cpp",
+      "tests/dining_tests.cpp"
+    ],
+    "service": [
+      "CMakeLists.txt",
+      "src/main.cpp",
+      "src/RuntimePolicy.h",
+      "tests/service_tests.cpp"
+    ]
+  },
+  "dlls": {
+    "PullUpAChairOrdering.dll": {
+      "sha256": "39303ebc76ad2bb488ea39af3ad1d7aeae53acb774e4170abc471d13ea8c3f35",
+      "source": "{workspace}\\pull-up-a-chair-0.9.9-beta-vrtrial1-20261015\\build-core\\Release\\PullUpAChairOrdering.dll"
+    },
+    "PullUpAChairService.dll": {
+      "sha256": "b4a29d63f4665d5b4a51d09e893ffedf60da4c03724c4080b6e1488f6f03fbe3",
+      "source": "{workspace}\\pull-up-a-chair-0.9.9-beta-vrtrial1-20261015\\build-service\\Release\\PullUpAChairService.dll"
+    },
+    "PullUpAChairEAS.dll": {
+      "sha256": "18b9fbbc4824ccbab5fb45b880874806a72952fd81c95d8602d93fa3cefc3713",
+      "source": "{workspace}\\pull-up-a-chair-0.9.9-beta-vrtrial1-20261015\\build-core\\Release\\PullUpAChairEAS.dll"
+    }
+  },
+  "experimental_vr_runtime": "1.4.15.0",
+  "flat_runtime_allowlist_unchanged": true,
+  "drink_potion_slots": {
+    "SE_AE": "0x10F",
+    "VR": "0x111"
+  },
+  "eas_observer_runtime_allowlist": [
+    "1.5.97.0",
+    "1.7.104.0"
+  ],
+  "english_recommended": true,
+  "installer_choices_unchanged": true,
+  "all_other_payload_bytes_unchanged": true,
+  "gameplay_tested": false,
+  "vr_tested": false,
+  "installed_locally": false,
+  "live_files_unchanged": true,
+  "previous_archive_unchanged": true,
+  "guides_inside": false,
+  "option_combinations": 864,
+  "current_regression": "4/4 passed (3 core/dining and 1 service)",
+  "vortex_library_validation": "passed"
+}

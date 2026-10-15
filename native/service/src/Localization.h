@@ -1,0 +1,52 @@
+#pragma once
+#include <atomic>
+#include <filesystem>
+#include <fstream>
+#include <map>
+#include <string>
+#include <string_view>
+namespace inn {
+class Localization {
+    std::map<std::string, std::string, std::less<>> english, active;
+    std::atomic_bool chinese_{};
+    static std::string Decode(std::string_view value) {
+        std::string out;out.reserve(value.size());
+        for(std::size_t i=0;i<value.size();++i) {
+            if(value[i]=='\\'&&i+1<value.size()) {
+                const auto next=value[i+1];
+                if(next=='n'||next=='t'||next=='\\'){out+=next=='n'?'\n':next=='t'?'\t':'\\';++i;continue;}
+            }
+            out+=value[i];
+        }
+        return out;
+    }
+    static bool Read(const std::filesystem::path& path, std::map<std::string,std::string,std::less<>>& target) {
+        std::ifstream stream(path);
+        if (!stream) return false;
+        std::string line;
+        while (std::getline(stream,line)) {
+            if (!line.empty() && line.back()=='\r') line.pop_back();
+            if (line.empty() || line.front()=='#') continue;
+            auto separator=line.find('\t');
+            if (separator!=std::string::npos) target[line.substr(0,separator)]=Decode(line.substr(separator+1));
+        }
+        return true;
+    }
+public:
+    bool Load(const std::filesystem::path& folder, std::string_view language) {
+        english.clear(); active.clear();
+        const bool valid=Read(folder / "en.tsv",english);
+        Read(folder / "zh.tsv",active);
+        UseChinese(language=="zh");
+        return valid;
+    }
+    void UseChinese(bool value) { chinese_.store(value,std::memory_order_relaxed); }
+    const char* Text(std::string_view key) const {
+        if (chinese_.load(std::memory_order_relaxed))if (auto i=active.find(key); i!=active.end()) return i->second.c_str();
+        if (auto i=english.find(key); i!=english.end()) return i->second.c_str();
+        return "[missing translation]";
+    }
+};
+inline Localization strings;
+inline const char* T(std::string_view key) { return strings.Text(key); }
+}

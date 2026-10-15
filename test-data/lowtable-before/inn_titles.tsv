@@ -1,0 +1,21 @@
+# English titles: display scale and optical body center; full strokes and original PNGs retained.
+# plugin	localLocation	key	nameEnglish	nameChinese	filename	u0	v0	u1	v1	aspect	clockwiseQuarterTurns	displayScale	bodyCenterY
+Skyrim.esm	01F86D	bannered_mare	The Bannered Mare	旗帜母马	handwritten_en_bannered_mare_title.png	0.0317972350	0.2841379310	0.9824884793	0.7600000000	5.9797101449	0	0.83617958	0.57101449
+Skyrim.esm	01CB8C	sleeping_giant	Sleeping Giant Inn	沉睡巨人	handwritten_en_sleeping_giant_title.png	0.0178487553	0.1951219512	0.9826209488	0.8224932249	4.4362850972	0	1.16798038	0.38012959
+Skyrim.esm	0200A5	winking_skeever	The Winking Skeever	眨眼雪鼠	winking_skeever_title.png	0	0	1	1	3.7042253521	0	1.18000000	0.53785211
+Skyrim.esm	020008	four_shields	Four Shields Tavern	四盾酒馆	handwritten_en_four_shields_title.png	0.0524861878	0.3356353591	0.9484346225	0.6629834254	8.2109704641	0	0.68930282	0.59704641
+Skyrim.esm	02247E	bee_and_barb	The Bee and Barb	蜜蜂与倒钩	handwritten_en_bee_and_barb_title.png	0.0488029466	0.2113259669	0.9401473297	0.8632596685	4.1016949153	0	0.69170153	0.48516949
+Skyrim.esm	0209EA	candlehearth	Candlehearth Hall	烛炉大厅	handwritten_en_candlehearth_title.png	0.0382136280	0.3080110497	0.9622467772	0.6906077348	7.2454873646	0	0.60601302	0.59386282
+Skyrim.esm	01F30E	silver_blood	Silver-Blood Inn	银血客栈	handwritten_en_silver_blood_title.png	0.0262672811	0.2855172414	0.9746543779	0.6937931034	6.9527027027	0	0.60980517	0.59121622
+Skyrim.esm	05CA26	dead_mans_drink	Dead Man's Drink	亡者之饮	handwritten_en_dead_mans_drink_title.png	0.0253339475	0.3024861878	0.9746660525	0.7058011050	7.0582191781	0	0.68101648	0.54794521
+Skyrim.esm	01EB7C	frozen_hearth	The Frozen Hearth	冰冻炉火	handwritten_en_frozen_hearth_title.png	0.0437384899	0.2790055249	0.9742173112	0.7375690608	6.0873493976	0	0.69556338	0.58433735
+Skyrim.esm	020065	windpeak	Windpeak Inn	风峰客栈	handwritten_en_windpeak_title.png	0.0322580645	0.1324137931	0.9824884793	0.9351724138	3.5429553265	0	1.28465229	0.42783505
+Skyrim.esm	01EB96	moorside	Moorside Inn	沼泽边客栈	handwritten_en_moorside_title.png	0.0105893186	0.2527624309	0.9894106814	0.7541436464	5.8567493113	0	0.76701066	0.62947658
+Skyrim.esm	01F883	frostfruit	Frostfruit Inn	霜果客栈	handwritten_en_frostfruit_title.png	0.0395948435	0.2624309392	0.9783609576	0.8825966851	4.5412026726	0	0.84091683	0.41648107
+Skyrim.esm	020A02	braidwood	Braidwood Inn	辫木客栈	handwritten_en_braidwood_title.png	0.0395948435	0.2569060773	0.9728360958	0.7237569061	5.9970414201	0	0.78829990	0.57988166
+Skyrim.esm	0226AA	vilemyr	Vilemyr Inn	维尔迈旅店	handwritten_en_vilemyr_title.png	0.0364055300	0.0868965517	0.9502304147	0.9434482759	3.1932367150	0	1.12060271	0.41304348
+Skyrim.esm	020054	nightgate	Nightgate Inn	夜门客栈	handwritten_en_nightgate_title.png	0.0981566820	0.2220689655	0.9377880184	0.8413793103	4.0579064588	0	1.00910019	0.43652561
+Skyrim.esm	01F7CB	old_hroldan	Old Hroldan Inn	老赫洛丹	handwritten_en_old_hroldan_title.png	0.0184162063	0.2776243094	0.9714548803	0.7707182320	5.7983193277	0	0.76745162	0.52801120
+Skyrim.esm	02264A	ragged_flagon	The Ragged Flagon	破碎酒壶	handwritten_en_ragged_flagon_title.png	0.0423963134	0.1489655172	0.9658986175	0.8731034483	3.8171428571	0	0.95433538	0.42666667
+Skyrim.esm	01F872	drunken_huntsman	The Drunken Huntsman	醉酒猎人	handwritten_en_drunken_huntsman_title.png	0.0216390424	0.2941988950	0.9894106814	0.7058011050	7.0536912752	0	0.75272601	0.60738255
+Dragonborn.esm	019A24	retching_netch	The Retching Netch	呕吐气母	handwritten_en_retching_netch_title.png	0.0239410681	0.2127071823	0.9627071823	0.9005524862	4.0943775100	0	1.03457746	0.41265060

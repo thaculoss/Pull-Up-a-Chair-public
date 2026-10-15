@@ -1,0 +1,28 @@
+Pull Up a Chair — original project source code
+
+Copyright (C) 2026 thaculoss
+SPDX-License-Identifier: GPL-3.0-only
+
+Except where otherwise noted, the original source code contributed by
+thaculoss to Pull Up a Chair, to the extent thaculoss has the right to
+license it, is licensed under the GNU General Public License, version 3
+only. This applies to the project's original C++, Papyrus, build scripts,
+tests and configuration code. A complete copy of that license is provided
+in COPYING.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+for more details.
+
+Third-party components retain their original copyrights, licenses and
+applicable exceptions. This notice does not replace or extend upstream
+permissions.
+
+This source-code license does not cover separately credited artwork,
+photographs, handwritten lettering, fonts, recordings or Bethesda game
+assets. No additional permission to reuse those assets outside this mod
+is granted by this notice. Applicable existing third-party licenses,
+including the font's SIL Open Font License, remain in effect.
+
+License choice confirmed by thaculoss on 2026-10-15.

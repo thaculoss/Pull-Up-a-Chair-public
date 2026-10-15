@@ -1,0 +1,137 @@
+Microsoft (R) COFF/PE Dumper Version 14.51.36260.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file pull-up-a-chair-0.9.9-beta-vrtrial1-20261015\build-core\Release\PullUpAChairOrdering.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    d3d11.dll
+    D3DCOMPILER_47.dll
+    ole32.dll
+    KERNEL32.dll
+    USER32.dll
+    MSVCP140.dll
+    VCRUNTIME140.dll
+    VCRUNTIME140_1.dll
+    api-ms-win-crt-heap-l1-1-0.dll
+    api-ms-win-crt-string-l1-1-0.dll
+    api-ms-win-crt-runtime-l1-1-0.dll
+    api-ms-win-crt-math-l1-1-0.dll
+    api-ms-win-crt-convert-l1-1-0.dll
+    api-ms-win-crt-stdio-l1-1-0.dll
+    api-ms-win-crt-filesystem-l1-1-0.dll
+    api-ms-win-crt-locale-l1-1-0.dll
+    api-ms-win-crt-time-l1-1-0.dll
+    api-ms-win-crt-utility-l1-1-0.dll
+    VERSION.dll
+    SHELL32.dll
+
+  Section contains the following exports for PullUpAChairOrdering.dll
+
+    00000000 characteristics
+    FFFFFFFF time date stamp
+        0.00 version
+           1 ordinal base
+           5 number of functions
+           5 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0005F400 PullUpAChairOrdering_GetDiningAPI = PullUpAChairOrdering_GetDiningAPI
+          2    1 00089B90 PullUpAChairOrdering_GetServiceBackend = PullUpAChairOrdering_GetServiceBackend
+          3    2 00053520 SKSEPlugin_Load = SKSEPlugin_Load
+          4    3 00094790 SKSEPlugin_Query = SKSEPlugin_Query
+          5    4 0024AC30 SKSEPlugin_Version = SKSEPlugin_Version
+
+Dump of file pull-up-a-chair-0.9.9-beta-vrtrial1-20261015\build-core\Release\PullUpAChairEAS.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    KERNEL32.dll
+    MSVCP140.dll
+    MSVCP140_ATOMIC_WAIT.dll
+    VCRUNTIME140.dll
+    VCRUNTIME140_1.dll
+    api-ms-win-crt-heap-l1-1-0.dll
+    api-ms-win-crt-string-l1-1-0.dll
+    api-ms-win-crt-math-l1-1-0.dll
+    api-ms-win-crt-runtime-l1-1-0.dll
+    api-ms-win-crt-locale-l1-1-0.dll
+    api-ms-win-crt-convert-l1-1-0.dll
+    api-ms-win-crt-stdio-l1-1-0.dll
+    api-ms-win-crt-filesystem-l1-1-0.dll
+    api-ms-win-crt-time-l1-1-0.dll
+    ole32.dll
+    VERSION.dll
+    USER32.dll
+    SHELL32.dll
+
+  Section contains the following exports for PullUpAChairEAS.dll
+
+    00000000 characteristics
+    FFFFFFFF time date stamp
+        0.00 version
+           1 ordinal base
+           3 number of functions
+           3 number of names
+
+    ordinal hint RVA      name
+
+          1    0 0002F1F0 SKSEPlugin_Load = SKSEPlugin_Load
+          2    1 0002FAA0 SKSEPlugin_Query = SKSEPlugin_Query
+          3    2 000AC120 SKSEPlugin_Version = SKSEPlugin_Version
+
+Dump of file pull-up-a-chair-0.9.9-beta-vrtrial1-20261015\build-service\Release\PullUpAChairService.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    KERNEL32.dll
+    USER32.dll
+    MSVCP140.dll
+    MSVCP140_ATOMIC_WAIT.dll
+    VCRUNTIME140.dll
+    VCRUNTIME140_1.dll
+    api-ms-win-crt-heap-l1-1-0.dll
+    api-ms-win-crt-string-l1-1-0.dll
+    api-ms-win-crt-math-l1-1-0.dll
+    api-ms-win-crt-locale-l1-1-0.dll
+    api-ms-win-crt-runtime-l1-1-0.dll
+    api-ms-win-crt-convert-l1-1-0.dll
+    api-ms-win-crt-stdio-l1-1-0.dll
+    api-ms-win-crt-filesystem-l1-1-0.dll
+    api-ms-win-crt-time-l1-1-0.dll
+    ole32.dll
+    SHELL32.dll
+    VERSION.dll
+
+  Section contains the following exports for PullUpAChairService.dll
+
+    00000000 characteristics
+    FFFFFFFF time date stamp
+        0.00 version
+           1 ordinal base
+           4 number of functions
+           4 number of names
+
+    ordinal hint RVA      name
+
+          1    0 00020270 PullUpAChairService_GetAPI = PullUpAChairService_GetAPI
+          2    1 00020290 SKSEPlugin_Load = SKSEPlugin_Load
+          3    2 00037640 SKSEPlugin_Query = SKSEPlugin_Query
+          4    3 000B4410 SKSEPlugin_Version = SKSEPlugin_Version
+
+  Summary
+
+       2F000 .data
+       22000 .pdata
+      136000 .rdata
+        8000 .reloc
+        3000 .rsrc
+      271000 .text

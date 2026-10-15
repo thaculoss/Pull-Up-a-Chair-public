@@ -1,0 +1,9 @@
+--- paper3/config/inn_artwork.tsv
++++ artclean1/config/inn_artwork.tsv
+@@ -17,5 +17,5 @@
+ Skyrim.esm	01F7CB	old_hroldan	Old Hroldan Inn	老赫洛丹	16_old_hroldan_inn.png	0.0893141946	0.126794258	0.92185008	0.961722488	0.99713467	0
+ Skyrim.esm	02264A	ragged_flagon	The Ragged Flagon	破碎酒壶	17_ragged_flagon.png	0.0701754386	0.0765550239	0.93460925	0.939393939	1.00184843	0
+ Skyrim.esm	01F872	drunken_huntsman	The Drunken Huntsman	醉酒猎人	18_drunken_huntsman.png	0.164274322	0.0438596491	0.834130781	0.957735247	0.732984293	0
+-Dragonborn.esm	019A24	retching_netch	The Retching Netch	呕吐气母	morrowind_netch.png	0.128248114	0.0583775588	0.818105616	0.964366945	0.688702929	0
++Dragonborn.esm	019A24	retching_netch	The Retching Netch	呕吐气母	-	0	0	1	1	1	0
+ -	000000	recommendation	Innkeeper's Recommendation	老板推荐	black_briar_tankard.png	0.177033493	0.23046252	0.820574163	0.807017544	1.11618257	0

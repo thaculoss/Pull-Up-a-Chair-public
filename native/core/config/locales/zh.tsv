@@ -1,0 +1,227 @@
+busy	正在准备餐点，请稍候。
+sit_first	请先坐在酒馆餐桌或吧台旁，再向老板或服务员点餐。
+unavailable	现在无法上菜，未扣除金币。
+not_inn	这里不是受支持的酒馆，未下单。
+catalog_error	菜品适配表不匹配，未下单。
+menu_failed	菜单暂时无法打开，未扣除金币。
+seat_changed	座位已改变，本次上菜已取消，未扣除金币。
+cancelled	上菜已取消，未扣除金币。
+models_failed	餐点模型未准备好或座位已改变，未扣除金币。
+stock_changed	库存、座位或金币已改变，订单已取消，未扣款。
+served	餐点已上桌，激活餐点即可食用。需要加餐时可以再次点菜。
+table_config	餐桌资料未能加载，未扣除金币。
+no_table	附近没有识别到可处理的餐桌或吧台，未扣除金币。
+occupied	已识别桌面，但摆盘位置有物品占用，未扣除金币。
+no_space	附近没有足够空间摆放餐点，未扣除金币。
+search_timeout	桌面搜索未能及时完成，本次已取消且未扣钱；可重新点餐。
+order_topic	我要点菜
+clean_topic	请收拾这张桌子上的餐点和餐具
+eat	食用
+eat_failed	现在无法食用，餐点已保留。
+nothing_to_clear	这张桌子没有可收走的食物或餐具。
+table_cleared	餐点和餐具已收拾干净。
+main	主菜
+drink	饮料
+side	汤 / 甜点
+other	其他食物
+all	全部
+title	酒馆点餐
+total	合计 · {} 金币
+reading_stock	正在查看今日供应……
+no_stock	本店暂时没有可供应的菜品。
+no_vendor	暂时无法取得本店菜单。
+choose	选择喜欢的菜品；再次选择即可取消。
+price_stock	{} 金币 · 库存 {}
+preview_unavailable	图片暂不可用
+selected	已选 · 再次选择取消
+preview_pending	图片准备中
+select_as	选作{}
+empty_category	此分类暂时没有可供应的菜品。
+omitted	—
+confirm	确认上菜 · {} 金币
+cancel	取消点餐
+controls	方向键 / 左摇杆 浏览    A 选取 / 取消    LB / RB 分类    Y 选择 / 取消特惠    鼠标点击 选取 / 取消
+gold_missing	金币不足，请调整餐点。
+daily_button	今日套餐 · 五折（Y）
+daily_price	单点 {} / 套餐 {} 金币
+daily_sold_out	今日套餐暂时售罄
+daily_selected	已选择今日套餐，合计享受五折。换菜将改为单点。
+pricing_unavailable	暂时无法报价，请稍后再试。
+price_changed	议价条件已改变，请重新点餐。未扣除金币。
+restore_topic	请把刚才收走的原有餐点和餐具放回桌上
+table_restored	收走的原有餐点和餐具已放回桌上。
+nothing_to_restore	这张桌子没有可放回的原有餐点或餐具。
+cleanup_full	收拾记录已满，请先恢复部分收走的物品。
+specialty_food_00080F	牛肉炖汤
+specialty_food_000810	蜂蜜酒坊蜜酒
+specialty_food_000811	甜卷
+specialty_food_000812	蛤蜊浓汤
+specialty_food_000813	香料葡萄酒
+specialty_food_000814	奶油甜点
+specialty_food_000815	海象肉饼
+specialty_food_000816	诺德蜜酒
+specialty_food_000817	雪莓果酥
+specialty_food_000818	鲑鱼排
+specialty_food_000819	黑荆棘蜜酒
+specialty_food_00081A	蜂蜜坚果点心
+specialty_food_00081B	烤山羊腿
+specialty_food_00081C	阿尔托葡萄酒
+specialty_food_00081D	杜松莓果酥
+specialty_food_00081E	鹿肉炖汤
+specialty_food_00081F	葡萄酒
+specialty_food_000820	苹果派
+specialty_food_000821	清蒸泥蟹腿
+specialty_food_000822	麦酒
+specialty_food_000823	海象肉炖汤
+specialty_food_000824	卷心菜土豆汤
+specialty_food_000825	薰衣草酥饺
+specialty_food_000826	苹果卷心菜炖汤
+specialty_food_000827	苹果酥饺
+specialty_food_000828	烤鸡胸
+specialty_food_000829	蔬菜汤
+specialty_food_00082A	鸡肉酥饺
+specialty_food_00082B	爵士葡萄果酥
+specialty_food_00082C	烤兔腿
+specialty_food_00082D	海象肉灰烬山药炖汤
+specialty_food_00082E	苏佳玛酒
+specialty	本店特色
+specialty_button	本店特色餐
+specialty_selected	已选择本店特色餐点，现做供餐。可在分类中调整。
+price_generated	现做 · {} 金币
+bundle_house_title	老板力荐!
+bundle_daily_title	今日特价！
+bundle_price	朝圣者必点！
+bundle_discount_price	五折特惠！仅售 {} 金！ 
+bundle_contents	内含：
+bundle_image	图片待补
+bundle_items_empty	暂无可用餐点
+bundle_item_unavailable	暂不可用的菜品
+bundle_unavailable	套餐暂不可用
+bundle_selected	已选此餐 · 再选取消
+bundle_select	选择这份套餐
+bundle_regular_price	原价 {} 金
+bundle_house_note	本店招牌搭配
+bundle_select_pad	[A] 选择套餐
+bundle_remove_pad	已选 · [A] 取消选择
+bundle_selected_badge	已选
+supplier_unavailable	这家店的供应商暂时无法接单，请稍后再试。
+call_settings_section	Pull Up a Chair
+call_settings_page	通用
+general_language_label	语言
+general_language_help	可选择英语或中文。界面立即切换，选择会保存到下次启动。
+general_language_restart	当前版本的 SKSE Menu Framework 需要重新启动游戏后更新栏目标题。
+general_call_heading	呼叫侍者
+general_cleanup_heading	餐桌清理
+call_settings_intro	选择坐在酒馆时如何招呼服务人员走到桌边。
+call_mode_label	呼叫方式
+call_mode_hotkey	独立热键（按一下即呼叫）
+call_mode_framework	Dynamic Activation Key 框架
+call_hotkey_help	
+call_current_binding	当前热键
+call_key_unbound	未绑定
+call_capture_start	设置热键
+call_capture_clear	清除热键
+call_capture_cancel	取消录入
+call_capture_prompt	请按下新的键盘或手柄按键。Esc 或关闭设置取消；15 秒未输入会自动取消。鼠标点击不会成为热键。
+call_capture_cancelled	已取消录入，原热键保留。
+call_capture_timeout	录入已超时，原热键保留。
+call_framework_help	坐在桌边，看向桌面空处或当前座位，按住 Dynamic Activation Key 修饰键再按交互键呼叫。松开修饰键后，交互键可正常起身。
+call_framework_available	已检测到 Dynamic Activation Key。
+call_framework_missing	未检测到 Dynamic Activation Key；该呼叫方式暂不可用，仍可通过对话点餐。
+call_framework_binding	框架当前按键
+call_settings_context	
+call_settings_persistence	修改会立即应用并保存，重新启动游戏后仍然保留。
+call_settings_saved	设置已保存并应用。
+call_settings_save_failed	设置保存失败，请检查配置文件是否可写。原设置保持不变。
+call_service_busy	服务人员正在走向桌边。
+call_unbound	未绑定
+call_no_server	附近没有可以响应的酒馆服务人员。
+call_dispatch_failed	暂时无法招呼服务人员，请稍后重试或直接与其交谈。
+call_unavailable	当前无法呼叫服务人员，请先在酒馆的餐桌旁坐好。
+call_mode_skyprompt	SkyPrompt 长按呼叫
+call_skyprompt_help	长按屏幕提示的键，进度完成后呼叫。可改用自己的呼叫键，避免与框架默认提示按钮共用；录入键位后生效。
+call_skyprompt_available	已检测到 SkyPrompt 提示接口。
+call_skyprompt_missing	未检测到可用 SkyPrompt；请选择独立热键或 DAK，也可直接对话。
+call_approach_help	
+call_prompt	招呼服务员
+call_approaching	服务员正在过来。
+call_path_failed	服务员暂时走不到桌边，请稍后再叫或直接与其交谈。
+call_arrived	服务员已到桌边，可以与其交谈。
+call_hint_label	SkyPrompt 辅助提示
+call_hint_off	关闭
+call_hint_on	仅显示提示
+call_hint_help	
+call_prompt_keys_label	SkyPrompt 按键来源
+call_prompt_keys_framework	框架默认按钮
+call_prompt_keys_own	本模组呼叫键
+call_prompt_hold	长按招呼服务员
+call_waiting_chat	服务员正在参与剧情场景，结束后会过来。
+call_priority_label	服务接近优先级
+call_priority_normal	普通寻路
+call_priority_enabled	高优先级（默认）
+call_priority_help	高优先级模式下，酒馆服务人员会忽略一切剧情对话。
+call_autoclear_label	开始点菜时自动清桌
+call_autoclear_off	关闭
+call_autoclear_on	开启
+call_autoclear_help	开启后，选择点菜并进入菜单时清桌；普通交谈、按铃和员工到桌边不清桌。
+call_cleanup_skipped	当前餐桌暂无法确认，自动清桌未执行；请使用对话中的清桌选项。
+cleanup_settings_page	餐桌清理
+cleanup_settings_intro	选择服务员清理桌面的范围。
+cleanup_scope_label	清理范围
+cleanup_scope_meal	仅餐点和餐具（默认）
+cleanup_scope_all	全部
+cleanup_scope_help	警告：全部模式会收走桌面所有物品甚至部分不可移动装饰，谨慎使用。
+cleanup_restore_help	
+cleanup_settings_saved	清理设置已保存。
+
+menu_subtitle	酒 馆 餐 单
+
+menu_empty_order	请先选择餐点。
+
+menu_confirm	[X] 确认上菜
+menu_cancel	[B] 返回
+menu_order_empty	请先选择餐点
+menu_order_bundle	已选：{}
+menu_order_custom	已选：自选餐点
+
+serving_size_page	紧凑摆盘
+serving_size_intro	可缩小部分菜品，用于适应部分模组的小桌子。
+serving_size_enable	大份主菜紧凑摆盘
+serving_size_off	关闭（默认）
+serving_size_on	开启
+serving_size_target	主菜目标尺寸
+serving_size_soup	普通汤碗大小
+serving_size_medium	稍大一档
+serving_size_large	大份尺寸
+serving_size_custom	当前自定义尺寸
+serving_size_help	注意，开启该项目后可能会导致部分菜品视觉效果异常。
+serving_size_saved	上菜尺寸设置已保存。
+serving_dessert_enable	大份甜点／配菜紧凑摆盘（含奶酪）
+serving_dessert_target	甜点／配菜目标尺寸
+
+# Per-inn promotional text. Blank values inherit bundle_price.
+bundle_price.bannered_mare	炖汤，甜卷，再来点特色蜜酒。
+bundle_price.sleeping_giant	现捞白河鲑鱼和新鲜苹果派！
+bundle_price.winking_skeever	上流社会的搭配！
+bundle_price.four_shields	粗茶淡饭，但能果腹.
+bundle_price.bee_and_barb	黑荆棘蜜酒?还是特调酒？
+bundle_price.candlehearth	传统诺德美食！
+bundle_price.silver_blood	烈酒，羊腿，干净的房间！
+bundle_price.dead_mans_drink	在战乱的追赶下，休息一会儿！
+bundle_price.frozen_hearth	去上学前的最后一餐！
+bundle_price.windpeak	诺德美酒，噩梦无忧！
+bundle_price.moorside	月色满满，蟹肉满满。
+bundle_price.frostfruit	宁静的生活，美味的酥饺。
+bundle_price.braidwood	妈妈的味道！
+bundle_price.vilemyr	
+bundle_price.nightgate	祖传的手艺！
+bundle_price.old_hroldan	泰伯·塞普汀吃过的同款套餐！
+bundle_price.ragged_flagon	
+bundle_price.drunken_huntsman	
+bundle_price.retching_netch	别像气母那样吐出来！
+call_table_action	呼叫服务员
+call_table_name	餐桌
+cleanup_hide_clear_label	隐藏清桌对话
+cleanup_hide_clear_help	隐藏员工对话中的清桌选项；不影响点菜时自动清桌。重新打开对话后生效。
+cleanup_hide_restore_label	隐藏撤回清桌对话
+cleanup_hide_restore_help	隐藏员工对话中恢复清桌前物品的选项。重新打开对话后生效。

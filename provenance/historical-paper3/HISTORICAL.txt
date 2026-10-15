@@ -1,0 +1,4 @@
+These files describe paper3, not the current artclean1 release.
+They retain their original results and original 63-asset inventory.
+artclean1 removes morrowind_netch.png and changes Artwork.h plus inn_artwork.tsv.
+No copy of the removed illustration is included in this documentation.

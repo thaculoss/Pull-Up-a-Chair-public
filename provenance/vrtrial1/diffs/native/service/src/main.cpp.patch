@@ -1,0 +1,10 @@
+--- artclean1/native/service/src/main.cpp
++++ vrtrial1/native/service/src/main.cpp
+@@ -113,6 +113,6 @@
+     auto io=SKSE::GetSerializationInterface();io->SetUniqueID(0x494E5356);io->SetSaveCallback(innservice::Save);io->SetLoadCallback(innservice::Load);
+     io->SetRevertCallback([](SKSE::SerializationInterface*){innservice::Revert();});
+     SKSE::GetMessagingInterface()->RegisterListener(Message);
+-    logger::info("Pull Up a Chair Service 0.9 beta runtime={} non-VR; configurable SKSE stock layout and live interface language; game testing pending",version.string());
++    logger::info("Pull Up a Chair Service 0.9 beta vrtrial1 runtime={} mode={}; configurable SKSE stock layout and live interface language; game testing pending",version.string(),inn::ExperimentalVR({version.major(),version.minor(),version.patch(),version.build()})?"experimental VR (unverified)":"flat runtime");
+     return true;
+ }

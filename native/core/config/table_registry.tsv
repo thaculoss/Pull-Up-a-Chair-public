@@ -1,0 +1,189 @@
+# profile	plugin	localFormID	model	shape	kind	note
+0	skyrim.esm	024CB9	clutter/common/commontable01.nif	rect	table	CommonTable01
+1	skyrim.esm	0E2604	clutter/common/commontable02.nif	rect	table	CommonTable02
+2	skyrim.esm	02F239	clutter/common/commontablesquare01.nif	rect	table	CommonTableSquare01
+3	skyrim.esm	0C234D	furniture/farm/farmtable01.nif	rect	table	FarmTable01
+4	skyrim.esm	0D4A2C	furniture/noble/nobletablesquare01.nif	rect	table	NobleTableSquare01
+5	skyrim.esm	0C29DF	furniture/noble/nobletablelong04.nif	rect	table	NobleTableLong04
+6	skyrim.esm	0C1114	furniture/noble/nobletablelong03.nif	rect	table	NobleTableLong03
+7	skyrim.esm	0C1113	furniture/noble/nobletablelong02.nif	rect	table	NobleTableLong02
+8	skyrim.esm	06B28D	furniture/noble/nobletableshort01.nif	rect	table	NobleTableShort01
+9	skyrim.esm	08C4B1	furniture/noble/nobletablelong01.nif	rect	table	NobleTableLong01
+10	skyrim.esm	07724B	clutter/upperclass/uppertable01.nif	rect	table	UpperTable01
+11	skyrim.esm	02136C	clutter/upperclass/uppertablesquare01.nif	rect	table	UpperTableSquare01
+12	skyrim.esm	0E29F4	architecture/whiterun/wrclutter/nobletablelong01clothwr01.nif	rect	table	NobleTableLong01ClothWR01
+13	skyrim.esm	0DEE3C	architecture/whiterun/wrclutter/nobletablesquare01clothwr01.nif	rect	table	NobleTableSquare01ClothWR01
+14	skyrim.esm	0DEE13	architecture/whiterun/wrclutter/nobletablelong03clothwr01.nif	rect	table	NobleTableLong03ClothWR01
+15	skyrim.esm	0B0105	furniture/commontableonebench.nif	rect	table	CommonTableOneBench
+16	skyrim.esm	0B0104	furniture/commontabletwobenches.nif	rect	table	CommonTableTwoBenches
+17	skyrim.esm	0A4ABB	furniture/farm/farmtablebench01.nif	rect	table	FarmTableBench01
+18	skyrim.esm	0A4ABA	furniture/farm/farmtablebench02.nif	rect	table	FarmTableBench02
+19	skyrim.esm	0C07F2	furniture/noble/nobletablelongbench01.nif	rect	table	NobleTableLongBench01
+20	skyrim.esm	0C07F3	furniture/noble/nobletablelongbench02.nif	rect	table	NobleTableLongBench02
+21	skyrim.esm	0C84D6	furniture/noble/nobletablelongbench03.nif	rect	table	NobleTableLongBench03
+22	skyrim.esm	0C84D9	furniture/noble/nobletablelongbench04.nif	rect	table	NobleTableLongBench04
+23	skyrim.esm	0C07F4	clutter/upperclass/uppertablebench01.nif	rect	table	UpperTableBench01
+24	skyrim.esm	0C07F5	clutter/upperclass/uppertablebench02.nif	rect	table	UpperTableBench02
+25	skyrim.esm	02702C	clutter/barset/barleft01.nif	rect	counter	BarLeft01
+26	skyrim.esm	02702D	clutter/barset/barright01.nif	rect	counter	BarRight01
+27	skyrim.esm	02702E	clutter/barset/barstraight01.nif	rect	counter	BarStraight01
+28	skyrim.esm	028B0E	clutter/counterset/counterleft01.nif	rect	counter	CounterLeft01
+29	skyrim.esm	028B0F	clutter/counterset/counterright01.nif	rect	counter	CounterRight01
+30	skyrim.esm	028B10	clutter/counterset/counterstraight01.nif	rect	counter	CounterStraight01
+31	skyrim.esm	02702A	clutter/barset/barcornerin01.nif	rect	counter	BarCornerIn01
+32	skyrim.esm	02702B	clutter/barset/barcornerout01.nif	rect	counter	BarCornerOut01
+33	skyrim.esm	028B14	clutter/counterset/countercornerin01.nif	rect	counter	CounterCornerIn01
+34	skyrim.esm	028B16	clutter/counterset/countercornerout01.nif	rect	counter	CounterCornerOut01
+3	better dynamic snow se - disablerefs.esm	005923	furniture/farm/farmtable01.nif	rect	table	BDS_FarmTable01Snow
+73	ccasvsse001-almsivi.esm	000802	creationclub/asvsse001/clutter/velothi/mwtable01.nif	rect	table	ccASVSSE001_Table01
+74	ccasvsse001-almsivi.esm	000803	creationclub/asvsse001/clutter/velothi/mwtablewide01.nif	rect	table	ccASVSSE001_TableWide01
+75	cceejsse001-hstead.esm	000824	creationclub/eejsse001/furniture/eej_counterstr.nif	rect	counter	EEJSSE001_CounterStraight
+76	cceejsse001-hstead.esm	00086A	creationclub/eejsse001/furniture/eej_noblelongtabletop.nif	rect	table	EEJSSE001_NobleTableTopLong
+13	cceejsse001-hstead.esm	000878	_pgpatcher_dups/1/architecture/whiterun/wrclutter/nobletablesquare01clothwr01.nif	rect	table	EEJSSE001_TableCloth
+77	cceejsse001-hstead.esm	000977	creationclub/eejsse001/furniture/eej_noblesqtabletop.nif	rect	table	EEJSSE001_NobleTableSquareTop
+78	cceejsse002-tower.esl	00082A	creationclub/eejsse002/clutter/eej_tablecloth.nif	rect	table	ccEEJSSE002_TableClothLong
+46	cceejsse002-tower.esl	0009D9	_pgpatcher_dups/1/furniture/highhrothgar/hhfurnituretable01.nif	rect	table	ccEEJSSE002_StoneTable
+42	cceejsse002-tower.esl	0009F9	_pgpatcher_dups/1/dlc01/dungeons/dwemerruinsdlc1/dwermsmcounterhalf01dlc1.nif	rect	counter	ccEEJSSE002_Counter
+79	cceejsse002-tower.esl	000A94	creationclub/eejsse002/furniture/eej_tabletop.nif	rect	table	ccEEJSSE002_TableTop
+80	cceejsse003-hollow.esl	00085A	creationclub/eejsse003/furniture/eej_tabletopnocol.nif	rect	table	ccEEJSSE003_TableTop
+81	cceejsse004-hall.esl	000927	creationclub/eejsse004/clutter/eej_tablecloth.nif	rect	table	ccEEJSSE004_TableCloth
+41	cceejsse004-hall.esl	0009EE	_pgpatcher_dups/1/clutter/common/commontablethin01.nif	rect	table	ccEEJSSE004_TableThin
+82	cceejsse005-cave.esm	08F031	creationclub/eejsse005/furniture/eej_tabletop.nif	rect	table	ccEEJSSE005_TableTopLong
+83	cceejsse005-cave.esm	09E58C	creationclub/eejsse005/furniture/eej_tabletopsm.nif	rect	table	ccEEJSSE005_TableTopSm
+84	dawnguard.esm	003F0D	dlc01/dungeons/dwemerruinsdlc1/dwermsmcounterhalf01dlc1.nif	rect	counter	DweRmSmCounter01Half
+85	dawnguard.esm	00CD5E	dlc01/furniture/snowelf/setable01.nif	rect	table	SETable01
+86	dawnguard.esm	00CD5F	dlc01/furniture/snowelf/setable02.nif	rect	table	SETable02
+114	dbm_relicnotifications.esp	A35EEE	furniture/noble/noblenighttable01.nif	rect	table	TCC_EndTable
+88	dragonborn.esm	01B93E	dlc02/dungeons/dwemer/smrooms/dlc2dwermsmcounter01.nif	rect	counter	DLC2DweRmSmCounter01
+89	dragonborn.esm	0209BE	dlc02/dungeons/dwemer/smrooms/dlc2dwermsmcounterhalf01.nif	rect	counter	DLC2DweRmSmCounterHalf01
+90	dragonborn.esm	021744	dlc02/furniture/dlc2darkelftable01.nif	rect	table	DLC2DarkElfTable01
+91	dragonborn.esm	021745	dlc02/furniture/dlc2darkelftable02.nif	rect	table	DLC2DarkElfTable02
+92	dragonborn.esm	021746	dlc02/furniture/dlc2darkelftableround01.nif	ellipse	table	DLC2DarkElfTableRound01
+93	dragonborn.esm	021747	dlc02/furniture/dlc2darkelftablesquare01.nif	rect	table	DLC2DarkElfTableSquare01
+94	dragonborn.esm	021748	dlc02/furniture/dlc2darkelftablethin01.nif	rect	table	DLC2DarkElfTableThin01
+87	dragonborn.esm	031AC8	dlc02/clutter/common/dlc2commontablethin01.nif	rect	table	DLC2CommonTableThin01
+3	floatingswordfollower.esp	0A8CDA	_pgpatcher_dups/1/furniture/farm/farmtable01.nif	rect	table	dsFarmTable01
+0	floatingswordfollower.esp	0C75F8	_pgpatcher_dups/1/clutter/common/commontable01.nif	rect	table	GA55CommonTable01
+68	floatingswordfollower.esp	0C7667	clutter/exteriorwoodenfurniture/exteriorwoodentable01.nif	rect	table	GAExteriorWoodenTable01
+2	floatingswordfollower.esp	0DC9DC	_pgpatcher_dups/1/clutter/common/commontablesquare01.nif	rect	table	HACommonTableSquare01
+3	floatingswordfollower.esp	0DC9E3	_pgpatcher_dups/1/furniture/farm/farmtable01.nif	rect	table	SSSSFarmTable01
+3	fortified dawnstar.esp	000A27	furniture/farm/farmtable01.nif	rect	table	FarmTable01Snow
+133	fuzzbeed resources.esp	00009B	fuzzbeed/clutter/nordic ruins/nortablehex.nif	ellipse	table	NorTableHex
+134	fuzzbeed resources.esp	00009C	fuzzbeed/clutter/nordic ruins/nortableoval.nif	ellipse	table	NorTableOval
+135	fuzzbeed resources.esp	00009D	fuzzbeed/clutter/nordic ruins/nortableround.nif	ellipse	table	NorTableRound
+133	fuzzbeed resources.esp	00016D	fuzzbeed/clutter/nordic ruins/nortablehex.nif	ellipse	table	NorTableHexSnow
+134	fuzzbeed resources.esp	00016E	fuzzbeed/clutter/nordic ruins/nortableoval.nif	ellipse	table	NorTableOvalSnow
+135	fuzzbeed resources.esp	00016F	fuzzbeed/clutter/nordic ruins/nortableround.nif	ellipse	table	NorTableRoundSnow
+16	glenmoril.esm	005A0F	furniture/commontabletwobenches.nif	rect	table	zzzRevCommonTableTwoBenches
+40	glenmoril.esm	005A14	_pgpatcher_dups/1/clutter/common/commoncounter01.nif	rect	counter	zzzRevCommonCounter01
+50	glenmoril.esm	00FD71	architecture/revenant/witcher/furniture/table1.nif	rect	table	zzzRevWitTable01
+51	glenmoril.esm	00FD73	architecture/revenant/witcher/furniture/table3.nif	rect	table	zzzRevWitTable03
+52	glenmoril.esm	00FD74	architecture/revenant/witcher/furniture/table4.nif	rect	table	zzzRevWitTable04
+53	glenmoril.esm	00FD75	architecture/revenant/witcher/furniture/table5.nif	rect	table	zzzRevWitTable05
+54	glenmoril.esm	00FD76	architecture/revenant/witcher/furniture/table6.nif	rect	table	zzzRevWitTable06
+55	glenmoril.esm	00FD77	architecture/revenant/witcher/furniture/tablecarpet.nif	rect	table	zzzRevWitTableCarpet
+17	glenmoril.esm	03670A	furniture/farm/farmtablebench01.nif	rect	table	zzzGHFarmTableBench01NoScale
+16	glenmoril.esm	264426	furniture/commontabletwobenches.nif	rect	table	zzzRevRottenWoodBench01
+35	hearthfires.esm	003F0D	_byoh/dungeons/dwemerruinsbyoh/dwermsmcounterhalf01byoh.nif	rect	counter	DweRmSmCounter01Half
+138	hsresources.esl	0009BE	hylios/furniture/noble/noblecounterleft01.nif	rect	counter	NobleCounterLeft01
+139	hsresources.esl	0009BF	hylios/furniture/noble/noblecounterright01.nif	rect	counter	NobleCounterRight01
+140	hsresources.esl	0009C0	hylios/furniture/noble/noblecounterstraight01.nif	rect	counter	NobleCounterStraight01
+137	hsresources.esl	000A5D	hylios/dungeons/dwemer/clutter/dwemercluttercounter01.nif	rect	counter	DwemerClutterCounter01
+106	jk's high hrothgar.esp	0009DE	furniture/highhrothgar/hhfurnituretable01.nif	rect	table	XJKHHFurnitureTable01Snow
+39	jk's high hrothgar.esp	000B76	_pgpatcher_dups/1/architecture/sovengarde/sovngardeinterior/sovtablesquare01.nif	rect	table	XJKHHSOVtableSquare01
+38	jk's high hrothgar.esp	000C00	_pgpatcher_dups/1/architecture/sovengarde/sovngardeinterior/sovtablemid01.nif	rect	table	XJKHHSOVtableMid01
+36	jk's high hrothgar.esp	000D88	_pgpatcher_dups/1/architecture/sovengarde/sovngardeinterior/sovtable01.nif	rect	table	XJKHHSOVtable01
+37	jk's high hrothgar.esp	000EA0	_pgpatcher_dups/1/architecture/sovengarde/sovngardeinterior/sovtableendr.nif	rect	table	XJKHHSOVtableEndR
+13	jk's whiterun's outskirts.esp	07FE06	_pgpatcher_dups/1/architecture/whiterun/wrclutter/nobletablesquare01clothwr01.nif	rect	table	XJKWRNobleTableSquare01ClothWR01
+0	legacyofthedragonborn.esm	12283B	_pgpatcher_dups/1/clutter/common/commontable01.nif	rect	table	CommonTable01WWW
+43	legacyofthedragonborn.esm	122BA9	_pgpatcher_dups/1/furniture/dwemer/dwefurnituretablea01.nif	rect	table	DweFurnitureTableA01WWW
+45	legacyofthedragonborn.esm	122BAC	_pgpatcher_dups/1/furniture/dwemer/dwefurnituretablesqa01.nif	rect	table	DweFurnitureTableSqA01WWW
+47	legacyofthedragonborn.esm	12452F	_pgpatcher_dups/2/architecture/sovengarde/sovngardeinterior/sovtable01.nif	rect	table	SOVtable01WWW
+65	legacyofthedragonborn.esm	124848	clutter/common/commoncounter01.nif	rect	counter	CommonCounter01WWW
+2	legacyofthedragonborn.esm	124854	_pgpatcher_dups/1/clutter/common/commontablesquare01.nif	rect	table	CommonTableSquare01WWW
+47	legacyofthedragonborn.esm	124B3A	_pgpatcher_dups/2/architecture/sovengarde/sovngardeinterior/sovtable01.nif	rect	table	SOVtable01WWWros
+44	lucien.esp	230318	_pgpatcher_dups/1/furniture/dwemer/dwefurnituretablea02.nif	rect	table	aaaLucDweFurnitureTableA02
+141	medieval markets.esp	000029	medieval markets/wood/shortfarmtable.nif	rect	table	00_FarmTableShort
+125	ocw_obscure's_collegeofwinterhold.esp	725C0C	furniture/obs_deco/obs_cloth_tablesquare_01.nif	rect	table	OBS_Cloth_TableSquare_01
+127	ocw_obscure's_collegeofwinterhold.esp	72AD0D	furniture/obs_deco/obs_cloth_tablesquare_03.nif	rect	table	OBS_Cloth_TableSquare_03
+126	ocw_obscure's_collegeofwinterhold.esp	72AD0E	furniture/obs_deco/obs_cloth_tablesquare_02.nif	rect	table	OBS_Cloth_TableSquare_02
+122	ocw_obscure's_collegeofwinterhold.esp	72FE0F	furniture/obs_deco/obs_cloth_tablesmall_01.nif	rect	table	OBS_Cloth_TableSmall_01
+123	ocw_obscure's_collegeofwinterhold.esp	72FE10	furniture/obs_deco/obs_cloth_tablesmall_02.nif	rect	table	OBS_Cloth_TableSmall_02
+124	ocw_obscure's_collegeofwinterhold.esp	72FE11	furniture/obs_deco/obs_cloth_tablesmall_03.nif	rect	table	OBS_Cloth_TableSmall_03
+119	ocw_obscure's_collegeofwinterhold.esp	749329	furniture/obs_deco/obs_cloth_tablelongthin_01.nif	rect	table	OBS_Cloth_TableLongThin_01
+120	ocw_obscure's_collegeofwinterhold.esp	74932A	furniture/obs_deco/obs_cloth_tablelongthin_02.nif	rect	table	OBS_Cloth_TableLongThin_02
+121	ocw_obscure's_collegeofwinterhold.esp	74932B	furniture/obs_deco/obs_cloth_tablelongthin_03.nif	rect	table	OBS_Cloth_TableLongThin_03
+129	ocw_obscure's_collegeofwinterhold.esp	B434BB	furniture/obs_furniture/obs_nobletableroundlarge_01.nif	ellipse	table	OBS_NobleTableRoundLarge_01
+128	ocw_obscure's_collegeofwinterhold.esp	C9C2F9	furniture/obs_furniture/obs_noblecounter_straight_01.nif	rect	counter	OBS_NobleCounter_Straight_01
+142	redbag's morthal.esp	026BE7	rbmorthalmeshes/table.nif	ellipse	table	000Table
+143	romanbathhouse.esp	000040	roman bathhouse/sm_table_nif.nif	rect	table	SM_Table_NIF
+136	ryn's snazzy last vigil.esp	02E7B1	gm_keep01/furniture/gm_sovtableendl.nif	rect	table	GM_SOVtableEndL
+72	skyrim.esm	02136B	clutter/upperclass/uppertableround01.nif	ellipse	table	UpperTableRound01
+66	skyrim.esm	02EC1F	clutter/common/commontableround01.nif	ellipse	table	CommonTableRound01
+108	skyrim.esm	02FD4D	furniture/highhrothgar/hhfurnituretableround01.nif	ellipse	table	HHFurnitureTableRound01
+106	skyrim.esm	02FD72	furniture/highhrothgar/hhfurnituretable01.nif	rect	table	HHFurnitureTable01
+68	skyrim.esm	03DE44	clutter/exteriorwoodenfurniture/exteriorwoodentable01.nif	rect	table	ExteriorWoodenTable01
+130	skyrim.esm	042D30	furniture/orcfurniture/orctable01.nif	rect	table	OrcTable01
+132	skyrim.esm	042D32	furniture/orcfurniture/orctablesquare01.nif	rect	table	OrcTableSquare01
+131	skyrim.esm	042D3D	furniture/orcfurniture/orctableround01.nif	ellipse	table	OrcTableRound01
+95	skyrim.esm	058602	dungeons/dwemer/smrooms/dwermsmcounter01.nif	rect	counter	DweRmSmCounter01
+70	skyrim.esm	05A405	clutter/ruins/ruinslongtable01.nif	rect	table	NorTableLong01
+57	skyrim.esm	05E48B	architecture/sovengarde/sovngardeinterior/sovtable01.nif	rect	table	SOVtable01
+58	skyrim.esm	05E4A2	architecture/sovengarde/sovngardeinterior/sovtableendl.nif	rect	table	SOVtableEndL
+59	skyrim.esm	05E4A6	architecture/sovengarde/sovngardeinterior/sovtableendr.nif	rect	table	SOVtableEndR
+62	skyrim.esm	05E4A9	architecture/sovengarde/sovngardeinterior/sovtablemid01.nif	rect	table	SOVtableMid01
+63	skyrim.esm	05E508	architecture/sovengarde/sovngardeinterior/sovtablesquare01.nif	rect	table	SOVtableSquare01
+102	skyrim.esm	063DEE	furniture/dwemer/dwefurnituretablea01.nif	rect	table	DweFurnitureTableA01
+103	skyrim.esm	063DEF	furniture/dwemer/dwefurnituretablea02.nif	rect	table	DweFurnitureTableA02
+56	skyrim.esm	06768D	architecture/skyhaventemple/skyhaventable01.nif	rect	table	SkyHavenTable01
+69	skyrim.esm	06AF7C	clutter/exteriorwoodenfurniture/exteriorwoodentable01snow.nif	rect	table	ExteriorWoodenTable01SnowLight
+2	skyrim.esm	06CFCA	clutter/common/commontablesquare01.nif	rect	table	CommonTableSquare01snow
+64	skyrim.esm	070BBC	clutter/civilwar/civilwartable01.nif	rect	table	CivilWarTable01
+2	skyrim.esm	0770DF	clutter/common/commontablesquare01.nif	rect	table	CommonTableSquare01ice
+104	skyrim.esm	0889AF	furniture/dwemer/dwefurnituretableathin01.nif	rect	table	DweFurnitureTableAThin01
+105	skyrim.esm	0889B0	furniture/dwemer/dwefurnituretablesqa01.nif	rect	table	DweFurnitureTableSqA01
+71	skyrim.esm	09B769	clutter/table01.nif	rect	table	Table01Snow
+69	skyrim.esm	09E2F4	clutter/exteriorwoodenfurniture/exteriorwoodentable01snow.nif	rect	table	ExteriorWoodenTable01snow
+113	skyrim.esm	0C0C2C	furniture/noble/noblelongtablewindhelm.nif	rect	table	NobleLongTableWindhelm
+115	skyrim.esm	0C29DE	furniture/noble/nobletableraound01.nif	ellipse	table	NobleTableRound01
+116	skyrim.esm	0C4D58	furniture/noble/nobletablethin01.nif	rect	table	NobleTableThin01
+67	skyrim.esm	0CE783	clutter/common/commontablethin01.nif	rect	table	CommonTableThin01
+110	skyrim.esm	0D5ACE	furniture/noble/nobleendtable02.nif	rect	table	NobleEndTable02
+109	skyrim.esm	0D5ACF	furniture/noble/nobleendtable01.nif	rect	table	NobleEndTable01
+111	skyrim.esm	0D5AD0	furniture/noble/nobleendtable03.nif	rect	table	NobleEndTable03
+112	skyrim.esm	0D5AD1	furniture/noble/nobleendtable04.nif	rect	table	NobleEndTable04
+107	skyrim.esm	0DED95	furniture/highhrothgar/hhfurnituretable02.nif	rect	table	HHFurnitureTable02
+118	skyrim.esm	0F5B98	furniture/nordic/ruinsbenchtable2sided.nif	rect	table	NorTableTwoBenches
+117	skyrim.esm	0F5B9A	furniture/nordic/ruinsbenchtable1sided.nif	rect	table	NorTableOneBench
+100	skyrim.esm	0F5B9B	furniture/dwemer/dwe_tablebench2seater.nif	rect	table	DweTableOneBench
+101	skyrim.esm	0F5B9C	furniture/dwemer/dwe_tablebench4seater.nif	rect	table	DweTableTwoBenches
+0	skyrim.esm	0F9997	clutter/common/commontable01.nif	rect	table	CommonTable01Light_SN
+2	skyrim.esm	0F9998	clutter/common/commontablesquare01.nif	rect	table	CommonTableSquare01Light_SN
+0	skyrim.esm	0FBB19	clutter/common/commontable01.nif	rect	table	CommonTable01Snow
+61	skyrim.esm	0FF506	architecture/sovengarde/sovngardeinterior/sovtablelong01.nif	rect	table	SOVtableLong01
+60	skyrim.esm	0FF518	architecture/sovengarde/sovngardeinterior/sovtableheadtable01.nif	rect	table	SOVtableHeadTable01
+65	skyrim.esm	101E97	clutter/common/commoncounter01.nif	rect	counter	CommonCounter01
+115	the great city of winterhold v4.esp	01434D	furniture/noble/nobletableraound01.nif	ellipse	table	NobleTableRoundSnowTGC
+0	unslaad.esm	00E46C	clutter/common/commontable01.nif	rect	table	zzzCrbCommonTable01_snow
+1	unslaad.esm	00E471	clutter/common/commontable02.nif	rect	table	zzzCrbCommonTable02_snow
+66	unslaad.esm	04FD64	clutter/common/commontableround01.nif	ellipse	table	zzzCrbCommonTableRound01_Snow
+63	unslaad.esm	1DAD2B	architecture/sovengarde/sovngardeinterior/sovtablesquare01.nif	rect	table	zzzCrbSOVtableSquare01_Snow
+70	unslaad.esm	3FCD3F	clutter/ruins/ruinslongtable01.nif	rect	table	zzzCrbNorTableLong01Snow
+57	unslaad.esm	453C05	architecture/sovengarde/sovngardeinterior/sovtable01.nif	rect	table	zzzCrbSOVtable01Snow
+115	vigilant.esm	054F07	furniture/noble/nobletableraound01.nif	ellipse	table	zzzCORTableRound01
+96	vigilant.esm	0C6FF4	furniture/aom/hhfurnituretable01.nif	rect	table	zzzCHHHFurnitureTable01
+97	vigilant.esm	0C6FF5	furniture/aom/hhfurnituretable02.nif	rect	table	zzzCHHHFurnitureTable02
+98	vigilant.esm	0C6FF8	furniture/aom/hhfurnituretableround01.nif	ellipse	table	zzzCHHHFurnitureTableRound01
+99	vigilant.esm	0C6FF9	furniture/aom/hhfurnituretableround02.nif	ellipse	table	zzzCHHHFurnitureTableRound02
+49	vigilant.esm	0E3F5E	architecture/aom/misc/sovtable01.nif	rect	table	zzzCHSOVtable01
+48	willybach's aeldsten.esp	408B97	_pgpatcher_dups/3/architecture/sovengarde/sovngardeinterior/sovtable01.nif	rect	table	WRVBakerytable01
+4	windhelmsse.esp	04D63C	furniture/noble/nobletablesquare01.nif	rect	table	NobleTableSquare01WHS
+24	windhelmsse.esp	153E25	clutter/upperclass/uppertablebench02.nif	rect	table	UpperTableBench02WHCustom
+111	windhelmsse.esp	17D530	furniture/noble/nobleendtable03.nif	rect	table	NobleEndTable03WHIce
+3	wyrmstooth.esp	02ABAF	furniture/farm/farmtable01.nif	rect	table	WTFarmTable01
+66	wyrmstooth.esp	19BB14	clutter/common/commontableround01.nif	ellipse	table	WTCommonTableRound01_snow
+# Optional eighth field: minimum tabletop height above the seat reference (default 35).
+# Vanilla Bannered Mare Uthgerd table reference 000C8FC8 uses NobleTableLow01.
+144	skyrim.esm	0C29E0	furniture/noble/nobletablelow01.nif	rect	table	NobleTableLow01	20
+# Vanilla Candlehearth Hall table reference 000CBA60 uses the smaller Low02.
+145	skyrim.esm	0C57AA	furniture/noble/nobletablelow02.nif	rect	table	NobleTableLow02	20

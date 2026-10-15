@@ -1,0 +1,97 @@
+{
+  "archive_sha256": "fbdff8fe999e04cbcea7aeae1773b02142f06b6e436fac0254edc4ef5c71a26a",
+  "compiler_sha256": "389fef19a803c36342fa7f733c96b6e27ef10fcd0b171af10427e29cbe153ec6",
+  "scripts": [
+    {
+      "archive_path": "00_Core/Scripts/PullUpAChairCleanTopic.pex",
+      "source": "PullUpAChairCleanTopic.psc",
+      "source_sha256": "dfa9371278e69e33fa88c9749e96f54ed56196c9bf9bbc8bcb9a850d88deee7f",
+      "release_sha256": "024db6df3d4b22d8dd8fda3d2534a6416c1aa323e5dc1dbad2be5100ef75f05a",
+      "recompiled_sha256": "60000eb734bc054d9a7828d9f05aedfee1e606d113c35a9b6f9bd01aba6e5c80",
+      "state_and_properties_match": true,
+      "different_functions": [],
+      "all_function_instructions_match": true,
+      "source_origin": "pull-up-a-chair-0.9.9-beta-lowtablelayout1-20261015/source/PullUpAChairCleanTopic.psc"
+    },
+    {
+      "archive_path": "00_Core/Scripts/PullUpAChairOrdering.pex",
+      "source": "PullUpAChairOrdering.psc",
+      "source_sha256": "ae391f0e09980a4f7c639725302fefc8d66ad3ca26a48430e76ece5b3f4a426f",
+      "release_sha256": "20a35f7181a97ebf58b9dafcb16e42833069bf74265b56732f194750e2091dce",
+      "recompiled_sha256": "bfa20cb3b79709faf6ba89196d56a721232d397d63944d74724dd9423192fdee",
+      "state_and_properties_match": true,
+      "different_functions": [],
+      "all_function_instructions_match": true,
+      "source_origin": "pull-up-a-chair-0.9.9-beta-lowtablelayout1-20261015/source/PullUpAChairOrdering.psc"
+    },
+    {
+      "archive_path": "00_Core/Scripts/PullUpAChairOrderingQuest.pex",
+      "source": "PullUpAChairOrderingQuest.psc",
+      "source_sha256": "1e2a8fa8205f4218d6301073b6aade441c9e0fb096f1f17718e5acbf9e5b429c",
+      "release_sha256": "a66b2591de0ad72781ae0ddb7575a1548e909895204c80ba98625d1e9e9789aa",
+      "recompiled_sha256": "cfebbac5bda98ccc9acf6f8354e3b7ae91170584278ba895952187c6e4b01e4b",
+      "state_and_properties_match": true,
+      "different_functions": [],
+      "all_function_instructions_match": true,
+      "source_origin": "pull-up-a-chair-0.9.9-beta-lowtablelayout1-20261015/source/PullUpAChairOrderingQuest.psc"
+    },
+    {
+      "archive_path": "00_Core/Scripts/PullUpAChairOrderingTopic.pex",
+      "source": "PullUpAChairOrderingTopic.psc",
+      "source_sha256": "d6cf0deab49596ab31d825cd1253b5468c9e84f94e8096ea4c7b939d1a0e73b1",
+      "release_sha256": "ebba811807100996ed24fc40bcd8b87f035c20992cf3885a37ca58b2a9a33c99",
+      "recompiled_sha256": "8e75f4a30f9466dc21e2b71f6b3f79fd1acecc4cd22d879d089b9cd4464bacb6",
+      "state_and_properties_match": true,
+      "different_functions": [],
+      "all_function_instructions_match": true,
+      "source_origin": "pull-up-a-chair-0.9.9-beta-lowtablelayout1-20261015/source/PullUpAChairOrderingTopic.psc"
+    },
+    {
+      "archive_path": "00_Core/Scripts/PullUpAChairRestoreTopic.pex",
+      "source": "PullUpAChairRestoreTopic.psc",
+      "source_sha256": "b94d6a9ba87115d368ae6da407c4c895657fbc3a46f9315d046d46cf6c189d8f",
+      "release_sha256": "dda200da3dbf0eee4f41a13ce3861dd8b11c7f6bd7093537924dd5b5945fdcfa",
+      "recompiled_sha256": "b1c6c1ca046de58aa62e4059335c166398e4bcb01c57587af77406a97dad3dc4",
+      "state_and_properties_match": true,
+      "different_functions": [],
+      "all_function_instructions_match": true,
+      "source_origin": "pull-up-a-chair-0.9.9-beta-lowtablelayout1-20261015/source/PullUpAChairRestoreTopic.psc"
+    },
+    {
+      "archive_path": "20_Service/Scripts/PullUpAChairService.pex",
+      "source": "PullUpAChairService.psc",
+      "source_sha256": "e6bd1c78fecf808f348403f833fe5e6124f29919997761e200c7bafc1ace02db",
+      "release_sha256": "f54130c37b2b4e20d5662401ad208f91d73912248e01670292c8d3d4ca6c0c55",
+      "recompiled_sha256": "0f19a14156ab05877ef7a6c16e0e41029249dc0c732b823ded50255e1b58a24c",
+      "state_and_properties_match": true,
+      "different_functions": [],
+      "all_function_instructions_match": true,
+      "source_origin": "pull-up-a-chair-0.9-beta-20261013/stage/20_Service/Source/Scripts/PullUpAChairService.psc"
+    },
+    {
+      "archive_path": "20_Service/Scripts/PullUpAChairServiceControl.pex",
+      "source": "PullUpAChairServiceControl.psc",
+      "source_sha256": "56528d4c765b8aa13ab6960c97528061cd7168f906c027fb16e0d62c3486074c",
+      "release_sha256": "8fd8f3d92a08a499c26bcb62520287738067a680db94986c9ba651c92ed8b9bf",
+      "recompiled_sha256": "6c3039528e5f1044be008717c38a8906bb3e53831bb6677e89020de404cccff5",
+      "state_and_properties_match": true,
+      "different_functions": [],
+      "all_function_instructions_match": true,
+      "source_origin": "pull-up-a-chair-0.9-beta-20261013/stage/20_Service/Source/Scripts/PullUpAChairServiceControl.psc"
+    },
+    {
+      "archive_path": "30_Dining/Scripts/PullUpAChairEAS.pex",
+      "source": "PullUpAChairEAS.psc",
+      "source_sha256": "11711eb72c4c38807958ccf86a0af76f6fc0187a5ea87a2eabd4b83eca649408",
+      "release_sha256": "73f21d0325203b66295586df03cca42411973814d6bc16e135d4798a6501f1c3",
+      "recompiled_sha256": "66f01fdbde4a75f2365754b19c94751f3a551d982c2206b042454c22ca39cd95",
+      "state_and_properties_match": true,
+      "different_functions": [],
+      "all_function_instructions_match": true,
+      "source_origin": "PullUpAChair/native/scripts/eas/PullUpAChairEAS.psc"
+    }
+  ],
+  "all_passed": true,
+  "comparison_normalization": "Ignore file headers, debug lines, and case of Papyrus identifiers/type names; retain literal strings, instructions, arguments and state fields.",
+  "scope": "Offline source-to-PEX instruction/state comparison; no gameplay assertion."
+}

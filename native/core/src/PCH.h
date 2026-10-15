@@ -1,0 +1,21 @@
+#pragma once
+#include <RE/Skyrim.h>
+#include <SKSE/SKSE.h>
+#include <spdlog/sinks/basic_file_sink.h>
+#include <algorithm>
+#include <array>
+#include <atomic>
+#include <chrono>
+#include <filesystem>
+#include <fstream>
+#include <map>
+#include <mutex>
+#include <optional>
+#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <thread>
+#include <RE/S/SendHUDMessage.h>
+#include <vector>
+namespace logger = SKSE::log;
+using namespace std::literals;

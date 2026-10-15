@@ -1,0 +1,227 @@
+busy	Your meal is being prepared.
+sit_first	Please sit at an inn table or counter before ordering.
+unavailable	Cannot serve right now. No gold was charged.
+not_inn	Ordering is only available at supported inns.
+catalog_error	The food catalog could not be loaded. No order was placed.
+menu_failed	The menu could not open. No gold was charged.
+seat_changed	Your seat changed. The order was cancelled without charge.
+cancelled	The order was cancelled. No gold was charged.
+models_failed	Serving was interrupted. No gold was charged.
+stock_changed	Stock, gold or your seat changed. The order was cancelled.
+served	Your meal is ready. Activate a dish to eat.
+table_config	The table catalog could not be loaded. No gold was charged.
+no_table	No supported table or counter was found nearby.
+occupied	There is not enough clear space on this table.
+no_space	No suitable space was found for your meal.
+search_timeout	Finding table space took too long. Please try again.
+order_topic	I would like to order a meal.
+clean_topic	Please clear all food and tableware from this table.
+eat	Eat
+eat_failed	You cannot eat right now. Your food is still on the table.
+nothing_to_clear	There is no meal or tableware to clear from this table.
+table_cleared	Your meal and tableware have been cleared.
+main	Main
+drink	Drink
+side	Soup / Dessert
+other	Other food
+all	All
+title	Inn Dining
+total	Total: {} gold
+reading_stock	Checking today's supplies...
+no_stock	No supported dishes are available right now.
+no_vendor	This inn's supplies are unavailable.
+choose	Choose your dishes. Select a dish again to remove it.
+price_stock	{} gold · {} available
+preview_unavailable	Image unavailable
+selected	Selected - select again to remove
+preview_pending	Preparing image
+select_as	Choose as {}
+empty_category	No dishes are available in this category.
+omitted	—
+confirm	Serve meal - {} gold
+cancel	Cancel
+controls	D-pad / Stick: browse    A: select / remove    LB / RB: category    Y: toggle daily special    Click: select / remove
+gold_missing	Not enough gold for this order.
+daily_button	Daily Special - 50% off (Y)
+daily_price	Separate: {}  Special: {} gold
+daily_sold_out	Today's special is sold out.
+daily_selected	Daily special selected at 50% off. Changing a dish returns to separate prices.
+pricing_unavailable	Prices are unavailable right now. Please try again later.
+price_changed	Your barter conditions changed. Please order again. No gold was charged.
+restore_topic	Please put the cleared original food and tableware back.
+table_restored	The cleared original food and tableware have been restored.
+nothing_to_restore	There is no cleared original food or tableware to restore here.
+cleanup_full	The clearing record is full. Please restore some cleared objects first.
+specialty_food_00080F	Beef Stew
+specialty_food_000810	Honningbrew Mead
+specialty_food_000811	Sweet Roll
+specialty_food_000812	Clam Chowder
+specialty_food_000813	Spiced Wine
+specialty_food_000814	Boiled Creme Treat
+specialty_food_000815	Horker Loaf
+specialty_food_000816	Nord Mead
+specialty_food_000817	Snowberry Crostata
+specialty_food_000818	Salmon Steak
+specialty_food_000819	Black-Briar Mead
+specialty_food_00081A	Honey Nut Treat
+specialty_food_00081B	Leg of Goat Roast
+specialty_food_00081C	Alto Wine
+specialty_food_00081D	Juniper Berry Crostata
+specialty_food_00081E	Venison Stew
+specialty_food_00081F	Wine
+specialty_food_000820	Apple Pie
+specialty_food_000821	Steamed Mudcrab Legs
+specialty_food_000822	Ale
+specialty_food_000823	Horker Stew
+specialty_food_000824	Cabbage Potato Soup
+specialty_food_000825	Lavender Dumpling
+specialty_food_000826	Apple Cabbage Stew
+specialty_food_000827	Apple Dumpling
+specialty_food_000828	Grilled Chicken Breast
+specialty_food_000829	Vegetable Soup
+specialty_food_00082A	Chicken Dumpling
+specialty_food_00082B	Jazbay Crostata
+specialty_food_00082C	Rabbit Haunch
+specialty_food_00082D	Horker and Ash Yam Stew
+specialty_food_00082E	Sujamma
+specialty	Specials
+specialty_button	House Special Meal
+specialty_selected	House special selected. Freshly prepared; adjust dishes in the categories.
+price_generated	Made to order · {} gold
+bundle_house_title	House Special
+bundle_daily_title	Daily Special
+bundle_price	A pilgrim's must-try!
+bundle_discount_price	{} gold · half price
+bundle_contents	Includes:
+bundle_image	Image pending
+bundle_items_empty	No dishes available
+bundle_item_unavailable	Unavailable dish
+bundle_unavailable	Set unavailable
+bundle_selected	Selected · choose again to remove
+bundle_select	Choose this meal
+bundle_regular_price	Separately: {} gold
+bundle_house_note	The inn's signature selection
+bundle_select_pad	[A] Choose meal
+bundle_remove_pad	Selected · [A] Remove
+bundle_selected_badge	Selected
+supplier_unavailable	This inn's supplier is unavailable. Please try again later.
+call_settings_section	Pull Up a Chair
+call_settings_page	General
+general_language_label	Language
+general_language_help	Choose English or Chinese. The interface updates immediately and your choice is saved.
+general_language_restart	Restart the game to refresh menu titles on this version of SKSE Menu Framework.
+general_call_heading	Call waiter
+general_cleanup_heading	Table cleanup
+call_settings_intro	Choose how to call inn staff over to your table while seated.
+call_mode_label	Call method
+call_mode_hotkey	Dedicated hotkey (press once)
+call_mode_framework	Dynamic Activation Key framework
+call_hotkey_help	
+call_current_binding	Current hotkey
+call_key_unbound	Unbound
+call_capture_start	Set hotkey
+call_capture_clear	Clear hotkey
+call_capture_cancel	Cancel binding
+call_capture_prompt	Press a keyboard or gamepad button. Escape or closing settings cancels; capture also cancels after 15 seconds. Mouse clicks are not recorded.
+call_capture_cancelled	Binding cancelled. The previous hotkey is unchanged.
+call_capture_timeout	Binding timed out. The previous hotkey is unchanged.
+call_framework_help	While seated, look at an empty tabletop or your current seat. Hold the Dynamic Activation Key modifier and press Activate to call. Release the modifier to stand up normally with Activate.
+call_framework_available	Dynamic Activation Key is available.
+call_framework_missing	Dynamic Activation Key was not detected. This call method is unavailable; ordering through dialogue remains available.
+call_framework_binding	Current framework key
+call_settings_context	
+call_settings_persistence	Changes apply immediately and are saved for the next game session.
+call_settings_saved	Settings saved and applied.
+call_settings_save_failed	Could not save settings. Check that the configuration file is writable. The previous settings remain active.
+call_service_busy	A staff member is walking over to your table.
+call_unbound	Unbound
+call_no_server	No nearby inn staff can respond to your call.
+call_dispatch_failed	Unable to call for service right now. Try again or speak to a staff member directly.
+call_unavailable	Service calls are unavailable here. Sit at a dining table in an inn first.
+call_mode_skyprompt	SkyPrompt hold to call
+call_skyprompt_help	Hold the displayed button until its progress completes to call. You can use your own call binding instead of shared framework buttons; bind a key first.
+call_skyprompt_available	SkyPrompt API is available.
+call_skyprompt_missing	SkyPrompt is unavailable. Choose a dedicated hotkey or DAK, or use dialogue.
+call_approach_help	
+call_prompt	Call staff
+call_approaching	A staff member is coming over.
+call_path_failed	Staff cannot reach your table right now. Try again later or speak to them directly.
+call_arrived	Staff have reached your table. You can speak to them.
+call_hint_label	SkyPrompt helper hint
+call_hint_off	Off
+call_hint_on	Display only
+call_hint_help	
+call_prompt_keys_label	SkyPrompt button source
+call_prompt_keys_framework	Framework default buttons
+call_prompt_keys_own	This mod's call binding
+call_prompt_hold	Hold to call staff
+call_waiting_chat	Staff are in a story scene and will come after it ends.
+call_priority_label	Service approach priority
+call_priority_normal	Normal pathing
+call_priority_enabled	High priority (default)
+call_priority_help	Prioritizes service over routine chatter. Story scenes still finish first.
+call_autoclear_label	Clear table when ordering starts
+call_autoclear_off	Off
+call_autoclear_on	On
+call_autoclear_help	When enabled, clears the table when you enter the ordering menu. Conversation, ringing and staff arrival do not clear it.
+call_cleanup_skipped	The current table could not be confirmed. Automatic cleanup was skipped; use the dialogue cleanup option.
+cleanup_settings_page	Table cleanup
+cleanup_settings_intro	Choose what the server clears from the tabletop.
+cleanup_scope_label	Cleanup scope
+cleanup_scope_meal	Food and tableware only (default)
+cleanup_scope_all	All
+cleanup_scope_help	Warning: All mode also clears tabletop decorations, including some fixed props. Use with care.
+cleanup_restore_help	
+cleanup_settings_saved	Cleanup settings saved.
+
+menu_subtitle	B I L L   O F   F A R E
+
+menu_empty_order	Choose a dish or meal first.
+
+menu_confirm	[X] Serve meal
+menu_cancel	[B] Back
+menu_order_empty	Choose a dish or meal first
+menu_order_bundle	Selected: {}
+menu_order_custom	Selected: your dishes
+
+serving_size_page	Compact plating
+serving_size_intro	Shrink large servings to fit the smaller tables added by some mods.
+serving_size_enable	Compact oversized main servings
+serving_size_off	Off (default)
+serving_size_on	On
+serving_size_target	Main target size
+serving_size_soup	Soup bowl size
+serving_size_medium	Medium
+serving_size_large	Large
+serving_size_custom	Current custom size
+serving_size_help	Some dishes may look distorted when this option is enabled.
+serving_size_saved	Serving size settings saved.
+serving_dessert_enable	Compact oversized desserts/sides (including cheese)
+serving_dessert_target	Dessert/side target size
+
+# Per-inn promotional text. Blank values inherit bundle_price.
+bundle_price.bannered_mare	Stew, sweet rolls, and some special mead.
+bundle_price.sleeping_giant	Fresh White River salmon and fresh apple pie!
+bundle_price.winking_skeever	A meal fit for high society!
+bundle_price.four_shields	Not a jarl's feast, but it'll fill your belly.
+bundle_price.bee_and_barb	Black-Briar Mead, or a house special?
+bundle_price.candlehearth	Traditional Nord fare!
+bundle_price.silver_blood	Strong drink,Strong roast,clean rooms.
+bundle_price.dead_mans_drink	Take a moment's rest from the war!
+bundle_price.frozen_hearth	One last meal before heading to the College!
+bundle_price.windpeak	Nord mead, no nightmares!
+bundle_price.moorside	Moonlight moves to mudcrabs at the Moorside Inn.
+bundle_price.frostfruit	A peaceful life, perfect dumplings.
+bundle_price.braidwood	Just like Mom used to make!
+bundle_price.vilemyr	
+bundle_price.nightgate	Family recipes passed down for generations!
+bundle_price.old_hroldan	The very meal Tiber Septim once enjoyed!
+bundle_price.ragged_flagon	
+bundle_price.drunken_huntsman	
+bundle_price.retching_netch	Don't retch like the Netch! 
+call_table_action	Call staff
+call_table_name	Table
+cleanup_hide_clear_label	Hide clear-table dialogue
+cleanup_hide_clear_help	Hides the staff dialogue option for clearing the table. Automatic ordering cleanup is unaffected. Reopen dialogue to apply.
+cleanup_hide_restore_label	Hide undo-cleanup dialogue
+cleanup_hide_restore_help	Hides the staff dialogue option for restoring items removed by cleanup. Reopen dialogue to apply.

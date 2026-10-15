@@ -1,0 +1,14 @@
+--- artclean1/native/core/adapter/src/InteractionRuntime.h
++++ vrtrial1/native/core/adapter/src/InteractionRuntime.h
+@@ -1,8 +1,9 @@
+ #pragma once
+ #include <cstddef>
+ namespace meal {
+-// Flat-runtime interaction ABI. Only this optional module installs these slots.
++// Only this optional module installs the food/plate interaction hooks.
+ inline constexpr std::size_t activateSlot = 0x37;
+ inline constexpr std::size_t activateTextSlot = 0x4C;
+-inline constexpr std::size_t drinkSlot = 0x10F;
++// CommonLib v11 Actor::DrinkPotion uses a different virtual slot in VR.
++constexpr std::size_t DrinkSlot(bool isVR) { return isVR ? 0x111 : 0x10F; }
+ } // namespace meal

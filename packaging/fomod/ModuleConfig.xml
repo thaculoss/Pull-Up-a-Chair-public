@@ -1,0 +1,456 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
+  <moduleName>Pull Up a Chair — 0.9.9 beta vrtrial1</moduleName>
+  <moduleDependencies operator="And">
+    <fileDependency file="Skyrim.esm" state="Active" />
+    <fileDependency file="Update.esm" state="Active" />
+    <fileDependency file="Dawnguard.esm" state="Active" />
+    <fileDependency file="HearthFires.esm" state="Active" />
+    <fileDependency file="Dragonborn.esm" state="Active" />
+  </moduleDependencies>
+  <requiredInstallFiles>
+    <folder source="00_Core" destination="" priority="0" />
+    <folder source="20_Service" destination="" priority="0" />
+  </requiredInstallFiles>
+  <installSteps order="Explicit">
+    <installStep name="1. Language / 语言">
+      <optionalFileGroups order="Explicit">
+        <group name="Menu language / 菜单语言" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="English (default)">
+              <description>English native menu, settings and title art. Food/location names follow the target game.
+默认英文；食物与地点名称沿用目标游戏。</description>
+              <conditionFlags>
+                <flag name="language">en</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Recommended" />
+              </typeDescriptor>
+            </plugin>
+            <plugin name="简体中文 / Chinese">
+              <description>Includes LXGW WenKai GB Medium for the Chinese ordering menu only. Enable Chinese glyphs in SKSE Menu Framework; use the optional Chinese-ready preset on page 4 if needed.
+已包含中文点菜菜单专用霞鹜文楷。框架仍需开启中文字形；第 4 页可选中文预设。</description>
+              <conditionFlags>
+                <flag name="language">zh</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+    <installStep name="2. Calling and cleanup / 呼叫与清桌">
+      <optionalFileGroups order="Explicit">
+        <group name="Call entry / 呼叫入口" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Dedicated hotkey - unbound (default)">
+              <description>No key is reserved. Bind a keyboard/controller key in this mod settings. One press calls; normal seated dialogue is immediately usable.
+默认不占用按键；请在设置页录制独立呼叫键。</description>
+              <conditionFlags>
+                <flag name="mode">0</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Recommended" />
+              </typeDescriptor>
+            </plugin>
+            <plugin name="Dynamic Activation Key / DAK">
+              <description>Requires Dynamic Activation Key.esp. Uses the target DAK modifier + Activate. No DAK files are bundled.
+需要目标环境的 DAK。</description>
+              <conditionFlags>
+                <flag name="mode">1</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="NotUsable" />
+                  <patterns>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="Dynamic Activation Key.esp" state="Active" />
+                      </dependencies>
+                      <type name="Optional" />
+                    </pattern>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="Dynamic Activation Key.esp" state="Inactive" />
+                      </dependencies>
+                      <type name="CouldBeUsable" />
+                    </pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+            <plugin name="SkyPrompt - hold action / 长按入口">
+              <description>Manually verify a compatible SkyPrompt DLL is installed; this wizard cannot check its API version. Only this call entry uses a hold.
+需要目标环境已安装兼容 SkyPrompt。</description>
+              <conditionFlags>
+                <flag name="mode">2</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+        <group name="Automatic cleanup at ordering / 点菜时自动清桌" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="On - food and tableware (default)">
+              <description>Matches the source setup. Runs on entering the ordering menu. Scriptless quest-linked objects do not have complete protection; turn off in sensitive scenes.
+进入点菜菜单时清理食物餐具；任务场景可选择关闭。</description>
+              <conditionFlags>
+                <flag name="cleanup">1</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Recommended" />
+              </typeDescriptor>
+            </plugin>
+            <plugin name="Off / 关闭自动清桌">
+              <description>Disable automatic cleanup for compatibility isolation. Manual cleanup remains available.
+用于排查其他桌面物件模组；手动清桌仍可使用。</description>
+              <conditionFlags>
+                <flag name="cleanup">0</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+        <group name="DAK hint display / DAK 提示显示" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Standard tabletop hint / 标准桌面提示">
+              <description>Keep the existing hint that appears when the camera detects a nearby tabletop.
+保留现有桌面识别提示，适合已经正常显示的环境。</description>
+              <files>
+                <folder source="70_DAKHUD\0" destination="" priority="100" />
+              </files>
+              <conditionFlags>
+                <flag name="hud">0</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
+            <plugin name="DAK call hint compatibility / DAK 呼叫提示兼容">
+              <description>Choose this when DAK can call staff but the Call staff text is missing. Shows the current Activate key below the crosshair while a seated inn call is allowed, including when there is no tabletop camera hit. Only affects DAK mode.
+能叫到职员但看不到字时选择；可呼叫时在屏幕中心下方显示按键与文字，仅在 DAK 模式生效。</description>
+              <files>
+                <folder source="70_DAKHUD\1" destination="" priority="100" />
+              </files>
+              <conditionFlags>
+                <flag name="hud">1</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Recommended" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+    <installStep name="3. Optional adapters / 可选适配">
+      <optionalFileGroups order="Explicit">
+        <group name="Desktop dining interactions / 桌面进食与餐盘交互" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Desktop dining + EAS compatibility / 桌面进食 + EAS 兼容">
+              <description>Preserves click-to-eat, food labels, plate protection and EAS animation visibility. Requires active TaberuAnimation.esp and working EAS/KID/behaviors. No upstream EAS script overrides. EAS observer test targets 1.5.97 and 1.7.104.
+保留点击桌上食物直接吃、食用提示和餐盘交互保护，并启用 EAS 动画餐盘联动。需要 EAS、KID 与正确的行为输出；不覆盖 EAS 原脚本。</description>
+              <files>
+                <folder source="30_Dining" destination="" priority="10" />
+                <folder source="30_EAS" destination="" priority="20" />
+              </files>
+              <conditionFlags>
+                <flag name="dining">1</flag>
+                <flag name="eas">1</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="NotUsable" />
+                  <patterns>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="TaberuAnimation.esp" state="Active" />
+                      </dependencies>
+                      <type name="Recommended" />
+                    </pattern>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="TaberuAnimation.esp" state="Inactive" />
+                      </dependencies>
+                      <type name="CouldBeUsable" />
+                    </pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+            <plugin name="Desktop dining without EAS / 仅桌面进食">
+              <description>Keeps click-to-eat and food/plate interaction. Does not require EAS or install its keyword rules. EAS observation is disabled.
+保留点击进食及食物／餐盘交互，不要求 EAS；不安装 EAS 关键词，不启用动画观察。</description>
+              <files>
+                <folder source="30_Dining" destination="" priority="10" />
+              </files>
+              <conditionFlags>
+                <flag name="dining">1</flag>
+                <flag name="eas">0</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="Recommended" />
+                  <patterns>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="TaberuAnimation.esp" state="Active" />
+                      </dependencies>
+                      <type name="Optional" />
+                    </pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+            <plugin name="Ordering and serving only / 仅点餐与上菜">
+              <description>Does not install the optional interaction DLL. Food uses the target game and its other interaction mods. Skyrim VR 1.4.15 is allowed to try loading; VR gameplay is untested.
+不安装食物／餐盘交互模块，交互交给游戏及其他模组。允许 Skyrim VR 1.4.15 自行尝试加载；VR 游戏内效果尚未验证。</description>
+              <conditionFlags>
+                <flag name="dining">0</flag>
+                <flag name="eas">0</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+        <group name="Other optional adapters / 其他可选适配" type="SelectAny">
+          <plugins order="Explicit">
+            <plugin name="SunHelm food classification adapter">
+              <description>Requires SunHelmSurvival.esp and SkyPatcher. Classifies house specials and conditionally installs 25 Cooking Re-Seasoned food entries by detected source plugin. Enable food plugins before installing or reinstall after adding them.
+默认不选；不包含 SunHelm 或 SkyPatcher 本体。</description>
+              <files>
+                <folder source="40_SunHelm" destination="" priority="10" />
+              </files>
+              <conditionFlags>
+                <flag name="sunhelm">1</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <dependencyType>
+                  <defaultType name="NotUsable" />
+                  <patterns>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="SunHelmSurvival.esp" state="Active" />
+                      </dependencies>
+                      <type name="Optional" />
+                    </pattern>
+                    <pattern>
+                      <dependencies operator="And">
+                        <fileDependency file="SunHelmSurvival.esp" state="Inactive" />
+                      </dependencies>
+                      <type name="CouldBeUsable" />
+                    </pattern>
+                  </patterns>
+                </dependencyType>
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+    <installStep name="4. Framework settings / 框架配置">
+      <optionalFileGroups order="Explicit">
+        <group name="SKSE Menu Framework INI / 菜单框架配置" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Keep target framework settings (default)">
+              <description>No framework INI is installed. Keep the target profile toggle key, layout and fonts. If you selected Chinese, ensure Chinese glyphs are enabled yourself.
+默认保留目标框架配置。</description>
+              <conditionFlags>
+                <flag name="preset">keep</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Recommended" />
+              </typeDescriptor>
+            </plugin>
+            <plugin name="Install Chinese-ready framework preset">
+              <description>Replaces the WHOLE SKSEMenuFramework.ini: F1 single press, controller shortcut off, Chinese fonts enabled, standard window geometry. Affects all framework menus. Optional for English.
+覆盖整份框架配置，启用中文字形、F1 单击开关；影响其他框架菜单。</description>
+              <files>
+                <folder source="60_FrameworkPreset" destination="" priority="10" />
+              </files>
+              <conditionFlags>
+                <flag name="preset">apply</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+  </installSteps>
+  <conditionalFileInstalls>
+    <patterns>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="en" />
+          <flagDependency flag="mode" value="0" />
+          <flagDependency flag="cleanup" value="0" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\en\0\0" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="en" />
+          <flagDependency flag="mode" value="0" />
+          <flagDependency flag="cleanup" value="1" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\en\0\1" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="en" />
+          <flagDependency flag="mode" value="1" />
+          <flagDependency flag="cleanup" value="0" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\en\1\0" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="en" />
+          <flagDependency flag="mode" value="1" />
+          <flagDependency flag="cleanup" value="1" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\en\1\1" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="en" />
+          <flagDependency flag="mode" value="2" />
+          <flagDependency flag="cleanup" value="0" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\en\2\0" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="en" />
+          <flagDependency flag="mode" value="2" />
+          <flagDependency flag="cleanup" value="1" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\en\2\1" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="zh" />
+          <flagDependency flag="mode" value="0" />
+          <flagDependency flag="cleanup" value="0" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\zh\0\0" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="zh" />
+          <flagDependency flag="mode" value="0" />
+          <flagDependency flag="cleanup" value="1" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\zh\0\1" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="zh" />
+          <flagDependency flag="mode" value="1" />
+          <flagDependency flag="cleanup" value="0" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\zh\1\0" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="zh" />
+          <flagDependency flag="mode" value="1" />
+          <flagDependency flag="cleanup" value="1" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\zh\1\1" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="zh" />
+          <flagDependency flag="mode" value="2" />
+          <flagDependency flag="cleanup" value="0" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\zh\2\0" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="zh" />
+          <flagDependency flag="mode" value="2" />
+          <flagDependency flag="cleanup" value="1" />
+        </dependencies>
+        <files>
+          <folder source="90_Settings\zh\2\1" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="en" />
+        </dependencies>
+        <files>
+          <folder source="91_ServiceLanguage\en" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="language" value="zh" />
+        </dependencies>
+        <files>
+          <folder source="91_ServiceLanguage\zh" destination="" priority="100" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="sunhelm" value="1" />
+          <fileDependency file="cooking reseasoned - cc camping - gourmet patch.esp" state="Active" />
+        </dependencies>
+        <files>
+          <folder source="41_SunHelmFoodPacks\0" destination="" priority="20" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="sunhelm" value="1" />
+          <fileDependency file="cooking reseasoned - new foods.esp" state="Active" />
+        </dependencies>
+        <files>
+          <folder source="41_SunHelmFoodPacks\1" destination="" priority="20" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <fileDependency file="Chatty NPCs.esp" state="Active" />
+        </dependencies>
+        <files>
+          <folder source="45_ChattyNPCs" destination="" priority="20" />
+        </files>
+      </pattern>
+    </patterns>
+  </conditionalFileInstalls>
+</config>

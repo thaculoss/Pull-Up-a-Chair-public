@@ -1,0 +1,10 @@
+--- artclean1/native/core/src/main.cpp
++++ vrtrial1/native/core/src/main.cpp
+@@ -248,6 +248,6 @@
+     io->SetSaveCallback([](SKSE::SerializationInterface* io){inn::tables::Save(io);inn::daily::Save(io);inn::cleanup::Save(io);inn::suppliers::Save(io);inn::service::Save(io);});io->SetLoadCallback(inn::tables::Load);
+     io->SetRevertCallback([](SKSE::SerializationInterface*){inn::tables::Revert();inn::daily::Revert();inn::suppliers::Revert();inn::service::PrepareLoad();});
+     SKSE::GetMessagingInterface()->RegisterListener(OnMessage);
+-    logger::info("Pull Up a Chair Ordering 0.9.9 beta lowtablelayout1 mealrestore1 gnisis1 emptybottle1 runtime={}; Solitude empty spiced-wine bottles included in tabletop cleanup; New Gnisis hides its empty specialty card; game-thread gold preflight before serving; precise commit rejection diagnostics retained; vanilla low tables, Chinese menu font and DAK HUD compatibility retained; diningmodule1: optional interaction API v1, core has no food/plate vfunc hooks; removed serving receipts persist across saves; VR excluded; gameplay validation required",v.string());
++    logger::info("Pull Up a Chair Ordering 0.9.9 beta vrtrial1 runtime={}; Solitude empty spiced-wine bottles included in tabletop cleanup; New Gnisis hides its empty specialty card; game-thread gold preflight before serving; precise commit rejection diagnostics retained; vanilla low tables, Chinese menu font and DAK HUD compatibility retained; diningmodule1: optional interaction API v1, core has no food/plate vfunc hooks; removed serving receipts persist across saves; mode={}; gameplay validation required",v.string(),inn::ExperimentalVR({v.major(),v.minor(),v.patch(),v.build()})?"experimental VR (unverified)":"flat runtime");
+     return true;
+ }

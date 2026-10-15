@@ -1,0 +1,27 @@
+Pull Up a Chair vrtrial1 — VR 实验加载范围
+作者：thaculoss；日期：2026-10-15
+
+Skyrim VR 1.4.15.0 允许尝试加载，不再仅因 VR 版本身份拒绝。
+这不是已完成的 VR 适配认证：没有 VR 头显或游戏内实测记录。
+VR 运动控制器按键尚未接入本模组原有呼叫/菜单操作；平面键鼠和 XInput
+代码的存在不代表 VR 手柄已经可用。头显中的菜单显示、指向、交互、坐姿、
+点单、进食、清桌及存档恢复仍需由 VR 测试者验证。
+可选 EAS 动画 observer 在 VR 上继续关闭：原 runtime gate 仍只接受
+1.5.97.0 或 1.7.104.0，且另有 EAS 插件/设置条件。DLL 能加载不代表 observer 能启用。
+餐饮模块 DrinkPotion 虚函数槽已区分 VR 0x111 和平面版 0x10F；这一静态修正
+和离线测试不代表 VR 进食动画或全流程已实测。
+
+外部运行依赖应选择对应 VR 版本，不能直接照搬 SE/AE 二进制：
+- SKSEVR。
+- VR Address Library，与 Skyrim VR 1.4.15.0 和所用 CommonLib 映射相匹配。
+- powerofthree's Papyrus Extender 的 VR 版本/对应 VR 支持组件。
+- 提供所需接口的 SKSE Menu Framework，以及其 VR 显示桥接 ImGui VR Helper。
+精确下载版本和依赖核对以随 FOMOD 放在外面的当前安装说明/依赖审计为准；
+这份清单不表示上述依赖在本机完成了 VR 集成验证，也不授予其再分发权。
+本包三个 ESP 保留 ESL 标记，推荐按 Skyrim VR ESL Support 作者要求安装该扩展
+及其前置，以使用轻插件机制：https://www.nexusmods.com/skyrimspecialedition/mods/106712
+未在无该扩展的 VR 环境验证；这不是新增的加载拒绝条件。
+
+本包保留 CommonLib/OpenVR 编译接口与对应源码许可，不是新增独立 OpenVR 公共 API。
+不宣称 Mesh Rendering Framework 整体通过 VR 验证；既有 food renderer 构建未使用其 vendor Hooks.cpp。
+安装包、包外说明和本源码材料都未上传 Nexus，未部署到任何游戏环境。

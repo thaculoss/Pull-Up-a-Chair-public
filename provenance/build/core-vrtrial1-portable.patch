@@ -1,0 +1,95 @@
+--- original/native/core/CMakeLists.txt
++++ portable/native/core/CMakeLists.txt
+@@ -3,35 +3,15 @@
+ set(CMAKE_CXX_STANDARD 23)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+-set(WORKSPACE "${CMAKE_CURRENT_SOURCE_DIR}/.." CACHE PATH "Local dependency workspace")
+-set(DEPS "${WORKSPACE}/buy-displayed-sp-autopay-20261009/deps" CACHE PATH "Framework dependencies")
+-set(GALLERY "${WORKSPACE}/food-gallery-20261010" CACHE PATH "Existing image renderer build")
+-set(CL "${DEPS}/commonlib-prebuilt/commonlibsse-ng-prebuilt-v11.0.0-all-msvc-cmake" CACHE PATH "Pinned CommonLib v11 prebuilt")
+-set(RENDER "${GALLERY}/deps/MeshRenderingFramework-source/QTR-Modding-Mesh-Rendering-Framework-c92dd6a")
+-
+-add_library(CommonLibSSE STATIC IMPORTED)
+-add_library(CommonLibSSE::CommonLibSSE ALIAS CommonLibSSE)
+-set_target_properties(CommonLibSSE PROPERTIES IMPORTED_LOCATION "${CL}/lib/CommonLibSSE.lib")
+-target_include_directories(CommonLibSSE INTERFACE "${CL}/include" "${CL}/extern/openvr/headers"
+-    "${DEPS}/spdlog/include" "${DEPS}/fmt/include" "${DEPS}/rapidcsv/src"
+-    "${DEPS}/DirectXTK/Inc" "${DEPS}/DirectXMath/Inc")
+-# This prebuilt library requires identical layout macros in every consumer.
+-# Keep OpenVR/multi-runtime layouts; entry policy allows exact experimental VR 1.4.15.
+-target_compile_definitions(CommonLibSSE INTERFACE ENABLE_SKYRIM_SE=1 ENABLE_SKYRIM_AE=1
+-    ENABLE_SKYRIM_VR=1 HAS_SKYRIM_MULTI_TARGETING=1 SPDLOG_COMPILED_LIB SPDLOG_FMT_EXTERNAL)
+-target_link_libraries(CommonLibSSE INTERFACE "${GALLERY}/build/spdlog/Release/spdlog.lib"
+-    "${GALLERY}/build/fmt/Release/fmt.lib" "${GALLERY}/build/Release/dxmath.lib" "${CL}/lib/openvr_api.lib"
+-    advapi32 bcrypt d3d11 d3dcompiler dbghelp dxgi ole32 version windowscodecs)
+-include("${DEPS}/CommonLibSSE-NG/cmake/CommonLibSSE.cmake")
+-
++if(NOT PUAC_POLICY_TESTS_ONLY)
+ add_library(PullUpAChairOrdering SHARED src/main.cpp src/InnServices.cpp src/SupplierServices.cpp src/TableManager.cpp src/DailyMenus.cpp src/BarterPricing.cpp src/TableCleanup.cpp src/Specialties.cpp src/TableDiscovery.cpp src/CallService.cpp src/CallFocus.cpp src/CallSettingsUI.cpp src/ServiceApproach.cpp src/SkyPromptCall.cpp src/ServicePriority.cpp src/ServingSize.cpp src/TopicVisibility.cpp src/SettingsStore.cpp)
+ target_sources(PullUpAChairOrdering PRIVATE src/ServiceSceneReservation.cpp)
+-target_include_directories(PullUpAChairOrdering PRIVATE src include "${RENDER}/include"
++target_include_directories(PullUpAChairOrdering PRIVATE src include "${PUAC_VENDOR_ROOT}/MeshRenderingFramework/include"
+     "${CMAKE_CURRENT_SOURCE_DIR}/third_party/SkyPromptAPI/include"
+-    "${GALLERY}/deps/nifly/Thiago099-nifly-cca0a77/include" "${GALLERY}/deps/nifly/Thiago099-nifly-cca0a77/external"
+-    "${GALLERY}/deps/DirectXTex/microsoft-DirectXTex-74f9b02/DirectXTex")
+-target_link_libraries(PullUpAChairOrdering PRIVATE CommonLibSSE "${GALLERY}/build/Release/food_renderer.lib"
+-    "${GALLERY}/build/nifly/src/Release/nifly.lib" "${GALLERY}/build/lib/Release/DirectXTex.lib")
++    "${PUAC_VENDOR_ROOT}/nifly/include" "${PUAC_VENDOR_ROOT}/nifly/external"
++    "${PUAC_VENDOR_ROOT}/DirectXTex/DirectXTex")
++target_link_libraries(PullUpAChairOrdering PRIVATE CommonLibSSE food_renderer
++    nifly DirectXTex)
+ target_commonlibsse_properties(PullUpAChairOrdering NAME "PullUpAChairOrdering" AUTHOR "Pull Up a Chair" VERSION 0.9.9 USE_ADDRESS_LIBRARY)
+ 
+ add_library(PullUpAChairEAS SHARED adapter/src/main.cpp)
+@@ -53,6 +33,8 @@
+     target_link_options(${plugin} PRIVATE /DEBUG /OPT:REF /OPT:ICF)
+ endforeach()
+ 
++endif() # native plugins
++
+ enable_testing()
+ file(READ "${CMAKE_CURRENT_SOURCE_DIR}/src/OrderSession.inl" CONFIRMATION_SOURCE)
+ string(FIND "${CONFIRMATION_SOURCE}" "void Snapshot(int token)" CONFIRMATION_END)
+@@ -66,24 +48,27 @@
+ target_include_directories(confirmation_tests PRIVATE src "${CMAKE_CURRENT_BINARY_DIR}/confirmation-fixture")
+ target_compile_options(confirmation_tests PRIVATE /utf-8 /W4)
+ add_test(NAME gold_preflight_and_queued_confirmation COMMAND confirmation_tests)
+-set(FONT_TEST_IMGUI "${WORKSPACE}/inn-ordering-core-20261010/preview/imgui")
++set(FONT_TEST_IMGUI "${PUAC_VENDOR_ROOT}/imgui-preview")
+ add_executable(menu_typeface_tests tests/menu_typeface_tests.cpp
+     "${FONT_TEST_IMGUI}/imgui.cpp" "${FONT_TEST_IMGUI}/imgui_draw.cpp"
+     "${FONT_TEST_IMGUI}/imgui_tables.cpp" "${FONT_TEST_IMGUI}/imgui_widgets.cpp")
+ target_include_directories(menu_typeface_tests PRIVATE src "${FONT_TEST_IMGUI}")
+ target_compile_options(menu_typeface_tests PRIVATE /utf-8 /W3)
+ add_test(NAME scoped_chinese_menu_typeface COMMAND menu_typeface_tests
+-    "${CMAKE_CURRENT_SOURCE_DIR}/../../stage/00_Core/SKSE/Plugins/Fonts/PUAC-WenKai-Medium.ttf")
++    "${PROJECT_SOURCE_DIR}/../../test-data/fonts/PUAC-WenKai-Medium.ttf")
++if(NOT PUAC_POLICY_TESTS_ONLY)
+ add_executable(menu_preview preview/main.cpp "${FONT_TEST_IMGUI}/imgui.cpp"
+     "${FONT_TEST_IMGUI}/imgui_draw.cpp" "${FONT_TEST_IMGUI}/imgui_tables.cpp"
+     "${FONT_TEST_IMGUI}/imgui_widgets.cpp" "${FONT_TEST_IMGUI}/backends/imgui_impl_dx11.cpp")
+ target_include_directories(menu_preview PRIVATE src "${FONT_TEST_IMGUI}"
+     "${FONT_TEST_IMGUI}/backends"
+-    "${DEPS}/fmt/include" "${GALLERY}/deps/DirectXTex/microsoft-DirectXTex-74f9b02/DirectXTex")
++    "${PUAC_VENDOR_ROOT}/fmt/include" "${PUAC_VENDOR_ROOT}/DirectXTex/DirectXTex")
+ target_compile_definitions(menu_preview PRIVATE UNICODE _UNICODE NOMINMAX "ImTextureID=void*")
+ target_compile_options(menu_preview PRIVATE /utf-8 /W3)
+-target_link_libraries(menu_preview PRIVATE "${GALLERY}/build/lib/Release/DirectXTex.lib"
+-    "${GALLERY}/build/fmt/Release/fmt.lib" d3d11 d3dcompiler dxgi ole32 windowscodecs)
++target_link_libraries(menu_preview PRIVATE DirectXTex
++    fmt::fmt d3d11 d3dcompiler dxgi ole32 windowscodecs)
++
++endif() # native renderer preview
+ 
+ add_executable(inn_routine_tests tests/inn_routine_tests.cpp)
+ target_include_directories(inn_routine_tests PRIVATE src)
+@@ -105,7 +90,7 @@
+ target_include_directories(low_table_tests PRIVATE src)
+ target_compile_options(low_table_tests PRIVATE /utf-8 /W4)
+ add_test(NAME vanilla_low_tables_registration COMMAND low_table_tests "${CMAKE_CURRENT_SOURCE_DIR}/config"
+-    "${WORKSPACE}/pull-up-a-chair-0.9.6-beta-font1-20261014/native/core/config")
++    "${PROJECT_SOURCE_DIR}/../../test-data/lowtable-before")
+ add_executable(adapter_tests tests/adapter_tests.cpp)
+ target_include_directories(adapter_tests PRIVATE adapter/src)
+ add_test(NAME retained_animation_identity_regression COMMAND adapter_tests)

@@ -1,0 +1,18 @@
+--- paper3/src/Artwork.h
++++ artclean1/src/Artwork.h
+@@ -28,9 +28,12 @@
+             if(fields.size()<11||fields.size()>14)throw std::runtime_error("Artwork catalog needs 11 through 14 fields");
+             InnArtwork row;row.plugin=fields[0];row.local=std::stoul(fields[1],nullptr,16);
+             row.key=fields[2];row.nameEnglish=fields[3];row.nameChinese=fields[4];
+-            if(std::filesystem::path(fields[5]).filename().string()!=fields[5]||!fields[5].ends_with(".png"))
+-                throw std::runtime_error("Artwork filename must be a local PNG");
+-            row.image.path="Data/Interface/PullUpAChairOrdering/InnSigns/"+fields[5];
++            // A dash keeps venue text and title lookup without an illustration.
++            if(fields[5]!="-") {
++                if(std::filesystem::path(fields[5]).filename().string()!=fields[5]||!fields[5].ends_with(".png"))
++                    throw std::runtime_error("Artwork filename must be a local PNG or -");
++                row.image.path="Data/Interface/PullUpAChairOrdering/InnSigns/"+fields[5];
++            }
+             for(int i=0;i<4;++i){row.image.uv[i]=std::stof(fields[6+i]);if(!std::isfinite(row.image.uv[i])||row.image.uv[i]<0||row.image.uv[i]>1)throw std::runtime_error("Invalid artwork UV");}
+             row.image.aspect=std::stof(fields[10]);
+             if(fields.size()>=12)row.image.quarterTurns=std::stoi(fields[11]);

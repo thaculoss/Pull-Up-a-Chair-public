@@ -1,0 +1,30 @@
+# locationPlugin	locationLocalID	merchantPlugin	merchantACHRLocalID	vendorFactionPlugin	vendorFactionLocalID	stockPlugin	stockREFRLocalID	priority	roleQuestPlugin	roleQuestLocalID	roleAliasIndex	note
+Dragonborn.esm	019A24	Dragonborn.esm	018291	Dragonborn.esm	025028	Dragonborn.esm	025029	10	-	000000	0	DLC2RRRetchingNetchLocation / DLC2RRGeldisSadri / primary proprietor
+Skyrim.esm	01CB8C	Skyrim.esm	013486	Skyrim.esm	0914F1	Skyrim.esm	078C0F	10	-	000000	0	RiverwoodSleepingGiantInnLocation / Orgnar / primary proprietor
+Skyrim.esm	01EB7C	Skyrim.esm	01C18D	Skyrim.esm	09DA61	Skyrim.esm	09DA60	10	Skyrim.esm	02430E	5	WinterholdTheFrozenHearthLocation / Dagur / primary proprietor
+Skyrim.esm	01EB7C	Skyrim.esm	01C18E	Skyrim.esm	09DA61	Skyrim.esm	09DA60	20	Skyrim.esm	02430E	5	WinterholdTheFrozenHearthLocation / Haran / conditional successor; requires current primary alias binding
+Skyrim.esm	01EB96	Skyrim.esm	01AA62	Skyrim.esm	09DA55	Skyrim.esm	09DA54	10	Skyrim.esm	02E0EE	8	MorthalMoorsideInnLocation / Jonna / primary proprietor
+Skyrim.esm	01F30E	Skyrim.esm	0198EC	Skyrim.esm	094386	Skyrim.esm	094385	10	Skyrim.esm	017F05	4	MarkarthSilverBloodInnLocation / Kleppr / primary proprietor
+Skyrim.esm	01F30E	Skyrim.esm	0198ED	Skyrim.esm	094386	Skyrim.esm	094385	20	Skyrim.esm	017F05	4	MarkarthSilverBloodInnLocation / Frabbi / conditional successor; requires current primary alias binding
+Skyrim.esm	01F7CB	Skyrim.esm	0199CF	Skyrim.esm	09E461	Skyrim.esm	09E460	10	Skyrim.esm	02C7E2	0	OldHroldanInnLocation / Eydis / primary proprietor
+Skyrim.esm	01F7CB	Skyrim.esm	066262	Skyrim.esm	09E461	Skyrim.esm	09E460	20	Skyrim.esm	02C7E2	0	OldHroldanInnLocation / LeontiusSalvius / conditional successor; requires current primary alias binding
+Skyrim.esm	01F86D	Skyrim.esm	01A66E	Skyrim.esm	09CAFC	Skyrim.esm	09CAFB	10	Skyrim.esm	0270A4	4	WhiterunBanneredMareLocation / Hulda / primary proprietor
+Skyrim.esm	01F86D	Skyrim.esm	01A69A	Skyrim.esm	09CAFC	Skyrim.esm	09CAFB	20	Skyrim.esm	0270A4	4	WhiterunBanneredMareLocation / Ysolda / conditional successor; requires current primary alias binding
+Skyrim.esm	01F883	Skyrim.esm	01A6A8	Skyrim.esm	09F252	Skyrim.esm	09F251	10	Skyrim.esm	03867C	2	RoriksteadFrostfruitInnLocation / Mralki / primary proprietor
+Skyrim.esm	020008	Skyrim.esm	019A29	Skyrim.esm	0A6BF5	Skyrim.esm	0A6BF4	10	Skyrim.esm	0212AB	12	DragonBridgeFourShieldsTavernLocation / Faida / primary proprietor
+Skyrim.esm	020054	Skyrim.esm	02005A	Skyrim.esm	0DA688	Skyrim.esm	09E48C	10	-	000000	0	NightgateInnLocation / Hadring / primary proprietor
+Skyrim.esm	020065	Skyrim.esm	01A6C8	Skyrim.esm	09DA48	Skyrim.esm	09DA47	10	Skyrim.esm	03829F	11	DawnstarWindpeakInnLocation / Thoring / primary proprietor
+Skyrim.esm	020065	Skyrim.esm	01A6C7	Skyrim.esm	09DA48	Skyrim.esm	09DA47	20	Skyrim.esm	03829F	11	DawnstarWindpeakInnLocation / Karita / conditional successor; requires current primary alias binding
+Skyrim.esm	0200A5	Skyrim.esm	0198A0	Skyrim.esm	0A6BF9	Skyrim.esm	0A6BF8	10	Skyrim.esm	02E1AD	2	SolitudeWinkingSkeeverLocation / CorpulusVinius / primary proprietor
+Skyrim.esm	0200A5	Skyrim.esm	0198A3	Skyrim.esm	0A6BF9	Skyrim.esm	0A6BF8	20	Skyrim.esm	02E1AD	2	SolitudeWinkingSkeeverLocation / SorexVinius / conditional successor; requires current primary alias binding
+Skyrim.esm	0209EA	Skyrim.esm	01B118	Skyrim.esm	0A3F01	Skyrim.esm	0A3F00	10	Skyrim.esm	03502E	8	WindhelmCandlehearthHallLocation / Elda / primary proprietor
+Skyrim.esm	0209EA	Skyrim.esm	01B11A	Skyrim.esm	0A3F01	Skyrim.esm	0A3F00	20	Skyrim.esm	03502E	8	WindhelmCandlehearthHallLocation / Nils / conditional successor; requires current primary alias binding
+Skyrim.esm	0209F0	Skyrim.esm	01B128	Skyrim.esm	0A3F16	Skyrim.esm	0A3F15	10	Skyrim.esm	03502E	10	WindhelmNewGnisisCornerclubLocation / AmbarysRendar / primary proprietor
+Skyrim.esm	0209F0	Skyrim.esm	01B129	Skyrim.esm	0A3F16	Skyrim.esm	0A3F15	20	Skyrim.esm	03502E	10	WindhelmNewGnisisCornerclubLocation / MalthyrElenil / conditional successor; requires current primary alias binding
+Skyrim.esm	020A02	Skyrim.esm	01B085	Skyrim.esm	0A3F27	Skyrim.esm	0A3F26	10	Skyrim.esm	02E6FF	0	KynesgroveBraidwoodInnLocation / Iddra / primary proprietor
+Skyrim.esm	020A02	Skyrim.esm	01B086	Skyrim.esm	0A3F27	Skyrim.esm	0A3F26	20	Skyrim.esm	02E6FF	0	KynesgroveBraidwoodInnLocation / Kjeld / conditional successor; requires current primary alias binding
+Skyrim.esm	02247E	Skyrim.esm	019DC8	Skyrim.esm	0A0705	Skyrim.esm	0A0704	10	Skyrim.esm	0368D8	8	RiftenBeeandBarbLocation / Keerava / primary proprietor
+Skyrim.esm	02247E	Skyrim.esm	019DC9	Skyrim.esm	0A0705	Skyrim.esm	0A0704	20	Skyrim.esm	0368D8	8	RiftenBeeandBarbLocation / TalenJei / conditional successor; requires current primary alias binding
+Skyrim.esm	0226AA	Skyrim.esm	019E02	Skyrim.esm	0A0708	Skyrim.esm	0A0707	10	Skyrim.esm	021236	0	IvarsteadVilemyrInnLocation / Wilhelm / primary proprietor
+Skyrim.esm	0226AA	Skyrim.esm	019E03	Skyrim.esm	0A0708	Skyrim.esm	0A0707	20	Skyrim.esm	021236	0	IvarsteadVilemyrInnLocation / Lynly / conditional successor; requires current primary alias binding
+Skyrim.esm	05CA26	Skyrim.esm	03A198	Skyrim.esm	0A6BFB	Skyrim.esm	0A6BFA	10	Skyrim.esm	04D78E	14	FalkreathDeadMansDrinkLocation / ValgaVinicia / primary proprietor

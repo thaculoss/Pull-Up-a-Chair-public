@@ -1,0 +1,50 @@
+[
+  {
+    "source_path": "download-compat-audit-20261004/gotobed-vokrii-patch-20261004/patch_original_pex.py",
+    "sha256": "30df629053e08014ae58eb34e207b0a3cc8403b2538dd167847df1375609ddf2"
+  },
+  {
+    "source_path": "inn-ordering-core-20261010/build_records_scripts.py",
+    "sha256": "89fcb5faa7a8d9b7ac901e2cfba706fe4b6f829c8ab1d325ec8cd1e2c28f98ef"
+  },
+  {
+    "source_path": "inn-ordering-core-20261010/build_service_package.py",
+    "sha256": "8d8a2166eb7a5a452135298f3e6e9bbdc0f0474696ae3695e89a6f09972c1e52"
+  },
+  {
+    "source_path": "inn-ordering-core-20261010/food_categories.py",
+    "sha256": "8dc4aa15c6e26eea69269ed39234f0a23461dbd0905086c9333c424eefc52338"
+  },
+  {
+    "source_path": "inn-ordering-core-20261010/generate_specialties.py",
+    "sha256": "312afbd9df3d17d9b63305c264ddf88ad9c72c9ed7605d09ce68a69fc9d9965b"
+  },
+  {
+    "source_path": "inn-service-module-20261010/build_records.py",
+    "sha256": "ee4b4e34edf82227f6c88f63966fd6269dc2ba0aed6064cfe288d1ffefb2ecc1"
+  },
+  {
+    "source_path": "lakeview-windowlight/inspect_plugins.py",
+    "sha256": "a2f1a481dab9dcff973169db062f01167a9d2da4087f687bcee5d759d252ecf3"
+  },
+  {
+    "source_path": "load-order-audit/audit_landscape.py",
+    "sha256": "c64ebd4bc699304a9a5c4582ed2592d9cf1a2274cb4fb0ba83896892d8b7154d"
+  },
+  {
+    "source_path": "load-order-audit/inspect_records.py",
+    "sha256": "8bc8cb6c7e579cbdcc68f4b245741391b2689d827326e9269e4097203bfb3e85"
+  },
+  {
+    "source_path": "pull-up-a-chair-0.9-beta-20261013/rebrand.py",
+    "sha256": "454c9b0f049e2a8a78b1834277807ddc51d375a47fc65c6cdc7d93eacf80a628"
+  },
+  {
+    "source_path": "pull-up-a-chair-0.9.1-beta-ai1-20261013/build_chatty_patch.py",
+    "sha256": "13e9355c89ca3afdb06b232e679bf84394461dc74224d76e31029c0911a68320"
+  },
+  {
+    "source_path": "pull-up-a-chair-0.9.2-beta-innfix1-20261013/patch_dialogue.py",
+    "sha256": "53618a7ff04e4603f750467947795017e7a8de51e48bf0e242fd9404895a4b60"
+  }
+]

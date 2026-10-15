@@ -1,0 +1,137 @@
+{
+  "author": "thaculoss",
+  "author_confirmation": "Direct user message 2026-10-15",
+  "eighteen_titles": [
+    {
+      "installed_filename": "handwritten_en_candlehearth_title.png",
+      "original_photo": "IMG_6361.JPG",
+      "installed_sha256": "c9f60d105458923cbb9e141b884078d01c29bc3462b520f38f128253cb4baa4b",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Candlehearth Hall\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_nightgate_title.png",
+      "original_photo": "IMG_6363(2).JPG",
+      "installed_sha256": "9d0baa843f36c3b41b938ebd89b7f83af47b953ff77c3dcfe4315484e58283b9",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Nightgate Inn\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_retching_netch_title.png",
+      "original_photo": "IMG_6363(1).JPG",
+      "installed_sha256": "6aab588d233d99f234d09b9bbeb5197e592f76b42534f0912103ce168c3be692",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Retching Netch\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_bannered_mare_title.png",
+      "original_photo": "IMG_6360.JPG",
+      "installed_sha256": "4186bfd3d56207ea057471bcf52d7a941c9639f0844d711c621d8f885f0a8131",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Bannered Mare\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_ragged_flagon_title.png",
+      "original_photo": "IMG_6363.JPG",
+      "installed_sha256": "ccc851797b6444e535f8c5d80996fc0bb44f86ce53d4e32b98d7c9550cb9a538",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Ragged Flagon\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_drunken_huntsman_title.png",
+      "original_photo": "IMG_6368.JPG",
+      "installed_sha256": "f362d0a530f6cf7a497096fd9486fcb57bd89662b4bea039c00e4a9189383c81",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Drunken Huntsman\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_old_hroldan_title.png",
+      "original_photo": "IMG_6369.JPG",
+      "installed_sha256": "cbfba7013f5dca4a17794e9fed67c43873770ba9de908698ae442dbfc7c46a1d",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Old Hroldan Inn\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_four_shields_title.png",
+      "original_photo": "IMG_6370.JPG",
+      "installed_sha256": "46cdcb3aa18cd71fdc37cac3fff83af686b6baec763eb46ed254846e1be64e42",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Four Shields Tavern\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_frostfruit_title.png",
+      "original_photo": "IMG_6371.JPG",
+      "installed_sha256": "db15418edd8238b1574bc3ab8c811f877793954e2c67487f5c767fa6da442f33",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Frostfruit Inn\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask.\n\nCleanup edit: Use case: precise-object-edit / background-extraction. Input is an already extracted black handwritten title with a transparent background, and is the edit target. At the top right of the initial capital F there is a thin stray diagonal spike extending upward, originating from a paper fiber in the photograph. Remove ONLY this upward spike. Keep the intended thick top bar of the F and its terminal; do not remove any part of the capital F or any other letter. Preserve all other handwriting exactly: original shapes, spacing, flourishes, and entire phrase \"Frostfruit Inn\". All lettering must be uniform solid black, no ink mottling or gradients. Keep existing real RGBA transparency and soft antialiased edges; no background, shadows, checkerboard, text additions, or decoration. Keep wide horizontal composition. Do not replace the calligraphy with a font."
+    },
+    {
+      "installed_filename": "handwritten_en_sleeping_giant_title.png",
+      "original_photo": "IMG_6372.JPG",
+      "installed_sha256": "14ae3e8be696dc9a417e702ba7de2590b7120a86672c5d169f699a55b1e3f6e7",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Sleeping Giant Inn\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_vilemyr_title.png",
+      "original_photo": "IMG_6373.JPG",
+      "installed_sha256": "cdaec1b70194bc31b2112379ac7b9e9831164fd97765df46b4e778b776a0412c",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Vilemyr Inn\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_silver_blood_title.png",
+      "original_photo": "IMG_6382(20261012-155013).JPG",
+      "installed_sha256": "5bdc4eac50c0172ac7eb7f86959a36232b3720eab9443e92ca772e67152f2c64",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photograph is the EDIT TARGET, the user's own handwritten lettering. Extract ONLY the handwritten words \"Silver Blood Inn\" from this new photo and make the handwriting uniform solid black on genuine transparent RGBA background. The new handwritten spelling is SILVER, in that exact order S-i-l-v-e-r; do not reproduce the earlier erroneous Sliver. Use THIS new photograph's individual letter forms. Remove all tan paper, shadows, paper fibers and stray debris. Preserve the original handwritten letter silhouettes, stroke widths, slant, proportions, spacing and flourishes as faithfully as possible; do not replace it with a font or redesign the calligraphy. Uniform pure black stroke interiors, no brown color, mottling, ink texture, shading or patchy opacity; only edges have soft antialiasing. Keep the entire phrase on a wide landscape canvas with transparent margin on every side. No white or colored background, checkerboard illustration, border, shadow, decorations or added text. This is the replacement asset for a recolorable handwriting collection."
+    },
+    {
+      "installed_filename": "handwritten_en_braidwood_title.png",
+      "original_photo": "IMG_6376.JPG",
+      "installed_sha256": "b210c194ee993dcb20d3757a19e9559d46117be77a647f827ddbc5019c22f396",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Braidwood Inn\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_bee_and_barb_title.png",
+      "original_photo": "IMG_6377.JPG",
+      "installed_sha256": "33e932bb82dc67b5776b4fb8bd417700f47e21c380f7ebbb623df22a95f3e765",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Bee & Barb\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_moorside_title.png",
+      "original_photo": "IMG_6378.JPG",
+      "installed_sha256": "8efa604fd2b2649f253c41397f4fce39c069c3a80429b6aa8fe687d5765adfc0",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Edit this photograph of handwritten text. Extract the handwritten words \"Moorside Inn\", remove the tan paper background and paper fibers, and make the writing a uniform flat black on a transparent background. Keep the same handwriting and complete words. The short thin line extending upward above the capital I in Inn is a paper fiber: omit that line. Preserve the capital I itself and the rest of the lettering. Output a transparent PNG."
+    },
+    {
+      "installed_filename": "handwritten_en_windpeak_title.png",
+      "original_photo": "IMG_6379(20261012-155037).JPG",
+      "installed_sha256": "eedf46a8ec4914b83f702c16bc242335366e9afcb3bed5d1776f05c166bccd62",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photograph is the EDIT TARGET, the user's own handwritten lettering. Extract ONLY the handwritten words \"Windpeak Inn\" from this new photo and make the handwriting uniform solid black on genuine transparent RGBA background. This new photograph includes the complete long downward-curving descender of the p in Windpeak. Preserve that full photographed descender, including its lower tip. Do not clip it, shorten it or substitute another flourish. Remove thin brown paper fibers near the capital I. Remove all tan paper, shadows, paper fibers and stray debris. Preserve the original handwritten letter silhouettes, stroke widths, slant, proportions, spacing and flourishes as faithfully as possible; do not replace it with a font or redesign the calligraphy. Uniform pure black stroke interiors, no brown color, mottling, ink texture, shading or patchy opacity; only edges have soft antialiasing. Keep the entire phrase on a wide landscape canvas with transparent margin on every side. No white or colored background, checkerboard illustration, border, shadow, decorations or added text. This is the replacement asset for a recolorable handwriting collection."
+    },
+    {
+      "installed_filename": "handwritten_en_frozen_hearth_title.png",
+      "original_photo": "IMG_6380.JPG",
+      "installed_sha256": "88e413d02e1f24bf183f35040d16b4fffaa5145a208859db09f8241439494316",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Frozen Hearth\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    },
+    {
+      "installed_filename": "handwritten_en_dead_mans_drink_title.png",
+      "original_photo": "IMG_6381.JPG",
+      "installed_sha256": "01b17c56375b01a8abb62cfaa6333a83908a3618a6e23388ee4d581f4c4b105c",
+      "method": "built-in imagegen extraction; exact generated output hash match",
+      "prompt": "Use case: background-extraction. The supplied photo is the EDIT TARGET: the user's personal handwriting. Extract ONLY the original handwritten phrase \"Dead Man's Drink\" onto real RGBA transparency, and convert all the ink to ONE completely UNIFORM SOLID PURE BLACK (#000000). Each stroke interior must be fully opaque and perfectly flat black, with no mottled ink texture, brown paper color, shading, grain, gradients or patchy opacity. Preserve the exact original handwritten silhouettes, individual letter shapes, spacing, slant, stroke widths and flourishes; do not typeset, correct spelling, redesign or smooth away the user's characteristic handwriting. Preserve thin strokes. Only edges have smooth antialiasing into transparency, without light or brown halos. Remove all paper, paper fibers and detached debris, and unrelated cropped marks at image edges. Fit the entire phrase within a wide landscape canvas with modest transparent margins; no clipped flourishes. Transparent means actual alpha=0 background, not a checkerboard illustration or white/black backdrop. No added text or artwork. This will be used as a recolorable silhouette mask."
+    }
+  ],
+  "winking_skeever": {
+    "installed_sha256": "1834200ffd5be70c7c13e17e476f52ab094e17d8010b91e921781bde0898251a",
+    "method": "Python alpha-mask cleanup, solid fill and crop; glyphs_redrawn=false",
+    "prior_source_preparation": "Unknown before selected-source.png; do not assert original handwriting was generated."
+  }
+}

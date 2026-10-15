@@ -1,0 +1,16 @@
+--- artclean1/native/service/tests/service_tests.cpp
++++ vrtrial1/native/service/tests/service_tests.cpp
+@@ -105,8 +105,11 @@
+         Check(WriteKeyboardBinding(user.c_str(),37)&&WriteGamepadBinding(user.c_str(),768),"Defaults restore failed");
+         saved=ReadBindings(base.c_str(),user.c_str());Check(saved.keyboard==37&&saved.gamepad==768,"Restored bindings not persisted");
+         std::filesystem::remove(base);std::filesystem::remove(user);std::filesystem::remove(folder);
+-        for(auto v:inn::supportedRuntimes)Check(inn::Supported(v),"Target version rejected");
+-        Check(!inn::Supported({1,4,15,0}),"VR accepted");Check(!inn::Supported({1,7,999,0}),"Unknown future accepted");
++        for(auto v:inn::supportedRuntimes){Check(inn::Supported(v),"Target version rejected");Check(!inn::ExperimentalVR(v),"Flat runtime marked experimental VR");}
++        Check(inn::Supported({1,4,15,0})&&inn::ExperimentalVR({1,4,15,0}),"Exact experimental VR runtime rejected");
++        for(auto v:{inn::RuntimeVersion{1,4,14,0},inn::RuntimeVersion{1,4,16,0},inn::RuntimeVersion{1,4,15,1}})
++            Check(!inn::Supported(v)&&!inn::ExperimentalVR(v),"Unknown VR runtime accepted");
++        Check(!inn::Supported({1,7,999,0}),"Unknown future accepted");
+         for(auto phase:{api::Phase::starting,api::Phase::approaching,api::Phase::waiting})
+             Check(RepeatBellAllowed(static_cast<std::uint32_t>(phase)),"A repeated bell press was blocked while waiting for staff");
+         for(auto phase:{api::Phase::idle,api::Phase::conversation,api::Phase::releasing})

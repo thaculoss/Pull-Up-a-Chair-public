@@ -1,0 +1,39 @@
+--- original/native/service/CMakeLists.txt
++++ portable/native/service/CMakeLists.txt
+@@ -3,32 +3,18 @@
+ set(CMAKE_CXX_STANDARD 23)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
+-set(WORKSPACE "${CMAKE_CURRENT_SOURCE_DIR}/.." CACHE PATH "Existing dependency workspace")
+-set(DEPS "${WORKSPACE}/buy-displayed-sp-autopay-20261009/deps")
+-set(GALLERY "${WORKSPACE}/food-gallery-20261010")
+-set(CL "${DEPS}/commonlib-prebuilt/commonlibsse-ng-prebuilt-v11.0.0-all-msvc-cmake")
+-add_library(CommonLibSSE STATIC IMPORTED)
+-add_library(CommonLibSSE::CommonLibSSE ALIAS CommonLibSSE)
+-set_target_properties(CommonLibSSE PROPERTIES IMPORTED_LOCATION "${CL}/lib/CommonLibSSE.lib")
+-target_include_directories(CommonLibSSE INTERFACE "${CL}/include" "${CL}/extern/openvr/headers"
+-    "${DEPS}/spdlog/include" "${DEPS}/fmt/include" "${DEPS}/rapidcsv/src"
+-    "${DEPS}/DirectXMath/Inc" "${DEPS}/DirectXTK/Inc")
+-# Match the pinned prebuilt layouts; entry policy allows exact experimental VR 1.4.15.
+-target_compile_definitions(CommonLibSSE INTERFACE ENABLE_SKYRIM_SE=1 ENABLE_SKYRIM_AE=1 ENABLE_SKYRIM_VR=1
+-    HAS_SKYRIM_MULTI_TARGETING=1 SPDLOG_COMPILED_LIB SPDLOG_FMT_EXTERNAL)
+-target_link_libraries(CommonLibSSE INTERFACE "${GALLERY}/build/spdlog/Release/spdlog.lib"
+-    "${GALLERY}/build/fmt/Release/fmt.lib" "${GALLERY}/build/Release/dxmath.lib" "${CL}/lib/openvr_api.lib"
+-    advapi32 bcrypt d3d11 d3dcompiler dbghelp dxgi ole32 shell32 version windowscodecs)
+-include("${DEPS}/CommonLibSSE-NG/cmake/CommonLibSSE.cmake")
++if(NOT PUAC_POLICY_TESTS_ONLY)
+ add_library(PullUpAChairService SHARED src/main.cpp src/Supply.cpp src/ServiceManager.cpp src/Settings.cpp src/BindingUI.cpp)
+ target_include_directories(PullUpAChairService PRIVATE src include
+-    "${GALLERY}/deps/MeshRenderingFramework-source/QTR-Modding-Mesh-Rendering-Framework-c92dd6a/include")
++    "${PUAC_VENDOR_ROOT}/MeshRenderingFramework/include")
+ target_link_libraries(PullUpAChairService PRIVATE CommonLibSSE)
+ target_commonlibsse_properties(PullUpAChairService NAME "PullUpAChairService" AUTHOR "Pull Up a Chair Service" VERSION 0.9.0 USE_ADDRESS_LIBRARY)
+ target_precompile_headers(PullUpAChairService PRIVATE src/PCH.h)
+ target_compile_definitions(PullUpAChairService PRIVATE UNICODE _UNICODE NOMINMAX)
+ target_compile_options(PullUpAChairService PRIVATE /utf-8 /Zc:preprocessor /permissive- /W4 /Zi /bigobj)
+ target_link_options(PullUpAChairService PRIVATE /DEBUG /OPT:REF /OPT:ICF)
++endif() # native service
++
+ enable_testing()
+ add_executable(service_tests tests/service_tests.cpp)
+ target_include_directories(service_tests PRIVATE src include)

@@ -1,0 +1,255 @@
+#pragma once
+#include "MeshRenderingFrameworkAPI.h"
+
+#include <array>
+#include <memory>
+#include <unordered_map>
+#include <d3d11.h>
+
+class GameAnimation;
+
+struct MeshVertex {
+    float position[3]{};
+    float normal[3]{};
+    float tangent[4]{1.0f, 0.0f, 0.0f, 1.0f};
+    float uv[2]{};
+    float color[4]{1.0f, 1.0f, 1.0f, 1.0f};
+};
+
+struct MeshBoneFrame {
+    RE::NiPoint3 origin{};
+    RE::NiPoint3 axisX{};
+    RE::NiPoint3 axisY{};
+    RE::NiPoint3 axisZ{};
+};
+
+struct MeshSkinWeight {
+    std::uint32_t vertexIndex = 0;
+    std::uint16_t boneIndex = 0;
+    float weight = 0.0f;
+};
+
+enum class MeshTextureSlot : std::size_t {
+    Diffuse,
+    Normal,
+    Glow,
+    Height,
+    Environment,
+    EnvironmentMask,
+    Subsurface,
+    Backlight,
+    Specular,
+    FaceTint,
+    Count
+};
+
+inline constexpr std::size_t MeshTextureSlotCount = static_cast<std::size_t>(MeshTextureSlot::Count);
+inline constexpr std::size_t MeshLightLimit = 8;
+
+struct MeshLight {
+    MeshRenderingFrameworkAPI::Internal::ILight* light = nullptr;
+    RE::NiPoint3 direction{};
+    RE::NiPoint3 color{1.0f, 1.0f, 1.0f};
+    float strength = 1.0f;
+};
+
+enum class MeshAlphaMode {
+    Opaque,
+    Cutout,
+    Blend
+};
+
+struct MeshMaterialConstants {
+    float alphaThreshold = -1.0f;
+    float materialAlpha = 1.0f;
+    float blendEnabled = 0.0f;
+    float specularStrength = 0.0f;
+    float specularColor[3]{1.0f, 1.0f, 1.0f};
+    float glossiness = 16.0f;
+    float emissiveColor[3]{};
+    float emissiveMultiple = 0.0f;
+    float tintColor[3]{1.0f, 1.0f, 1.0f};
+    float environmentScale = 0.0f;
+    float uvScale[2]{1.0f, 1.0f};
+    float uvOffset[2]{};
+    float parallaxScale = 0.0f;
+    float backlightPower = 0.0f;
+    float rimlightPower = 2.0f;
+    float auxiliaryMapMode = 0.0f;
+    float hasNormalMap = 0.0f;
+    float hasHeightMap = 0.0f;
+    float hasEnvironmentMap = 0.0f;
+    float hasEnvironmentMask = 0.0f;
+    float hasSubsurfaceMap = 0.0f;
+    float hasBacklightMap = 0.0f;
+    float hasSpecularMap = 0.0f;
+    float modelSpaceNormals = 0.0f;
+    float useVertexColors = 1.0f;
+    float useVertexAlpha = 1.0f;
+    float emissiveEnabled = 0.0f;
+    float specularEnabled = 1.0f;
+    float hasAuxiliaryMap = 0.0f;
+    float hasFaceTintMap = 0.0f;
+    float faceOrSkin = 0.0f;
+    float hairMaterial = 0.0f;
+    float skinTinted = 0.0f;
+    float useBodyTint = 0.0f;
+    float materialPadding[2]{};
+    float bodyTintColor[3]{1.0f, 1.0f, 1.0f};
+    float bodyTintPadding = 0.0f;
+};
+
+static_assert(sizeof(MeshMaterialConstants) % 16 == 0);
+
+struct MeshPart {
+    std::string shapeName;
+    std::string sourcePath;
+    std::vector<MeshVertex> vertices;
+    std::vector<std::uint16_t> indices;
+    std::array<std::string, MeshTextureSlotCount> texturePaths;
+    ID3D11Buffer* vertexBuffer = nullptr;
+    ID3D11Buffer* indexBuffer = nullptr;
+    std::array<ID3D11ShaderResourceView*, MeshTextureSlotCount> textureViews{};
+    std::array<bool, MeshTextureSlotCount> textureLoadAttempted{};
+    MeshAlphaMode alphaMode = MeshAlphaMode::Opaque;
+    float alphaThreshold = -1.0f;
+    float materialAlpha = 1.0f;
+    float specularColor[3]{1.0f, 1.0f, 1.0f};
+    float specularStrength = 1.0f;
+    float glossiness = 16.0f;
+    float emissiveColor[3]{};
+    float emissiveMultiple = 1.0f;
+    float tintColor[3]{1.0f, 1.0f, 1.0f};
+    float environmentScale = 1.0f;
+    float uvScale[2]{1.0f, 1.0f};
+    float uvOffset[2]{};
+    float parallaxScale = 0.0f;
+    float backlightPower = 0.0f;
+    float rimlightPower = 2.0f;
+    float auxiliaryMapMode = 0.0f;
+    bool modelSpaceNormals = false;
+    bool useVertexColors = true;
+    bool useVertexAlpha = true;
+    bool emissiveEnabled = false;
+    bool specularEnabled = true;
+    bool environmentEnabled = false;
+    bool faceOrSkin = false;
+    bool hairMaterial = false;
+    bool skinTinted = false;
+    bool faceGenPart = false;
+    bool vertexBufferDirty = false;
+    RE::NiPoint3 center{};
+    std::vector<MeshVertex> bindVertices;
+    std::vector<MeshVertex> morphBaseVertices;
+    std::vector<RE::NiPoint3> morphSourcePositions;
+    MeshBoneFrame morphToBindFrame{};
+    std::vector<std::string> skinBoneNames;
+    std::vector<MeshBoneFrame> bindBoneFrames;
+    std::vector<MeshBoneFrame> morphToBindBoneFrames;
+    std::vector<MeshSkinWeight> skinWeights;
+
+    MeshPart() = default;
+    MeshPart(const MeshPart&) = delete;
+    MeshPart& operator=(const MeshPart&) = delete;
+    MeshPart(MeshPart&& other) noexcept;
+    MeshPart& operator=(MeshPart&& other) noexcept;
+    ~MeshPart();
+
+    void ResetGpuResources();
+};
+
+class Mesh {
+private:
+    static inline uint64_t autoIncrement = 0;
+    static inline uint64_t lightAutoIncrement = 0;
+    float boundingRadius = 0.0f;
+    RE::NiPoint3 animationCenter{};
+    RE::NiMatrix3 animationRotation{};
+    std::unique_ptr<GameAnimation> animation;
+    RE::ActorHandle faceMorphActor;
+    void Fit(RE::NiPoint2 position, RE::NiPoint2 scale);
+    void Initialize(uint32_t width, uint32_t height);
+    bool Load(const char* nifPath);
+    bool ApplyMorphDeltas(MeshPart& part, const std::vector<RE::NiPoint3>& sourceDeltas);
+    bool UpdateFaceMorphs();
+
+public:
+    Mesh(const char* nifPath, uint32_t width, uint32_t height);
+    Mesh(
+        const char* const* basePaths,
+        uint32_t basePathCount,
+        const char* const* attachmentPaths,
+        uint32_t attachmentPathCount,
+        uint32_t width,
+        uint32_t height);
+    ~Mesh();
+
+    MeshRenderingFrameworkAPI::Internal::IMesh* mesh = nullptr;
+    // Private-device side of the texture shared with mesh->texture.
+    ID3D11Texture2D* outputTexture = nullptr;
+    std::string sourcePath;
+    std::vector<MeshPart> parts;
+    std::unordered_map<std::string, MeshBoneFrame> boneFrames;
+    std::vector<MeshLight> lights;
+    float exposure = 1.0f;
+
+    bool IsValid() const;
+    bool InitializeGpuResources(ID3D11Device* device);
+    void ResetGpuResources();
+    bool SetBoneLocalPose(
+        const char* const* boneNames,
+        const std::int16_t* parentIndices,
+        const MeshRenderingFrameworkAPI::BoneTransform* transforms,
+        uint32_t transformCount);
+    bool PlayAnimation(const char* animationPath, const char* skeletonPath, bool loop);
+    bool SetMorph(const char* triPath, const char* morphName, float value);
+    bool ClearFaceMorphs();
+    bool SetFaceMorphSource(RE::Actor* actor);
+    bool SetTextureSet(
+        const char* nifPath,
+        const char* const* texturePaths,
+        std::uint32_t texturePathCount,
+        bool modelSpaceNormals,
+        bool includeBodyShape);
+    std::uint32_t GetLightCount() const;
+    MeshRenderingFrameworkAPI::Internal::ILight* GetLight(std::uint32_t lightIndex) const;
+    MeshRenderingFrameworkAPI::Internal::ILight* AddLight(
+        float directionX,
+        float directionY,
+        float directionZ,
+        float red,
+        float green,
+        float blue,
+        float strength);
+    bool ClearLights();
+    bool SetExposure(float value);
+    bool GetExposure(float* value) const;
+    bool SetLightDirection(
+        MeshRenderingFrameworkAPI::Internal::ILight* light,
+        float x,
+        float y,
+        float z);
+    bool GetLightDirection(
+        MeshRenderingFrameworkAPI::Internal::ILight* light,
+        float* x,
+        float* y,
+        float* z) const;
+    bool SetLightColor(
+        MeshRenderingFrameworkAPI::Internal::ILight* light,
+        float red,
+        float green,
+        float blue);
+    bool GetLightColor(
+        MeshRenderingFrameworkAPI::Internal::ILight* light,
+        float* red,
+        float* green,
+        float* blue) const;
+    bool SetLightStrength(MeshRenderingFrameworkAPI::Internal::ILight* light, float strength);
+    bool GetLightStrength(MeshRenderingFrameworkAPI::Internal::ILight* light, float* strength) const;
+    bool UpdateAnimation();
+    void Draw(
+        ID3D11DeviceContext* context,
+        ID3D11ShaderResourceView* const* fallbackTextures,
+        ID3D11Buffer* materialConstantBuffer,
+        bool transparentPass);
+};

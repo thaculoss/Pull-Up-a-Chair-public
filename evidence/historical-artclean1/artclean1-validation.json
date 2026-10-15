@@ -1,0 +1,184 @@
+{
+  "author": "thaculoss",
+  "release": "Pull-Up-a-Chair-0.9.9-beta-artclean1-FOMOD.zip",
+  "release_sha256": "1bd5d0a4a553fcec6496801b80d6c48e7ef20c1ecf1771be27f14e372cb0930b",
+  "date": "2026-10-15",
+  "project_code_license": "GPL-3.0-only",
+  "removed_asset": "00_Core/Interface/PullUpAChairOrdering/InnSigns/morrowind_netch.png",
+  "removed_asset_absent": true,
+  "asset_origin_hash_matches": "62/62",
+  "png": 58,
+  "ttf": 1,
+  "wav": 3,
+  "native_modules_source_mapped": 3,
+  "production_cpp_changed": [
+    "src/Artwork.h"
+  ],
+  "production_config_changed": [
+    "config/inn_artwork.tsv"
+  ],
+  "offline_preview_changed": [
+    "preview/main.cpp"
+  ],
+  "core_source_complete_comparison_files": 151,
+  "native_modules": [
+    {
+      "package_entry": "00_Core/SKSE/Plugins/PullUpAChairOrdering.dll",
+      "sha256": "61d9597e6d0ae35aa47998b81129627e4b01ad4cdef460452d364c94994d5990",
+      "origin": "artclean1/build-core/Release/PullUpAChairOrdering.dll"
+    },
+    {
+      "package_entry": "20_Service/SKSE/Plugins/PullUpAChairService.dll",
+      "sha256": "fc515795c38619c6170feb23877597966ede89e9bc1c780da985e4aea262d4c7",
+      "origin": "unchanged paper3 payload; see historical-paper3/native-source-validation.json"
+    },
+    {
+      "package_entry": "30_Dining/SKSE/Plugins/PullUpAChairEAS.dll",
+      "sha256": "88196ad0d20123a0710a3a6db5142bd932e4fa1e48b632a15acc1006120170ab",
+      "origin": "unchanged paper3 payload; see historical-paper3/native-source-validation.json"
+    }
+  ],
+  "script_plugin_payload_unchanged_vs_paper3": "13/13 (8 PEX, 3 ESP, 2 SEQ)",
+  "historical_script_semantic_validation": "8/8; preserved under historical-paper3, not rerun",
+  "historical_plugin_rebuild_validation": "5/5; preserved under historical-paper3, not rerun",
+  "historical_standalone_policy_tests": "18/18; preserved under historical-paper3, not rerun",
+  "current_build_and_tests": {
+    "core_native_build": "succeeded against established original dependency binaries",
+    "core_build_log_sha256": "d02cda6d96e7d32607559013af15ab97e33fc6b88ff3a61d144f6d39526fcad9",
+    "core_regression_log": "Test project {workspace}/pull-up-a-chair-0.9.9-beta-artclean1-20261015/build-core\n    Start 6: core_orders_tables_languages_runtimes\n1/1 Test #6: core_orders_tables_languages_runtimes ...   Passed    0.03 sec\n\n100% tests passed, 0 tests failed out of 1\n\nTotal Test time (real) =   0.03 sec\n",
+    "package": {
+      "archive": "{workspace}\\pull-up-a-chair-0.9.9-beta-artclean1-20261015\\dist\\Pull-Up-a-Chair-0.9.9-beta-artclean1-FOMOD.zip",
+      "sha256": "1bd5d0a4a553fcec6496801b80d6c48e7ef20c1ecf1771be27f14e372cb0930b",
+      "bytes": 49538889,
+      "entries": 126,
+      "base_archive": "{workspace}\\pull-up-a-chair-0.9.9-beta-paper3-20261015\\dist\\Pull-Up-a-Chair-0.9.9-beta-paper3-FOMOD.zip",
+      "base_archive_sha256": "fbdff8fe999e04cbcea7aeae1773b02142f06b6e436fac0254edc4ef5c71a26a",
+      "changed_entries": [
+        "00_Core/SKSE/Plugins/PullUpAChairOrdering.dll",
+        "00_Core/SKSE/Plugins/PullUpAChairOrdering/catalog/inn_artwork.tsv",
+        "fomod/ModuleConfig.xml",
+        "fomod/info.xml"
+      ],
+      "removed_entries": [
+        "00_Core/Interface/PullUpAChairOrdering/InnSigns/morrowind_netch.png"
+      ],
+      "source_changes": [
+        "config/inn_artwork.tsv",
+        "preview/main.cpp",
+        "src/Artwork.h"
+      ],
+      "core_dll_sha256": "61d9597e6d0ae35aa47998b81129627e4b01ad4cdef460452d364c94994d5990",
+      "image_removed": true,
+      "image_references_removed": true,
+      "venue_metadata_retained": true,
+      "english_recommended": true,
+      "installer_choices_unchanged": true,
+      "paper3_background_unchanged": true,
+      "gameplay_tested": false,
+      "installed_locally": false,
+      "live_files_unchanged": true,
+      "previous_archive_unchanged": true,
+      "guides_inside": false,
+      "option_combinations": 864,
+      "core_regression": "1/1 passed",
+      "offline_previews": 8,
+      "vortex_library_validation": "passed"
+    },
+    "installer_library": {
+      "validator": "System.Xml schema and installed Vortex XmlScriptType.Validate / LoadScript",
+      "library_path": "E:\\gater\\Vortex\\resources\\app.asar.unpacked\\node_modules\\@nexusmods\\fomod-installer-ipc\\dist\\XmlScript.dll",
+      "library_sha256": "41ece950d93e34fd357a849aa2193f61c0ad73cc4f2f4f3f9284ada02aeb0867",
+      "schema_sha256": "ebc5ec2c6d61f6b6fbd4e5e2ad59210efd7cd28cb43d04bb7de566c727042d38",
+      "schema_valid": true,
+      "load_script_succeeded": true,
+      "archive_sha256": "1bd5d0a4a553fcec6496801b80d6c48e7ef20c1ecf1771be27f14e372cb0930b",
+      "interactive_installer_tested": false,
+      "gameplay_tested": false
+    },
+    "preview": {
+      "renders": [
+        {
+          "inn": "retching_netch",
+          "language": "en",
+          "scenario": "specialty",
+          "path": "{workspace}\\pull-up-a-chair-0.9.9-beta-artclean1-20261015\\evidence\\previews\\retching_netch-en-specialty.png",
+          "sha256": "fab6236f15a3d001f1e7632537e64ddea5196c8a4eb8e021e025176d3b8c05db",
+          "warnings": []
+        },
+        {
+          "inn": "retching_netch",
+          "language": "zh",
+          "scenario": "specialty",
+          "path": "{workspace}\\pull-up-a-chair-0.9.9-beta-artclean1-20261015\\evidence\\previews\\retching_netch-zh-specialty.png",
+          "sha256": "9150e0d32b187856e8ce8affea44cd8b3cebc8bd0cf1ab9a52bde4a388d95129",
+          "warnings": []
+        },
+        {
+          "inn": "retching_netch",
+          "language": "en",
+          "scenario": "main",
+          "path": "{workspace}\\pull-up-a-chair-0.9.9-beta-artclean1-20261015\\evidence\\previews\\retching_netch-en-main.png",
+          "sha256": "e7f1b2aba1bbf7e75bd1bbd3d7daa4e60f1e2de2628add75e4b0a8222f2f3a30",
+          "warnings": []
+        },
+        {
+          "inn": "retching_netch",
+          "language": "zh",
+          "scenario": "main",
+          "path": "{workspace}\\pull-up-a-chair-0.9.9-beta-artclean1-20261015\\evidence\\previews\\retching_netch-zh-main.png",
+          "sha256": "ce581e95682a943796b06910a73018f9a905bbb4c2cf844c6bb0eea85698221a",
+          "warnings": []
+        },
+        {
+          "inn": "new_gnisis",
+          "language": "en",
+          "scenario": "single-card",
+          "path": "{workspace}\\pull-up-a-chair-0.9.9-beta-artclean1-20261015\\evidence\\previews\\new_gnisis-en-single-card.png",
+          "sha256": "32bf6eb0aeed5727fac717b60c0b1d9d5c712b7c28ccf74ff42403ff90baf677",
+          "warnings": []
+        },
+        {
+          "inn": "new_gnisis",
+          "language": "zh",
+          "scenario": "single-card",
+          "path": "{workspace}\\pull-up-a-chair-0.9.9-beta-artclean1-20261015\\evidence\\previews\\new_gnisis-zh-single-card.png",
+          "sha256": "696db913c25aee30797f32ccec64a699b23226b05aebda650d2411130f9db451",
+          "warnings": []
+        },
+        {
+          "inn": "winking_skeever",
+          "language": "en",
+          "scenario": "specialty",
+          "path": "{workspace}\\pull-up-a-chair-0.9.9-beta-artclean1-20261015\\evidence\\previews\\winking_skeever-en-specialty.png",
+          "sha256": "3ca563c0666097c36c4df530ea88d4d19bfb314f8c02a95df76bb9e772b94f88",
+          "warnings": []
+        },
+        {
+          "inn": "winking_skeever",
+          "language": "zh",
+          "scenario": "specialty",
+          "path": "{workspace}\\pull-up-a-chair-0.9.9-beta-artclean1-20261015\\evidence\\previews\\winking_skeever-zh-specialty.png",
+          "sha256": "6439a4c3b312d4b808856b4dc08627e89266d6ef926566e4d31ceeeabb849b1e",
+          "warnings": []
+        }
+      ],
+      "removed_image_absent": true,
+      "retained_venue_titles_and_flavor_text": true,
+      "renderer_sha256": "90bbaa2c2c9b362db5f2469843dd5cfce63ddd17c4f13e16a807b204a74515ac",
+      "offline_only": true,
+      "gameplay_tested": false
+    },
+    "clean_vendor_and_three_plugin_build_executed": false,
+    "gameplay_tested": false
+  },
+  "fresh_full_vendor_and_three_dll_rebuild": false,
+  "gameplay_tested": false,
+  "nexus_uploaded": false,
+  "game_deployed": false,
+  "original_paper3_fomod_unchanged": true,
+  "rights_boundaries": [
+    "Removed Morrowind illustration is not part of this release",
+    "Media reuse grants remain separate from code GPL",
+    "Other retained provenance and attribution boundaries unchanged"
+  ]
+}

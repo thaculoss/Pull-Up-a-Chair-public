@@ -1,0 +1,16 @@
+{
+  "release": "artclean1",
+  "date": "2026-10-15",
+  "author": "thaculoss",
+  "removed_asset": "00_Core/Interface/PullUpAChairOrdering/InnSigns/morrowind_netch.png",
+  "remaining_media_count": 62,
+  "source_changes": [
+    "src/Artwork.h",
+    "config/inn_artwork.tsv",
+    "preview/main.cpp"
+  ],
+  "other_source_files_unchanged": true,
+  "old_reports_preserved": "historical-paper3 directories",
+  "no_new_artwork_or_generative_image_edit": true,
+  "source_licensing_unchanged": "GPL-3.0-only for eligible original code; third-party and media terms separate"
+}

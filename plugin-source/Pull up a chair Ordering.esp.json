@@ -1,0 +1,3474 @@
+{
+  "archive_path": "00_Core/Pull up a chair Ordering.esp",
+  "sha256": "2df28849e4742fcc66c5affc4cf54efeaa9fd5660f626fce1ce2aeb7be0ff4c9",
+  "length": 15565,
+  "records": [
+    {
+      "kind": "record",
+      "tag": "TES4",
+      "formid": "00000000",
+      "header_tail_hex": "0002000000000000000000002c000000",
+      "subrecords": [
+        {
+          "tag": "HEDR",
+          "data_hex": "9a99d93f34000000020d0000"
+        },
+        {
+          "tag": "CNAM",
+          "data_hex": "50756c6c205570206120436861697200",
+          "text_annotation": "Pull Up a Chair"
+        },
+        {
+          "tag": "SNAM",
+          "data_hex": "496e646570656e64656e7420696e6e206f72646572696e6720636f726520322e302e302d616c7068612e332e20496e646570656e64656e7420686f757365207370656369616c7469657320616e6420636f72726563746564206261727465722e00",
+          "text_annotation": "Independent inn ordering core 2.0.0-alpha.3. Independent house specialties and corrected barter."
+        },
+        {
+          "tag": "MAST",
+          "data_hex": "736b7972696d2e65736d00",
+          "text_annotation": "skyrim.esm"
+        },
+        {
+          "tag": "DATA",
+          "data_hex": "0000000000000000"
+        },
+        {
+          "tag": "MAST",
+          "data_hex": "7570646174652e65736d00",
+          "text_annotation": "update.esm"
+        },
+        {
+          "tag": "DATA",
+          "data_hex": "0000000000000000"
+        },
+        {
+          "tag": "MAST",
+          "data_hex": "6461776e67756172642e65736d00",
+          "text_annotation": "dawnguard.esm"
+        },
+        {
+          "tag": "DATA",
+          "data_hex": "0000000000000000"
+        },
+        {
+          "tag": "MAST",
+          "data_hex": "68656172746866697265732e65736d00",
+          "text_annotation": "hearthfires.esm"
+        },
+        {
+          "tag": "DATA",
+          "data_hex": "0000000000000000"
+        },
+        {
+          "tag": "MAST",
+          "data_hex": "647261676f6e626f726e2e65736d00",
+          "text_annotation": "dragonborn.esm"
+        },
+        {
+          "tag": "DATA",
+          "data_hex": "0000000000000000"
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "474c4f42000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "GLOB",
+          "formid": "05000804",
+          "header_tail_hex": "0000000004080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724f72646572696e67507269636500",
+              "text_annotation": "PullUpAChairOrderingPrice"
+            },
+            {
+              "tag": "FNAM",
+              "data_hex": "73"
+            },
+            {
+              "tag": "FLTV",
+              "data_hex": "0000a041"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "51555354000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "QUST",
+          "formid": "05000805",
+          "header_tail_hex": "0000000005080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724f72646572696e67517565737400",
+              "text_annotation": "PullUpAChairOrderingQuest"
+            },
+            {
+              "tag": "VMAD",
+              "data_hex": "050002000100190050756c6c55704143686169724f72646572696e6751756573740003000900506c6179657252656601010000ffff140000000700476f6c6430303101010000ffff0f0000000a004f72646572507269636501010000ffff04080005"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "496e6e2044696e696e6700",
+              "text_annotation": "Inn Dining"
+            },
+            {
+              "tag": "DNAM",
+              "data_hex": "11013cff0000000000000000"
+            },
+            {
+              "tag": "NEXT",
+              "data_hex": ""
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "00000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "4449414c000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "DIAL",
+          "formid": "05000807",
+          "header_tail_hex": "0000000007080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724f72646572696e67546f70696300",
+              "text_annotation": "PullUpAChairOrderingTopic"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4920776f756c64206c696b6520746f206f726465722061206d65616c2e00",
+              "text_annotation": "I would like to order a meal."
+            },
+            {
+              "tag": "PNAM",
+              "data_hex": "00004842"
+            },
+            {
+              "tag": "BNAM",
+              "data_hex": "06080005"
+            },
+            {
+              "tag": "QNAM",
+              "data_hex": "05080005"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "SNAM",
+              "data_hex": "43555354"
+            },
+            {
+              "tag": "TIFC",
+              "data_hex": "01000000"
+            }
+          ]
+        },
+        {
+          "kind": "group",
+          "header_tail_hex": "07080005070000000000000000000000",
+          "records": [
+            {
+              "kind": "record",
+              "tag": "INFO",
+              "formid": "05000808",
+              "header_tail_hex": "0000000008080005000000002c000000",
+              "subrecords": [
+                {
+                  "tag": "VMAD",
+                  "data_hex": "050002000100190050756c6c55704143686169724f72646572696e67546f7069630000000202190050756c6c55704143686169724f72646572696e67546f70696301190050756c6c55704143686169724f72646572696e67546f7069630a00467261676d656e745f30"
+                },
+                {
+                  "tag": "ENAM",
+                  "data_hex": "01000000"
+                },
+                {
+                  "tag": "PNAM",
+                  "data_hex": "00000000"
+                },
+                {
+                  "tag": "CNAM",
+                  "data_hex": "00",
+                  "text_annotation": ""
+                },
+                {
+                  "tag": "DNAM",
+                  "data_hex": "22ba0d00"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "010000000000803f470000001b090500000000000000000000000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "000000000000803f4700000093ee0d00000000000000000000000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "000000000000803f3202000087cb0100000000000000000000000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "00000000000040409f00000000000000000000000200000014000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "000000000000803f2000000014000000000000000000000000000000ffffffff"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "DIAL",
+          "formid": "0500080A",
+          "header_tail_hex": "000000000a080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724f72646572696e67436c65616e546f70696300",
+              "text_annotation": "PullUpAChairOrderingCleanTopic"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "506c6561736520636c656172206d79206d65616c20616e64207461626c65776172652e00",
+              "text_annotation": "Please clear my meal and tableware."
+            },
+            {
+              "tag": "PNAM",
+              "data_hex": "00004842"
+            },
+            {
+              "tag": "BNAM",
+              "data_hex": "09080005"
+            },
+            {
+              "tag": "QNAM",
+              "data_hex": "05080005"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "SNAM",
+              "data_hex": "43555354"
+            },
+            {
+              "tag": "TIFC",
+              "data_hex": "01000000"
+            }
+          ]
+        },
+        {
+          "kind": "group",
+          "header_tail_hex": "0a080005070000000000000000000000",
+          "records": [
+            {
+              "kind": "record",
+              "tag": "INFO",
+              "formid": "0500080B",
+              "header_tail_hex": "000000000b080005000000002c000000",
+              "subrecords": [
+                {
+                  "tag": "VMAD",
+                  "data_hex": "050002000100160050756c6c5570414368616972436c65616e546f7069630000000202160050756c6c5570414368616972436c65616e546f70696301160050756c6c5570414368616972436c65616e546f7069630a00467261676d656e745f30"
+                },
+                {
+                  "tag": "ENAM",
+                  "data_hex": "01000000"
+                },
+                {
+                  "tag": "PNAM",
+                  "data_hex": "00000000"
+                },
+                {
+                  "tag": "CNAM",
+                  "data_hex": "00",
+                  "text_annotation": ""
+                },
+                {
+                  "tag": "DNAM",
+                  "data_hex": "22ba0d00"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "010000000000803f470000001b090500000000000000000000000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "000000000000803f4700000093ee0d00000000000000000000000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "000000000000803f3202000087cb0100000000000000000000000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "00000000000040409f00000000000000000000000200000014000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "000000000000803f2000000014000000000000000000000000000000ffffffff"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "DIAL",
+          "formid": "0500080D",
+          "header_tail_hex": "000000000d080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c5570414368616972526573746f7265546f70696300",
+              "text_annotation": "PullUpAChairRestoreTopic"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "506c65617365207075742074686520636c6561726564206f75747369646520666f6f6420616e64207461626c6577617265206261636b2e00",
+              "text_annotation": "Please put the cleared outside food and tableware back."
+            },
+            {
+              "tag": "PNAM",
+              "data_hex": "00004842"
+            },
+            {
+              "tag": "BNAM",
+              "data_hex": "0c080005"
+            },
+            {
+              "tag": "QNAM",
+              "data_hex": "05080005"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "SNAM",
+              "data_hex": "43555354"
+            },
+            {
+              "tag": "TIFC",
+              "data_hex": "01000000"
+            }
+          ]
+        },
+        {
+          "kind": "group",
+          "header_tail_hex": "0d080005070000000000000000000000",
+          "records": [
+            {
+              "kind": "record",
+              "tag": "INFO",
+              "formid": "0500080E",
+              "header_tail_hex": "000000000e080005000000002c000000",
+              "subrecords": [
+                {
+                  "tag": "VMAD",
+                  "data_hex": "050002000100180050756c6c5570414368616972526573746f7265546f7069630000000202180050756c6c5570414368616972526573746f7265546f70696301180050756c6c5570414368616972526573746f7265546f7069630a00467261676d656e745f30"
+                },
+                {
+                  "tag": "ENAM",
+                  "data_hex": "01000000"
+                },
+                {
+                  "tag": "PNAM",
+                  "data_hex": "00000000"
+                },
+                {
+                  "tag": "CNAM",
+                  "data_hex": "00",
+                  "text_annotation": ""
+                },
+                {
+                  "tag": "DNAM",
+                  "data_hex": "22ba0d00"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "010000000000803f470000001b090500000000000000000000000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "000000000000803f4700000093ee0d00000000000000000000000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "000000000000803f3202000087cb0100000000000000000000000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "00000000000040409f00000000000000000000000200000014000000ffffffff"
+                },
+                {
+                  "tag": "CTDA",
+                  "data_hex": "000000000000803f2000000014000000000000000000000000000000ffffffff"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "464c5354000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "FLST",
+          "formid": "05000800",
+          "header_tail_hex": "0000000000080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724f72646572696e67537570706f727465645461626c657300",
+              "text_annotation": "PullUpAChairOrderingSupportedTables"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "b94c0200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "04260e00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "39f20200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "4d230c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2c4a0d00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "df290c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "14110c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "13110c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "8db20600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "b1c40800"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "4b720700"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "6c130200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "f4290e00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3cee0d00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "13ee0d00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "05010b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "04010b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "bb4a0a00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "ba4a0a00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "f2070c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "f3070c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "d6840c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "d9840c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "f4070c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "f5070c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2c700200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2d700200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2e700200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "0e8b0200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "0f8b0200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "108b0200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2a700200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2b700200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "148b0200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "168b0200"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "FLST",
+          "formid": "05000801",
+          "header_tail_hex": "0000000001080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724f72646572696e67537570706f72746564466f6f6400",
+              "text_annotation": "PullUpAChairOrderingSupportedFood"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "e7060204"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "e5070204"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "e6070204"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "cc480204"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "ce480204"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2f570304"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "5bcd0304"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "72cf0304"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "dc090003"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "33350003"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "37350003"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "39350003"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3a350003"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3b350003"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3d350003"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3f350003"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "41350003"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "01180103"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "5ac30200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3c130300"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "5d4c0300"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "5e4c0300"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "ca080500"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2e4b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2f4b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "304b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "314b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "324b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "384b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "394b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3a4b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3b4b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3c4b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3d4b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3e4b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "434b0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "975c0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "985c0600"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "e8210700"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "4c220700"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "4e220700"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "bd220700"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "c2220700"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "c7220700"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "68530800"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "48530c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "47890e00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "01ba0e00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "02ba0e00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "14430f00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "1b430f00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "1c430f00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "1d430f00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "1e430f00"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "FLST",
+          "formid": "05000802",
+          "header_tail_hex": "0000000002080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724f72646572696e675374617469634f62737461636c657300",
+              "text_annotation": "PullUpAChairOrderingStaticObstacles"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "4af20100"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "47d80200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "15600800"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "16600800"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "17600800"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "1c840c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2b840c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "9c6b0d00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "89ab0d00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "8aab0d00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "8bab0d00"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "FLST",
+          "formid": "05000803",
+          "header_tail_hex": "0000000003080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724f72646572696e674d6561737572656450726f707300",
+              "text_annotation": "PullUpAChairOrderingMeasuredProps"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "0f000000"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "48f20100"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "49f20100"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "4af20100"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "204f0200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "47d80200"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "41190300"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "9a190300"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "e3190300"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "6a4e0400"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "5bad0500"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "15600800"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "16600800"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "17600800"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "24860900"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "25860900"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3ea00a00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "cc9b0b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "d09b0b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "d29b0b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "d49b0b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "d69b0b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "d89b0b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "da9b0b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "dc9b0b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "de9b0b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "e09b0b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "1c840c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "2b840c00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "9c6b0d00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "89ab0d00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "8aab0d00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "8bab0d00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "17260e00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "18260e00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "df420e00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "e0420e00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "e1420e00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "3f4b1000"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "404b1000"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "f5080f00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "444c4252000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "DLBR",
+          "formid": "05000806",
+          "header_tail_hex": "0000000006080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724f72646572696e674272616e636800",
+              "text_annotation": "PullUpAChairOrderingBranch"
+            },
+            {
+              "tag": "QNAM",
+              "data_hex": "05080005"
+            },
+            {
+              "tag": "TNAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "DNAM",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "SNAM",
+              "data_hex": "07080005"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "DLBR",
+          "formid": "05000809",
+          "header_tail_hex": "0000000009080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724f72646572696e67436c65616e4272616e636800",
+              "text_annotation": "PullUpAChairOrderingCleanBranch"
+            },
+            {
+              "tag": "QNAM",
+              "data_hex": "05080005"
+            },
+            {
+              "tag": "TNAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "DNAM",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "SNAM",
+              "data_hex": "0a080005"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "DLBR",
+          "formid": "0500080C",
+          "header_tail_hex": "000000000c080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c5570414368616972526573746f72654272616e636800",
+              "text_annotation": "PullUpAChairRestoreBranch"
+            },
+            {
+              "tag": "QNAM",
+              "data_hex": "05080005"
+            },
+            {
+              "tag": "TNAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "DNAM",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "SNAM",
+              "data_hex": "0d080005"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "414c4348000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500080F",
+          "header_tail_hex": "000000000f080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64426565665374657700",
+              "text_annotation": "PullUpAChairSpecialty_FoodBeefStew"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "000000000000000000000000"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "42656566205374657700",
+              "text_annotation": "Beef Stew"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c537465772e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Stew.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "0200000004000000000000008e5603c464647300604ddd5cc38821b064647300604ddd5c4d763a52646473008eaea792bfba986b646473008eaea792"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "1fc20f00"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "08000000030000000000000000000000eae21000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "a4581000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000c84100000000d0020000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "a3581000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000004000000000d0020000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000810",
+          "header_tail_hex": "0000000010080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64486f6e6e696e67627265774d65616400",
+              "text_annotation": "PullUpAChairSpecialty_FoodHonningbrewMead"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "fcfffdff0200040004001b00"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "486f6e6e696e6762726577204d65616400",
+              "text_annotation": "Honningbrew Mead"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c506f74696f6e735c4d656164486f6e6e696e674272657730312e6e696600",
+              "text_annotation": "Clutter\\Potions\\MeadHonningBrew01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000a0000000000000063df5c0164647300bffa25dab9fb95cf64647300bffa25dafae0bba4646473007f66a5c0ce353c0964647300262c333bfd5a856264647300bffa25dab80a477764647300604ddd5c98a1d17f64647300604ddd5cf90e5c2e64647300604ddd5c346f166864647300bffa25da1b315936646473007f66a5c0"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "bded0300"
+            },
+            {
+              "tag": "ZNAM",
+              "data_hex": "c0ed0300"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "1400000003000000000000000000000035640b00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "16eb0300"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000a0410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "45c61000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000c8410000000014000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000811",
+          "header_tail_hex": "0000000011080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f645377656574726f6c6c00",
+              "text_annotation": "PullUpAChairSpecialty_FoodSweetroll"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "f7fff7ff0000090009000f00"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "537765657420526f6c6c00",
+              "text_annotation": "Sweet Roll"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "02000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd08008c240a00"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c5377656574526f6c6c30312e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\SweetRoll01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "0200000002000000000000007f34a00664647300604ddd5ce89a3a1e64647300604ddd5c"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcccc3d"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0200000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000a0400000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000812",
+          "header_tail_hex": "0000000012080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f42594f48466f6f64436c616d43686f7764657200",
+              "text_annotation": "PullUpAChairSpecialty_BYOHFoodClamChowder"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "fafffafffdff060006000200"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "436c616d2043686f7764657200",
+              "text_annotation": "Clam Chowder"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c537465772e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Stew.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000000000000000000"
+            },
+            {
+              "tag": "MODS",
+              "data_hex": "0100000007000000537465773a31305335000301000000"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "1fc20f00"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "05000000030000000000000000000000eae21000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cc330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000813",
+          "header_tail_hex": "0000000013080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64536f6c697475646553706963656457696e6500",
+              "text_annotation": "PullUpAChairSpecialty_FoodSolitudeSpicedWine"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "f9fffaff0000070006001d00"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "5370696365642057696e6500",
+              "text_annotation": "Spiced Wine"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c57696e655c57696e6553616e53706963656477696e652e6e696600",
+              "text_annotation": "Clutter\\Wine\\WineSanSpicedwine.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000600000000000000a5698f6d646473002659b6b41bf13770646473002659b6b42883cf3c646473002659b6b43b4dc5be646473002659b6b4164e0459646473002659b6b4b8ec307b64647300262c333b"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "bded0300"
+            },
+            {
+              "tag": "ZNAM",
+              "data_hex": "c0ed0300"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0700000003000000000000000000000035640b00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "16eb0300"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000c8410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "45c61000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000f0410000000032000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000814",
+          "header_tail_hex": "0000000014080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64426f696c65644372656d65547265617400",
+              "text_annotation": "PullUpAChairSpecialty_FoodBoiledCremeTreat"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "f9fff9fffeff070007000200"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "426f696c6564204372656d6520547265617400",
+              "text_annotation": "Boiled Creme Treat"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "02000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd08008c240a00"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c466f6f645c42757474657273636f746368437265616d7330312e6e696600",
+              "text_annotation": "Clutter\\Food\\ButterscotchCreams01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000700000000000000e946083e64647300b9148236cc9f2a8764647300b9148236ce353c0964647300262c333b2a60a24264647300b9148236fae0bba4646473007f66a5c01b315936646473007f66a5c0b93aed84646473007f66a5c0"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0400000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000815",
+          "header_tail_hex": "0000000015080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64486f726b65724d656174436f6f6b656400",
+              "text_annotation": "PullUpAChairSpecialty_FoodHorkerMeatCooked"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "f9fff5ff000007000c000800"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "486f726b6572204c6f616600",
+              "text_annotation": "Horker Loaf"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c486f726b65724d656174436f6f6b65642e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\HorkerMeatCooked.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000200000000000000e00d7b7e64647300604ddd5ceefce6b764647300604ddd5c"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000803f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0400000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000816",
+          "header_tail_hex": "0000000016080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f644d65616400",
+              "text_annotation": "PullUpAChairSpecialty_FoodMead"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "fdfffeff0200030003001800"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4e6f7264204d65616400",
+              "text_annotation": "Nord Mead"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c4d65616430312e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Mead01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "02000000080000000000000063df5c0164647300bffa25dab9fb95cf64647300bffa25dafae0bba4646473007f66a5c0ce353c0964647300262c333bfd5a856264647300bffa25daea2164a764647300604ddd5c98a1d17f64647300604ddd5cf90e5c2e64647300604ddd5c"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "bded0300"
+            },
+            {
+              "tag": "ZNAM",
+              "data_hex": "c0ed0300"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0500000003000000000000000000000035640b00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "16eb0300"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000070410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "45c61000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000f041000000001e000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000817",
+          "header_tail_hex": "0000000017080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f42594f48466f6f64536e6f77626572727943726f737461746100",
+              "text_annotation": "PullUpAChairSpecialty_BYOHFoodSnowberryCrostata"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "c7ffc7fff6ff3a003a000a00"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "536e6f7762657272792043726f737461746100",
+              "text_annotation": "Snowberry Crostata"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "5f42594f485c436c75747465725c466f6f645c5461727430312e6e696600",
+              "text_annotation": "_BYOH\\Clutter\\Food\\Tart01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000000000000000000"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcc4c3e"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0500000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "eaea0300"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "00008040000000003c000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000818",
+          "header_tail_hex": "0000000018080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f6453616c6d6f6e436f6f6b656400",
+              "text_annotation": "PullUpAChairSpecialty_FoodSalmonCooked"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "fcfff9ff0000040007000200"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "53616c6d6f6e20537465616b00",
+              "text_annotation": "Salmon Steak"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c466f6f645c436f6f6b656453616c6d6f6e537465616b30312e6e696600",
+              "text_annotation": "Clutter\\Food\\CookedSalmonSteak01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000200000000000000caf19f3264647300b914823615c2866c64647300b9148236"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcccc3d"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0400000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000a0400000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000819",
+          "header_tail_hex": "0000000019080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64426c61636b42726961724d65616400",
+              "text_annotation": "PullUpAChairSpecialty_FoodBlackBriarMead"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "fcfffdff0200040004001b00"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "426c61636b2d4272696172204d65616400",
+              "text_annotation": "Black-Briar Mead"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c506f74696f6e735c4d656164426c61636b42726961722e6e696600",
+              "text_annotation": "Clutter\\Potions\\MeadBlackBriar.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000a0000000000000063df5c0164647300bffa25dab9fb95cf64647300bffa25dafae0bba4646473007f66a5c0ce353c0964647300262c333bfd5a856264647300bffa25dab80a477764647300604ddd5c98a1d17f64647300604ddd5cf90e5c2e64647300604ddd5c346f166864647300bffa25da1b315936646473007f66a5c0"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "bded0300"
+            },
+            {
+              "tag": "ZNAM",
+              "data_hex": "c0ed0300"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcc4c3e"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "1900000003000000000000000000000035640b00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cc330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000a0410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "45c61000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "00002042000000001e000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500081A",
+          "header_tail_hex": "000000001a080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64486f6e65794e7574547265617400",
+              "text_annotation": "PullUpAChairSpecialty_FoodHoneyNutTreat"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "fbffeffffcff04000e000500"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "486f6e6579204e757420547265617400",
+              "text_annotation": "Honey Nut Treat"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c466f6f645c4e75747479427265616430312e6e696600",
+              "text_annotation": "Clutter\\Food\\NuttyBread01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000300000000000000c52706d064647300b9148236a24bae8464647300b9148236fae0bba4646473007f66a5c0"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcccc3d"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0200000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000a0400000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500081B",
+          "header_tail_hex": "000000001b080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64476f61744d656174436f6f6b656400",
+              "text_annotation": "PullUpAChairSpecialty_FoodGoatMeatCooked"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "f9fff2fff8ff07000e000800"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4c6567206f6620476f617420526f61737400",
+              "text_annotation": "Leg of Goat Roast"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c476f61744d656174436f6f6b65642e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\GoatMeatCooked.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000200000000000000fd9a02ca64647300604ddd5c6c22e12664647300604ddd5c"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000803f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0400000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500081C",
+          "header_tail_hex": "000000001c080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f6457696e65416c746f00",
+              "text_annotation": "PullUpAChairSpecialty_FoodWineAlto"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "f8fff8ff0000080008001b00"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "416c746f2057696e6500",
+              "text_annotation": "Alto Wine"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c57696e655c57696e65426f74746c653031422e6e696600",
+              "text_annotation": "Clutter\\Wine\\WineBottle01B.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "0200000004000000000000002883cf3c646473002659b6b43b4dc5be646473002659b6b4164e0459646473002659b6b4b8ec307b64647300262c333b"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "bded0300"
+            },
+            {
+              "tag": "ZNAM",
+              "data_hex": "c0ed0300"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0c00000003000000000000000000000035640b00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "16eb0300"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000070410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "45c61000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000f041000000001e000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500081D",
+          "header_tail_hex": "000000001d080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f42594f48466f6f644a756e69706572426572727943726f737461746100",
+              "text_annotation": "PullUpAChairSpecialty_BYOHFoodJuniperBerryCrostata"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "ecffecff0000140014000700"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4a756e697065722042657272792043726f737461746100",
+              "text_annotation": "Juniper Berry Crostata"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "5f42594f485c436c75747465725c466f6f645c5461727430312e6e696600",
+              "text_annotation": "_BYOH\\Clutter\\Food\\Tart01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000000000000000000"
+            },
+            {
+              "tag": "MODS",
+              "data_hex": "01000000080000005461727430313a304735000300000000"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcc4c3e"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0500000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000080400000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "a2581000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "00000040000000003c000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500081E",
+          "header_tail_hex": "000000001e080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f6456656e69736f6e5374657700",
+              "text_annotation": "PullUpAChairSpecialty_FoodVenisonStew"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "000000000000000000000000"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "56656e69736f6e205374657700",
+              "text_annotation": "Venison Stew"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c537465772e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Stew.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "0200000004000000000000008e5603c464647300604ddd5cc38821b064647300604ddd5c4d763a52646473008eaea792bfba986b646473008eaea792"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "1fc20f00"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "08000000030000000000000000000000eae21000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cc330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000070410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "a2581000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000803f00000000d0020000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "a3581000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000803f00000000d0020000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500081F",
+          "header_tail_hex": "000000001f080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f6457696e65426f74746c6530324100",
+              "text_annotation": "PullUpAChairSpecialty_FoodWineBottle02A"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "f9fffaff0000070006001d00"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "57696e6500",
+              "text_annotation": "Wine"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c57696e655c57696e65426f74746c653032412e6e696600",
+              "text_annotation": "Clutter\\Wine\\WineBottle02A.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "0200000004000000000000002883cf3c646473002659b6b43b4dc5be646473002659b6b4164e0459646473002659b6b4b8ec307b64647300262c333b"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "bded0300"
+            },
+            {
+              "tag": "ZNAM",
+              "data_hex": "c0ed0300"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0700000003000000000000000000000035640b00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "16eb0300"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000070410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "45c61000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000f041000000001e000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000820",
+          "header_tail_hex": "0000000020080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f6450696500",
+              "text_annotation": "PullUpAChairSpecialty_FoodPie"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "f3fff4fffcff0c000d000100"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4170706c652050696500",
+              "text_annotation": "Apple Pie"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c50696530312e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Pie01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000200000000000000692d16dd64647300604ddd5c495cc96664647300604ddd5c"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0500000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000821",
+          "header_tail_hex": "0000000021080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f42594f48466f6f644d7564637261624c656773436f6f6b656400",
+              "text_annotation": "PullUpAChairSpecialty_BYOHFoodMudcrabLegsCooked"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "efffefff0000110010000600"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "537465616d6564204d756463726162204c65677300",
+              "text_annotation": "Steamed Mudcrab Legs"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "5f42594f485c436c75747465725c466f6f645c4d7564637261624c656773436f6f6b656430312e6e696600",
+              "text_annotation": "_BYOH\\Clutter\\Food\\MudcrabLegsCooked01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000000000000000000"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcccc3d"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0400000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000040410000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000822",
+          "header_tail_hex": "0000000022080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f416c6500",
+              "text_annotation": "PullUpAChairSpecialty_Ale"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "fdfffeff0200030003001800"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "416c6500",
+              "text_annotation": "Ale"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c4d65616430312e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Mead01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "02000000080000000000000063df5c0164647300bffa25dab9fb95cf64647300bffa25dafae0bba4646473007f66a5c0ce353c0964647300262c333bfd5a856264647300bffa25daea2164a764647300604ddd5c98a1d17f64647300604ddd5cf90e5c2e64647300604ddd5c"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "bded0300"
+            },
+            {
+              "tag": "ZNAM",
+              "data_hex": "c0ed0300"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0500000003000000000000000000000035640b00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "16eb0300"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000070410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "45c61000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000f041000000001e000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000823",
+          "header_tail_hex": "0000000023080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64486f726b65725374657700",
+              "text_annotation": "PullUpAChairSpecialty_FoodHorkerStew"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "000000000000000000000000"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "486f726b6572205374657700",
+              "text_annotation": "Horker Stew"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c537465772e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Stew.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "0200000004000000000000008e5603c464647300604ddd5cc38821b064647300604ddd5c4d763a52646473008eaea792bfba986b646473008eaea792"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "1fc20f00"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "08000000030000000000000000000000eae21000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cc330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000070410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000070410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "a2581000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000803f00000000d0020000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000824",
+          "header_tail_hex": "0000000024080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f6443616262616765506f7461746f536f757000",
+              "text_annotation": "PullUpAChairSpecialty_FoodCabbagePotatoSoup"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "000000000000000000000000"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4361626261676520506f7461746f20536f757000",
+              "text_annotation": "Cabbage Potato Soup"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c537465772e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Stew.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "0200000004000000000000008e5603c464647300604ddd5cc38821b064647300604ddd5c4d763a52646473008eaea792bfba986b646473008eaea792"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "1fc20f00"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "05000000030000000000000000000000eae21000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cc330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000825",
+          "header_tail_hex": "0000000025080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f42594f48466f6f644c6176656e64657244756d706c696e67303100",
+              "text_annotation": "PullUpAChairSpecialty_BYOHFoodLavenderDumpling01"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "8bffe4ff8bff75001c007500"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4c6176656e6465722044756d706c696e6700",
+              "text_annotation": "Lavender Dumpling"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "5f42594f485c436c75747465725c466f6f645c44756d706c696e6730312e6e696600",
+              "text_annotation": "_BYOH\\Clutter\\Food\\Dumpling01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000000000000000000"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcccc3d"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0300000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000a0400000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "a8581000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "00002041000000003c000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "519e0300"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "00002041000000003c000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000826",
+          "header_tail_hex": "0000000026080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f644170706c65436162626167655374657700",
+              "text_annotation": "PullUpAChairSpecialty_FoodAppleCabbageStew"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "000000000000000000000000"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4170706c652043616262616765205374657700",
+              "text_annotation": "Apple Cabbage Stew"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c537465772e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Stew.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "0200000004000000000000008e5603c464647300604ddd5cc38821b064647300604ddd5c4d763a52646473008eaea792bfba986b646473008eaea792"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0800000003000000000000000000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cc330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000070410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000827",
+          "header_tail_hex": "0000000027080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f42594f48466f6f644170706c6544756d706c696e67303100",
+              "text_annotation": "PullUpAChairSpecialty_BYOHFoodAppleDumpling01"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "fafffafffeff060006000300"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4170706c652044756d706c696e6700",
+              "text_annotation": "Apple Dumpling"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "5f42594f485c436c75747465725c466f6f645c44756d706c696e6730312e6e696600",
+              "text_annotation": "_BYOH\\Clutter\\Food\\Dumpling01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000000000000000000"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcccc3d"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0300000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000a0400000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "1beb0300"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000a040000000003c000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000828",
+          "header_tail_hex": "0000000028080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64436869636b656e436f6f6b656400",
+              "text_annotation": "PullUpAChairSpecialty_FoodChickenCooked"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "000000000000000000000000"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4772696c6c656420436869636b656e2042726561737400",
+              "text_annotation": "Grilled Chicken Breast"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c466f6f645c436f6f6b6564436869636b656e4d65617430312e6e696600",
+              "text_annotation": "Clutter\\Food\\CookedChickenMeat01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000200000000000000eaacd74864647300b91482361e52143664647300484a40bf"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcc4c3e"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0400000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000a0400000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "05000829",
+          "header_tail_hex": "0000000029080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64566567657461626c65536f757000",
+              "text_annotation": "PullUpAChairSpecialty_FoodVegetableSoup"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "000000000000000000000000"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "566567657461626c6520536f757000",
+              "text_annotation": "Vegetable Soup"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c537465772e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Stew.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "0200000004000000000000008e5603c464647300604ddd5cc38821b064647300604ddd5c4d763a52646473008eaea792bfba986b646473008eaea792"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "1fc20f00"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "05000000030000000000000000000000eae21000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "a2581000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000803f00000000d0020000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "a3581000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000803f00000000d0020000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500082A",
+          "header_tail_hex": "000000002a080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f42594f48466f6f64436869636b656e44756d706c696e67303100",
+              "text_annotation": "PullUpAChairSpecialty_BYOHFoodChickenDumpling01"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "8bffe4ff8bff75001c007500"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "436869636b656e2044756d706c696e6700",
+              "text_annotation": "Chicken Dumpling"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "5f42594f485c436c75747465725c466f6f645c44756d706c696e6730312e6e696600",
+              "text_annotation": "_BYOH\\Clutter\\Food\\Dumpling01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000000000000000000"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcccc3d"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0300000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000070410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "a2581000"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000803f0000000078000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500082B",
+          "header_tail_hex": "000000002b080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f42594f48466f6f644a617a62617943726f737461746100",
+              "text_annotation": "PullUpAChairSpecialty_BYOHFoodJazbayCrostata"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "ecffecff0000140014000700"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "4a617a6261792043726f737461746100",
+              "text_annotation": "Jazbay Crostata"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "5f42594f485c436c75747465725c466f6f645c5461727430312e6e696600",
+              "text_annotation": "_BYOH\\Clutter\\Food\\Tart01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000000000000000000"
+            },
+            {
+              "tag": "MODS",
+              "data_hex": "01000000080000005461727430313a304835000300000000"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcc4c3e"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0500000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000020410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "f8ea0300"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "00008040000000003c000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500082C",
+          "header_tail_hex": "000000002c080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f466f6f64526162626974436f6f6b656400",
+              "text_annotation": "PullUpAChairSpecialty_FoodRabbitCooked"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "f9fffaff0000070006000300"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "526162626974204861756e636800",
+              "text_annotation": "Rabbit Haunch"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "560e0a00"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c44656164416e696d616c735c5261626269744d656174436f6f6b656430312e6e696600",
+              "text_annotation": "Clutter\\DeadAnimals\\RabbitMeatCooked01.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "0200000002000000000000006120048d64647300484a40bf2422398b64647300484a40bf"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "cdcccc3d"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0300000003000000000000000000000094af0c00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000a0400000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500082D",
+          "header_tail_hex": "000000002d080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f444c4332466f6f64486f726b657241736859616d5374657700",
+              "text_annotation": "PullUpAChairSpecialty_DLC2FoodHorkerAshYamStew"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "000000000000000000000000"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "486f726b657220616e64204173682059616d205374657700",
+              "text_annotation": "Horker and Ash Yam Stew"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "436c75747465725c496e6772656469656e74735c537465772e6e696600",
+              "text_annotation": "Clutter\\Ingredients\\Stew.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000000000000000000"
+            },
+            {
+              "tag": "MODS",
+              "data_hex": "0100000007000000537465773a31305ecd030401000000"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "1fc20f00"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "09000000030000000000000000000000eae21000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cb330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000080410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cc330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000040410000000000000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "ALCH",
+          "formid": "0500082E",
+          "header_tail_hex": "000000002e080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725370656369616c74795f444c433253756a616d6d6100",
+              "text_annotation": "PullUpAChairSpecialty_DLC2Sujamma"
+            },
+            {
+              "tag": "OBND",
+              "data_hex": "f8fff8ff0000080008001900"
+            },
+            {
+              "tag": "FULL",
+              "data_hex": "53756a616d6d6100",
+              "text_annotation": "Sujamma"
+            },
+            {
+              "tag": "KSIZ",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "KWDA",
+              "data_hex": "eacd0800"
+            },
+            {
+              "tag": "MODL",
+              "data_hex": "444c4330325c436c75747465725c444c4330324c6f63616c4c6971756f722e6e696600",
+              "text_annotation": "DLC02\\Clutter\\DLC02LocalLiquor.nif"
+            },
+            {
+              "tag": "MODT",
+              "data_hex": "020000000000000000000000"
+            },
+            {
+              "tag": "YNAM",
+              "data_hex": "bded0300"
+            },
+            {
+              "tag": "ZNAM",
+              "data_hex": "c0ed0300"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "0000003f"
+            },
+            {
+              "tag": "ENIT",
+              "data_hex": "0a00000003000000000000000000000035640b00"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "cc330f00"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "000070410000000000000000"
+            },
+            {
+              "tag": "EFID",
+              "data_hex": "2c3f0700"
+            },
+            {
+              "tag": "EFIT",
+              "data_hex": "0000f041000000003c000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "5041434b000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "PACK",
+          "formid": "0500082F",
+          "header_tail_hex": "000000002f080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c5570414368616972536572766963655072696f7269747954726176656c00",
+              "text_annotation": "PullUpAChairServicePriorityTravel"
+            },
+            {
+              "tag": "PKDT",
+              "data_hex": "052000001200000000000000"
+            },
+            {
+              "tag": "PSDT",
+              "data_hex": "ffff00ffff00000000000000"
+            },
+            {
+              "tag": "PKCU",
+              "data_hex": "03000000aa6f010003000000"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "4c6f636174696f6e00"
+            },
+            {
+              "tag": "PLDT",
+              "data_hex": "0000000014000000b4000000"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "426f6f6c00"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "00",
+              "text_annotation": ""
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "426f6f6c00"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "00",
+              "text_annotation": ""
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "00"
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "02"
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "04"
+            },
+            {
+              "tag": "XNAM",
+              "data_hex": "05"
+            },
+            {
+              "tag": "POBA",
+              "data_hex": ""
+            },
+            {
+              "tag": "INAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "PDTO",
+              "data_hex": "0000000000000000"
+            },
+            {
+              "tag": "POEA",
+              "data_hex": ""
+            },
+            {
+              "tag": "INAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "PDTO",
+              "data_hex": "0000000000000000"
+            },
+            {
+              "tag": "POCA",
+              "data_hex": ""
+            },
+            {
+              "tag": "INAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "PDTO",
+              "data_hex": "0000000000000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "5041434b000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "PACK",
+          "formid": "05000830",
+          "header_tail_hex": "0000000030080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725365727669636557616974466f724f7264657200",
+              "text_annotation": "PullUpAChairServiceWaitForOrder"
+            },
+            {
+              "tag": "PKDT",
+              "data_hex": "052000001200006700000000"
+            },
+            {
+              "tag": "PSDT",
+              "data_hex": "ffff00ffff00000000000000"
+            },
+            {
+              "tag": "PKCU",
+              "data_hex": "02000000e254060000000000"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "466c6f617400"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "426f6f6c00"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "01"
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "03"
+            },
+            {
+              "tag": "UNAM",
+              "data_hex": "04"
+            },
+            {
+              "tag": "XNAM",
+              "data_hex": "05"
+            },
+            {
+              "tag": "POBA",
+              "data_hex": ""
+            },
+            {
+              "tag": "INAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "PDTO",
+              "data_hex": "0000000000000000"
+            },
+            {
+              "tag": "POEA",
+              "data_hex": ""
+            },
+            {
+              "tag": "INAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "PDTO",
+              "data_hex": "0000000000000000"
+            },
+            {
+              "tag": "POCA",
+              "data_hex": ""
+            },
+            {
+              "tag": "INAM",
+              "data_hex": "00000000"
+            },
+            {
+              "tag": "PDTO",
+              "data_hex": "0000000000000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "534e4452000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "SNDR",
+          "formid": "05000D00",
+          "header_tail_hex": "00000000000d0005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c5570414368616972506167655475726e5265636f7264656400",
+              "text_annotation": "PullUpAChairPageTurnRecorded"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "0a54ef1e"
+            },
+            {
+              "tag": "GNAM",
+              "data_hex": "51440600"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "446174615c536f756e645c66785c50756c6c55704143686169724f72646572696e675c506167655475726e2e77617600"
+            },
+            {
+              "tag": "ONAM",
+              "data_hex": "58400b00"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "02000000"
+            },
+            {
+              "tag": "BNAM",
+              "data_hex": "000080000000"
+            }
+          ]
+        },
+        {
+          "kind": "record",
+          "tag": "SNDR",
+          "formid": "05000D01",
+          "header_tail_hex": "00000000010d0005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169725365727669636542656c6c5265636f7264656400",
+              "text_annotation": "PullUpAChairServiceBellRecorded"
+            },
+            {
+              "tag": "CNAM",
+              "data_hex": "0a54ef1e"
+            },
+            {
+              "tag": "GNAM",
+              "data_hex": "a1720100"
+            },
+            {
+              "tag": "ANAM",
+              "data_hex": "446174615c536f756e645c66785c50756c6c55704143686169724f72646572696e675c5365727669636542656c6c2e77617600"
+            },
+            {
+              "tag": "ONAM",
+              "data_hex": "dce50700"
+            },
+            {
+              "tag": "LNAM",
+              "data_hex": "02000000"
+            },
+            {
+              "tag": "BNAM",
+              "data_hex": "000080000000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "group",
+      "header_tail_hex": "46414354000000000000000000000000",
+      "records": [
+        {
+          "kind": "record",
+          "tag": "FACT",
+          "formid": "05000831",
+          "header_tail_hex": "0000000031080005000000002c000000",
+          "subrecords": [
+            {
+              "tag": "EDID",
+              "data_hex": "50756c6c55704143686169724163746976655365727669636546616374696f6e00",
+              "text_annotation": "PullUpAChairActiveServiceFaction"
+            },
+            {
+              "tag": "DATA",
+              "data_hex": "01000000"
+            },
+            {
+              "tag": "CRVA",
+              "data_hex": "00000000000000000000000000000000"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1739 @@
+#include "RenderManager.h"
+
+#include <DirectXMath.h>
+#include <DirectXTex.h>
+#include <d3d11.h>
+#include <d3dcompiler.h>
+#include <dxgi.h>
+#include <wincodec.h>
+
+#include <algorithm>
+#include <array>
+#include <cmath>
+#include <cstddef>
+#include <cstring>
+
+namespace
+{
+    template <class T>
+    void ReleaseResource(T*& resource)
+    {
+        if (resource) {
+            resource->Release();
+            resource = nullptr;
+        }
+    }
+
+    bool CreatePrivateDevice(
+        ID3D11Device* presentationDevice,
+        ID3D11Device** privateDevice,
+        ID3D11DeviceContext** privateContext)
+    {
+        if (!presentationDevice || !privateDevice || !privateContext) {
+            return false;
+        }
+
+        *privateDevice = nullptr;
+        *privateContext = nullptr;
+
+        IDXGIDevice* dxgiDevice = nullptr;
+        HRESULT result = presentationDevice->QueryInterface(
+            __uuidof(IDXGIDevice),
+            reinterpret_cast<void**>(&dxgiDevice));
+        if (FAILED(result)) {
+            return false;
+        }
+
+        IDXGIAdapter* adapter = nullptr;
+        result = dxgiDevice->GetAdapter(&adapter);
+        ReleaseResource(dxgiDevice);
+        if (FAILED(result) || !adapter) {
+            ReleaseResource(adapter);
+            return false;
+        }
+
+        const D3D_FEATURE_LEVEL featureLevel = presentationDevice->GetFeatureLevel();
+        result = D3D11CreateDevice(
+            adapter,
+            D3D_DRIVER_TYPE_UNKNOWN,
+            nullptr,
+            D3D11_CREATE_DEVICE_BGRA_SUPPORT,
+            &featureLevel,
+            1,
+            D3D11_SDK_VERSION,
+            privateDevice,
+            nullptr,
+            privateContext);
+        ReleaseResource(adapter);
+        if (FAILED(result)) {
+            ReleaseResource(*privateContext);
+            ReleaseResource(*privateDevice);
+            return false;
+        }
+        return true;
+    }
+
+    struct SceneConstants {
+        DirectX::XMFLOAT4X4 worldViewProjection;
+        DirectX::XMFLOAT4X4 world;
+        DirectX::XMFLOAT4 cameraPosition;
+        DirectX::XMFLOAT4 lightDirections[MeshLightLimit];
+        DirectX::XMFLOAT4 lightColors[MeshLightLimit];
+        DirectX::XMFLOAT4 ambientColor;
+        DirectX::XMFLOAT4X4 lightViewProjections[MeshLightLimit];
+        DirectX::XMFLOAT4 shadowParameters;
+        DirectX::XMFLOAT4 renderParameters;
+    };
+
+    static_assert(sizeof(SceneConstants) == 960);
+
+    constexpr UINT shadowMapResolution = 1024;
+    constexpr std::size_t shadowLightCount = MeshLightLimit;
+
+    constexpr const char* vertexShaderSource = R"(
+        cbuffer SceneConstants : register(b0)
+        {
+            row_major float4x4 worldViewProjection;
+            row_major float4x4 world;
+        };
+
+        struct VertexInput
+        {
+            float3 position : POSITION;
+            float3 normal : NORMAL;
+            float4 tangent : TANGENT;
+            float2 uv : TEXCOORD0;
+            float4 color : COLOR0;
+        };
+
+        struct PixelInput
+        {
+            float4 position : SV_POSITION;
+            float3 worldPosition : TEXCOORD1;
+            float3 normal : NORMAL;
+            float4 tangent : TANGENT;
+            float2 uv : TEXCOORD0;
+            float4 color : COLOR0;
+        };
+
+        PixelInput main(VertexInput input)
+        {
+            PixelInput output;
+            output.position = mul(float4(input.position, 1.0f), worldViewProjection);
+            output.worldPosition = mul(float4(input.position, 1.0f), world).xyz;
+            output.normal = normalize(mul(input.normal, (float3x3)world));
+            output.tangent.xyz = normalize(mul(input.tangent.xyz, (float3x3)world));
+            output.tangent.w = input.tangent.w;
+            output.uv = input.uv;
+            output.color = input.color;
+            return output;
+        }
+    )";
+
+    constexpr const char* pixelShaderSource = R"(
+        Texture2D diffuseTexture : register(t0);
+        Texture2D normalTexture : register(t1);
+        Texture2D auxiliaryTexture : register(t2);
+        Texture2D heightTexture : register(t3);
+        TextureCube environmentTexture : register(t4);
+        Texture2D environmentMaskTexture : register(t5);
+        Texture2D subsurfaceTexture : register(t6);
+        Texture2D backlightTexture : register(t7);
+        Texture2D specularTexture : register(t8);
+        Texture2D faceTintTexture : register(t9);
+        Texture2DArray<float> shadowTexture : register(t10);
+        SamplerState materialSampler : register(s0);
+        SamplerComparisonState shadowSampler : register(s1);
+
+        cbuffer SceneConstants : register(b0)
+        {
+            row_major float4x4 worldViewProjection;
+            row_major float4x4 world;
+            float4 cameraPosition;
+            float4 lightDirections[8];
+            float4 lightColors[8];
+            float4 ambientColor;
+            row_major float4x4 lightViewProjections[8];
+            float4 shadowParameters;
+            float4 renderParameters;
+        };
+
+        cbuffer MaterialConstants : register(b1)
+        {
+            float alphaThreshold;
+            float materialAlpha;
+            float blendEnabled;
+            float specularStrength;
+            float3 specularColor;
+            float glossiness;
+            float3 emissiveColor;
+            float emissiveMultiple;
+            float3 tintColor;
+            float environmentScale;
+            float2 uvScale;
+            float2 uvOffset;
+            float parallaxScale;
+            float backlightPower;
+            float rimlightPower;
+            float auxiliaryMapMode;
+            float hasNormalMap;
+            float hasHeightMap;
+            float hasEnvironmentMap;
+            float hasEnvironmentMask;
+            float hasSubsurfaceMap;
+            float hasBacklightMap;
+            float hasSpecularMap;
+            float modelSpaceNormals;
+            float useVertexColors;
+            float useVertexAlpha;
+            float emissiveEnabled;
+            float specularEnabled;
+            float hasAuxiliaryMap;
+            float hasFaceTintMap;
+            float faceOrSkin;
+            float hairMaterial;
+            float skinTinted;
+            float useBodyTint;
+            float2 materialPadding;
+            float3 bodyTintColor;
+            float bodyTintPadding;
+        };
+
+        struct PixelInput
+        {
+            float4 position : SV_POSITION;
+            float3 worldPosition : TEXCOORD1;
+            float3 normal : NORMAL;
+            float4 tangent : TANGENT;
+            float2 uv : TEXCOORD0;
+            float4 color : COLOR0;
+        };
+
+        float3 EvaluateLight(
+            float3 normal,
+            float3 viewDirection,
+            float3 worldPosition,
+            float3 albedo,
+            float specularMask,
+            uint lightIndex)
+        {
+            float3 lightDirection = normalize(lightDirections[lightIndex].xyz);
+            float diffuseAmount = saturate(dot(normal, lightDirection));
+            float3 halfVector = normalize(lightDirection + viewDirection);
+            float normalHalf = saturate(dot(normal, halfVector));
+            float specularPower = max(glossiness, 1.0f);
+            float specularAmount = pow(normalHalf, specularPower);
+            if (faceOrSkin > 0.5f) {
+                // Skyrim's skin glossiness does not map directly to a
+                // Blinn-Phong exponent. Blend in a broader lobe so the low-valued
+                // external skin lighting map still produces a visible highlight.
+                float broadSpecular = pow(normalHalf, max(specularPower * 0.25f, 4.0f));
+                specularAmount = lerp(specularAmount, broadSpecular, 0.6f);
+            }
+            float3 diffuseLight = albedo * diffuseAmount;
+            float3 specularLight = specularColor * specularStrength * specularMask * specularAmount;
+
+            float4 shadowPosition = mul(float4(worldPosition, 1.0f), lightViewProjections[lightIndex]);
+            float3 shadowProjection = shadowPosition.xyz / shadowPosition.w;
+            float2 shadowUv = float2(
+                shadowProjection.x * 0.5f + 0.5f,
+                -shadowProjection.y * 0.5f + 0.5f);
+            float shadowAmount = 1.0f;
+            if (shadowProjection.z >= 0.0f && shadowProjection.z <= 1.0f &&
+                all(shadowUv >= 0.0f) && all(shadowUv <= 1.0f)) {
+                float comparisonDepth = shadowProjection.z -
+                    shadowParameters.z -
+                    shadowParameters.w * (1.0f - diffuseAmount);
+                shadowAmount = 0.0f;
+                [unroll]
+                for (int shadowY = -1; shadowY <= 1; ++shadowY) {
+                    [unroll]
+                    for (int shadowX = -1; shadowX <= 1; ++shadowX) {
+                        float2 shadowOffset = float2(shadowX, shadowY) *
+                            shadowParameters.x * shadowParameters.y;
+                        shadowAmount += shadowTexture.SampleCmpLevelZero(
+                            shadowSampler,
+                            float3(shadowUv + shadowOffset, lightIndex),
+                            comparisonDepth);
+                    }
+                }
+                shadowAmount /= 9.0f;
+            }
+            return (diffuseLight + specularLight) *
+                lightColors[lightIndex].rgb * lightColors[lightIndex].a * shadowAmount;
+        }
+
+        float4 main(PixelInput input, bool frontFacing : SV_IsFrontFace) : SV_TARGET
+        {
+            float faceSign = hairMaterial > 0.5f && !frontFacing ? -1.0f : 1.0f;
+            float3 geometricNormal = normalize(input.normal) * faceSign;
+            float3 tangent = normalize(input.tangent.xyz - geometricNormal * dot(input.tangent.xyz, geometricNormal));
+            float3 bitangent = normalize(cross(geometricNormal, tangent)) * input.tangent.w;
+            float3x3 tangentToWorld = float3x3(tangent, bitangent, geometricNormal);
+            float3 viewDirection = normalize(cameraPosition.xyz - input.worldPosition);
+
+            float2 uv = input.uv * uvScale + uvOffset;
+            if (hasHeightMap > 0.5f && parallaxScale > 0.0f) {
+                float3 tangentView = mul(tangentToWorld, viewDirection);
+                float height = heightTexture.Sample(materialSampler, uv).r - 0.5f;
+                uv -= tangentView.xy * (height * parallaxScale / max(abs(tangentView.z), 0.2f));
+            }
+
+            float4 diffuseSample = diffuseTexture.Sample(materialSampler, uv);
+            float3 vertexRgb = lerp(float3(1.0f, 1.0f, 1.0f), input.color.rgb, useVertexColors);
+            float vertexAlpha = lerp(1.0f, input.color.a, useVertexAlpha);
+            float3 albedo = diffuseSample.rgb * vertexRgb;
+            float alpha = diffuseSample.a * vertexAlpha * materialAlpha;
+            clip(alpha - alphaThreshold);
+
+            float4 normalSample = normalTexture.Sample(materialSampler, uv);
+            float3 normal = geometricNormal;
+            if (hasNormalMap > 0.5f) {
+                if (modelSpaceNormals > 0.5f) {
+                    // Skyrim model-space normal textures store the mesh Y and Z
+                    // components in the blue and green channels respectively.
+                    float3 mappedNormal = normalize(normalSample.xzy * 2.0f - 1.0f);
+                    normal = normalize(mul(mappedNormal, (float3x3)world)) * faceSign;
+                } else {
+                    float2 mappedXY = normalSample.xy * 2.0f - 1.0f;
+                    float mappedZ = sqrt(saturate(1.0f - dot(mappedXY, mappedXY)));
+                    normal = normalize(mul(float3(mappedXY, mappedZ), tangentToWorld));
+                }
+            }
+
+            float4 auxiliary = auxiliaryTexture.Sample(materialSampler, uv);
+            if (auxiliaryMapMode > 1.5f && auxiliaryMapMode < 2.5f) {
+                albedo *= lerp(float3(1.0f, 1.0f, 1.0f), tintColor, auxiliary.r);
+            } else if (auxiliaryMapMode > 3.5f && hasSubsurfaceMap > 0.5f) {
+                float grayscaleMask = subsurfaceTexture.Sample(materialSampler, uv).r;
+                albedo *= lerp(float3(1.0f, 1.0f, 1.0f), tintColor, grayscaleMask);
+            }
+            if (hasFaceTintMap > 0.5f) {
+                // FaceTint is authored around neutral mid-gray and modulates
+                // the base skin diffuse; it is not itself a replacement diffuse.
+                float3 faceTint = faceTintTexture.Sample(materialSampler, uv).rgb;
+                albedo *= saturate(faceTint * 2.0f) * 5.0f;
+            }
+            if (useBodyTint > 0.5f) {
+                albedo *= bodyTintColor * 5.0f;
+            }
+
+            float specularMask = hasSpecularMap > 0.5f
+                ? specularTexture.Sample(materialSampler, uv).r
+                : (hasNormalMap > 0.5f ? normalSample.a : 1.0f);
+            if (faceOrSkin > 0.5f && hasSpecularMap > 0.5f) {
+                // Skin lighting maps contain low-valued variation over a
+                // dielectric base reflectance, rather than the complete F0.
+                specularMask = lerp(0.04f, 1.0f, saturate(specularMask));
+            }
+            specularMask *= specularEnabled;
+
+            float3 color = albedo * ambientColor.rgb;
+            [loop]
+            for (uint lightIndex = 0; lightIndex < (uint)renderParameters.y; ++lightIndex) {
+                color += EvaluateLight(
+                    normal,
+                    viewDirection,
+                    input.worldPosition,
+                    albedo,
+                    specularMask,
+                    lightIndex);
+            }
+
+            float backFacingLight = renderParameters.y > 0.5f
+                ? saturate(dot(-normal, normalize(lightDirections[0].xyz)))
+                : 0.0f;
+            if (hasSubsurfaceMap > 0.5f && auxiliaryMapMode < 3.5f) {
+                color += subsurfaceTexture.Sample(materialSampler, uv).rgb * albedo * backFacingLight * 0.35f;
+            }
+            if (hasBacklightMap > 0.5f) {
+                color += backlightTexture.Sample(materialSampler, uv).rgb * backFacingLight * max(backlightPower, 0.25f);
+            }
+
+            float rim = pow(1.0f - saturate(dot(normal, viewDirection)), max(rimlightPower, 0.01f));
+            if (auxiliaryMapMode > 2.5f) {
+                color += auxiliary.rgb * albedo * rim * 0.3f;
+            }
+            if (emissiveEnabled > 0.5f) {
+                float useGlowTexture = hasAuxiliaryMap *
+                    (((auxiliaryMapMode > 0.5f && auxiliaryMapMode < 1.5f) || auxiliaryMapMode > 3.5f) ? 1.0f : 0.0f);
+                float3 glow = useGlowTexture > 0.5f
+                    ? auxiliary.rgb
+                    : float3(1.0f, 1.0f, 1.0f);
+                color += glow * emissiveColor * emissiveMultiple;
+            }
+
+            if (hasEnvironmentMap > 0.5f) {
+                float3 reflectionDirection = reflect(-viewDirection, normal);
+                float3 environment = environmentTexture.Sample(materialSampler, reflectionDirection).rgb;
+                float environmentMask = hasEnvironmentMask > 0.5f
+                    ? environmentMaskTexture.Sample(materialSampler, uv).r
+                    : 1.0f;
+                float fresnel = pow(1.0f - saturate(dot(normal, viewDirection)), 5.0f);
+                color += environment * environmentMask * environmentScale * lerp(0.25f, 1.0f, fresnel);
+            }
+
+            float outputAlpha = blendEnabled > 0.5f ? alpha : 1.0f;
+            // Lift UI midtones without applying a per-channel tone curve, which
+            // would wash out the material colors. A luminance-space Reinhard
+            // curve preserves both hue and shading above 1.0 instead of clipping
+            // bright skin/tint materials to a single flat value.
+            float3 positiveColor = max(color * renderParameters.x, 0.0f);
+            float luminance = max(dot(positiveColor, float3(0.2126f, 0.7152f, 0.0722f)), 0.0f);
+            float mappedLuminance = luminance / (1.0f + luminance);
+            float displayLuminance = pow(mappedLuminance, 1.0f / 2.2f);
+            float3 displayColor = luminance > 0.0f
+                ? saturate(positiveColor * (displayLuminance / luminance))
+                : float3(0.0f, 0.0f, 0.0f);
+            float displaySaturation = faceOrSkin > 0.5f ? 0.5f : 0.5f;
+            displayColor = lerp(displayLuminance.xxx, displayColor, displaySaturation);
+            return float4(displayColor, outputAlpha);
+        }
+    )";
+
+    constexpr const char* shadowVertexShaderSource = R"(
+        cbuffer SceneConstants : register(b0)
+        {
+            row_major float4x4 worldViewProjection;
+        };
+
+        struct VertexInput
+        {
+            float3 position : POSITION;
+            float3 normal : NORMAL;
+            float4 tangent : TANGENT;
+            float2 uv : TEXCOORD0;
+            float4 color : COLOR0;
+        };
+
+        struct PixelInput
+        {
+            float4 position : SV_POSITION;
+            float2 uv : TEXCOORD0;
+            float4 color : COLOR0;
+        };
+
+        PixelInput main(VertexInput input)
+        {
+            PixelInput output;
+            output.position = mul(float4(input.position, 1.0f), worldViewProjection);
+            output.uv = input.uv;
+            output.color = input.color;
+            return output;
+        }
+    )";
+
+    constexpr const char* shadowPixelShaderSource = R"(
+        Texture2D diffuseTexture : register(t0);
+        SamplerState materialSampler : register(s0);
+
+        cbuffer MaterialConstants : register(b1)
+        {
+            float alphaThreshold;
+            float materialAlpha;
+            float blendEnabled;
+            float specularStrength;
+            float3 specularColor;
+            float glossiness;
+            float3 emissiveColor;
+            float emissiveMultiple;
+            float3 tintColor;
+            float environmentScale;
+            float2 uvScale;
+            float2 uvOffset;
+            float parallaxScale;
+            float backlightPower;
+            float rimlightPower;
+            float auxiliaryMapMode;
+            float hasNormalMap;
+            float hasHeightMap;
+            float hasEnvironmentMap;
+            float hasEnvironmentMask;
+            float hasSubsurfaceMap;
+            float hasBacklightMap;
+            float hasSpecularMap;
+            float modelSpaceNormals;
+            float useVertexColors;
+            float useVertexAlpha;
+            float emissiveEnabled;
+            float specularEnabled;
+        };
+
+        struct PixelInput
+        {
+            float4 position : SV_POSITION;
+            float2 uv : TEXCOORD0;
+            float4 color : COLOR0;
+        };
+
+        void main(PixelInput input)
+        {
+            float2 uv = input.uv * uvScale + uvOffset;
+            float vertexAlpha = lerp(1.0f, input.color.a, useVertexAlpha);
+            float alpha = diffuseTexture.Sample(materialSampler, uv).a * vertexAlpha * materialAlpha;
+            float shadowAlphaThreshold = alphaThreshold >= 0.0f
+                ? alphaThreshold
+                : (blendEnabled > 0.5f ? 0.1f : -1.0f);
+            clip(alpha - shadowAlphaThreshold);
+        }
+    )";
+
+    bool CompileShader(const char* source, const char* target, ID3DBlob** byteCode)
+    {
+        ID3DBlob* errors = nullptr;
+        const HRESULT result = D3DCompile(
+            source,
+            std::strlen(source),
+            nullptr,
+            nullptr,
+            nullptr,
+            "main",
+            target,
+            D3DCOMPILE_ENABLE_STRICTNESS | D3DCOMPILE_OPTIMIZATION_LEVEL3,
+            0,
+            byteCode,
+            &errors);
+
+        if (FAILED(result) && errors) {
+            logger::error("Mesh shader compilation failed: {}", static_cast<const char*>(errors->GetBufferPointer()));
+        }
+        ReleaseResource(errors);
+        return SUCCEEDED(result);
+    }
+
+    HRESULT CreateSolidTexture(
+        ID3D11Device* device,
+        std::uint32_t pixel,
+        bool cubeTexture,
+        ID3D11ShaderResourceView** textureView)
+    {
+        if (!device || !textureView) {
+            return E_INVALIDARG;
+        }
+
+        D3D11_TEXTURE2D_DESC description{};
+        description.Width = 1;
+        description.Height = 1;
+        description.MipLevels = 1;
+        description.ArraySize = cubeTexture ? 6 : 1;
+        description.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+        description.SampleDesc.Count = 1;
+        description.Usage = D3D11_USAGE_IMMUTABLE;
+        description.BindFlags = D3D11_BIND_SHADER_RESOURCE;
+        description.MiscFlags = cubeTexture ? D3D11_RESOURCE_MISC_TEXTURECUBE : 0;
+
+        std::array<D3D11_SUBRESOURCE_DATA, 6> initialData{};
+        for (D3D11_SUBRESOURCE_DATA& subresource : initialData) {
+            subresource.pSysMem = &pixel;
+            subresource.SysMemPitch = sizeof(pixel);
+        }
+
+        ID3D11Texture2D* texture = nullptr;
+        HRESULT result = device->CreateTexture2D(&description, initialData.data(), &texture);
+        if (SUCCEEDED(result)) {
+            result = device->CreateShaderResourceView(texture, nullptr, textureView);
+        }
+        ReleaseResource(texture);
+        return result;
+    }
+
+    DirectX::XMMATRIX GetWorldMatrix(const MeshRenderingFrameworkAPI::Internal::IMesh& mesh)
+    {
+        const RE::NiMatrix3& rotation = mesh.rotation;
+        const DirectX::XMMATRIX rotationMatrix = DirectX::XMMatrixSet(
+            rotation.entry[0][0], rotation.entry[1][0], rotation.entry[2][0], 0.0f,
+            rotation.entry[0][1], rotation.entry[1][1], rotation.entry[2][1], 0.0f,
+            rotation.entry[0][2], rotation.entry[1][2], rotation.entry[2][2], 0.0f,
+            0.0f, 0.0f, 0.0f, 1.0f);
+
+        return DirectX::XMMatrixScaling(mesh.scale, mesh.scale, mesh.scale) *
+               rotationMatrix *
+               DirectX::XMMatrixTranslation(mesh.position.x, mesh.position.y, mesh.position.z);
+    }
+}
+
+MeshRenderingFrameworkAPI::Internal::IMesh* RenderManager::AddByNifPAth(
+    const char* nifPath, uint32_t width, uint32_t height)
+{
+    if (!nifPath || !nifPath[0] || width == 0 || height == 0) {
+        return nullptr;
+    }
+
+    std::unique_lock lock(mutex);
+    Mesh* loadedMesh = new Mesh(nifPath, width, height);
+    if (!loadedMesh->IsValid()) {
+        delete loadedMesh;
+        return nullptr;
+    }
+
+    meshes[loadedMesh->mesh] = loadedMesh;
+    return loadedMesh->mesh;
+}
+
+MeshRenderingFrameworkAPI::Internal::IMesh* RenderManager::AddByNifPathSet(
+    const char* const* basePaths,
+    uint32_t basePathCount,
+    const char* const* attachmentPaths,
+    uint32_t attachmentPathCount,
+    uint32_t width,
+    uint32_t height)
+{
+    if (!basePaths || basePathCount == 0 || width == 0 || height == 0) {
+        return nullptr;
+    }
+
+    std::unique_lock lock(mutex);
+    Mesh* loadedMesh = new Mesh(
+        basePaths,
+        basePathCount,
+        attachmentPaths,
+        attachmentPathCount,
+        width,
+        height);
+    if (!loadedMesh->IsValid()) {
+        delete loadedMesh;
+        return nullptr;
+    }
+
+    meshes[loadedMesh->mesh] = loadedMesh;
+    return loadedMesh->mesh;
+}
+
+MeshRenderingFrameworkAPI::Internal::IMesh* RenderManager::AddByNiAVObjectList(
+    RE::NiAVObject* const*, uint32_t, uint32_t, uint32_t)
+{
+    logger::error("NiAVObject rendering is unavailable: nifly requires a source NIF stream");
+    return nullptr;
+}
+
+bool RenderManager::SetBoneLocalPose(
+    MeshRenderingFrameworkAPI::Internal::IMesh* mesh,
+    const char* const* boneNames,
+    const std::int16_t* parentIndices,
+    const MeshRenderingFrameworkAPI::BoneTransform* transforms,
+    uint32_t transformCount)
+{
+    if (!mesh || !boneNames || !parentIndices || !transforms || transformCount == 0) {
+        return false;
+    }
+
+    std::unique_lock lock(mutex);
+    const auto meshEntry = meshes.find(mesh);
+    if (meshEntry == meshes.end() || !meshEntry->second) {
+        return false;
+    }
+    return meshEntry->second->SetBoneLocalPose(
+        boneNames,
+        parentIndices,
+        transforms,
+        transformCount);
+}
+
+bool RenderManager::PlayAnimation(
+    MeshRenderingFrameworkAPI::Internal::IMesh* mesh,
+    const char* animationPath,
+    const char* skeletonPath,
+    bool loop)
+{
+    if (!mesh || !animationPath || !animationPath[0] || !skeletonPath || !skeletonPath[0]) {
+        return false;
+    }
+
+    std::unique_lock lock(mutex);
+    const auto meshEntry = meshes.find(mesh);
+    if (meshEntry == meshes.end() || !meshEntry->second) {
+        return false;
+    }
+    return meshEntry->second->PlayAnimation(animationPath, skeletonPath, loop);
+}
+
+bool RenderManager::SetFaceMorphSource(
+    MeshRenderingFrameworkAPI::Internal::IMesh* mesh,
+    RE::Actor* actor)
+{
+    if (!mesh || !actor) {
+        return false;
+    }
+
+    std::unique_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshEntry = meshes.find(mesh);
+    if (meshEntry == meshes.end() || !meshEntry->second) {
+        return false;
+    }
+    return meshEntry->second->SetFaceMorphSource(actor);
+}
+
+bool RenderManager::SetMorph(
+    MeshRenderingFrameworkAPI::Internal::IMesh* mesh,
+    const char* triPath,
+    const char* morphName,
+    float value)
+{
+    if (!mesh || !triPath || !morphName) {
+        return false;
+    }
+
+    std::unique_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshEntry = meshes.find(mesh);
+    if (meshEntry == meshes.end() || !meshEntry->second) {
+        return false;
+    }
+    return meshEntry->second->SetMorph(triPath, morphName, value);
+}
+
+bool RenderManager::ClearFaceMorphs(
+    MeshRenderingFrameworkAPI::Internal::IMesh* mesh)
+{
+    if (!mesh) {
+        return false;
+    }
+
+    std::unique_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshEntry = meshes.find(mesh);
+    if (meshEntry == meshes.end() || !meshEntry->second) {
+        return false;
+    }
+    return meshEntry->second->ClearFaceMorphs();
+}
+
+bool RenderManager::SetTextureSet(
+    MeshRenderingFrameworkAPI::Internal::IMesh* mesh,
+    const char* nifPath,
+    const char* const* texturePaths,
+    std::uint32_t texturePathCount,
+    bool modelSpaceNormals,
+    bool includeBodyShape)
+{
+    if (!mesh || !nifPath || !nifPath[0] || !texturePaths || texturePathCount == 0) {
+        return false;
+    }
+
+    std::unique_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshEntry = meshes.find(mesh);
+    if (meshEntry == meshes.end() || !meshEntry->second) {
+        return false;
+    }
+    return meshEntry->second->SetTextureSet(
+        nifPath,
+        texturePaths,
+        texturePathCount,
+        modelSpaceNormals,
+        includeBodyShape);
+}
+
+std::uint32_t RenderManager::GetLightCount(MeshRenderingFrameworkAPI::Internal::IMesh* mesh)
+{
+    if (!mesh) {
+        return 0;
+    }
+    std::shared_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::const_iterator meshEntry = meshes.find(mesh);
+    return meshEntry != meshes.end() && meshEntry->second
+        ? meshEntry->second->GetLightCount()
+        : 0;
+}
+
+MeshRenderingFrameworkAPI::Internal::ILight* RenderManager::GetLight(
+    MeshRenderingFrameworkAPI::Internal::IMesh* mesh,
+    std::uint32_t lightIndex)
+{
+    if (!mesh) {
+        return nullptr;
+    }
+    std::shared_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::const_iterator meshEntry = meshes.find(mesh);
+    return meshEntry != meshes.end() && meshEntry->second
+        ? meshEntry->second->GetLight(lightIndex)
+        : nullptr;
+}
+
+MeshRenderingFrameworkAPI::Internal::ILight* RenderManager::AddLight(
+    MeshRenderingFrameworkAPI::Internal::IMesh* mesh,
+    float directionX,
+    float directionY,
+    float directionZ,
+    float red,
+    float green,
+    float blue,
+    float strength)
+{
+    if (!mesh) {
+        return nullptr;
+    }
+    std::unique_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshEntry = meshes.find(mesh);
+    return meshEntry != meshes.end() && meshEntry->second
+        ? meshEntry->second->AddLight(
+              directionX,
+              directionY,
+              directionZ,
+              red,
+              green,
+              blue,
+              strength)
+        : nullptr;
+}
+
+bool RenderManager::ClearLights(MeshRenderingFrameworkAPI::Internal::IMesh* mesh)
+{
+    if (!mesh) {
+        return false;
+    }
+    std::unique_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshEntry = meshes.find(mesh);
+    return meshEntry != meshes.end() && meshEntry->second && meshEntry->second->ClearLights();
+}
+
+bool RenderManager::SetExposure(MeshRenderingFrameworkAPI::Internal::IMesh* mesh, float exposure)
+{
+    if (!mesh) {
+        return false;
+    }
+    std::unique_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshEntry = meshes.find(mesh);
+    return meshEntry != meshes.end() && meshEntry->second && meshEntry->second->SetExposure(exposure);
+}
+
+bool RenderManager::GetExposure(MeshRenderingFrameworkAPI::Internal::IMesh* mesh, float* exposure)
+{
+    if (!mesh || !exposure) {
+        return false;
+    }
+    std::shared_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::const_iterator meshEntry = meshes.find(mesh);
+    return meshEntry != meshes.end() && meshEntry->second && meshEntry->second->GetExposure(exposure);
+}
+
+bool RenderManager::SetLightDirection(
+    MeshRenderingFrameworkAPI::Internal::ILight* light,
+    float x,
+    float y,
+    float z)
+{
+    if (!light) {
+        return false;
+    }
+    std::unique_lock lock(mutex);
+    for (const std::pair<MeshRenderingFrameworkAPI::Internal::IMesh* const, Mesh*>& meshEntry : meshes) {
+        if (meshEntry.second && meshEntry.second->SetLightDirection(light, x, y, z)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool RenderManager::GetLightDirection(
+    MeshRenderingFrameworkAPI::Internal::ILight* light,
+    float* x,
+    float* y,
+    float* z)
+{
+    if (!light || !x || !y || !z) {
+        return false;
+    }
+    std::shared_lock lock(mutex);
+    for (const std::pair<MeshRenderingFrameworkAPI::Internal::IMesh* const, Mesh*>& meshEntry : meshes) {
+        if (meshEntry.second && meshEntry.second->GetLightDirection(light, x, y, z)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool RenderManager::SetLightColor(
+    MeshRenderingFrameworkAPI::Internal::ILight* light,
+    float red,
+    float green,
+    float blue)
+{
+    if (!light) {
+        return false;
+    }
+    std::unique_lock lock(mutex);
+    for (const std::pair<MeshRenderingFrameworkAPI::Internal::IMesh* const, Mesh*>& meshEntry : meshes) {
+        if (meshEntry.second && meshEntry.second->SetLightColor(light, red, green, blue)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool RenderManager::GetLightColor(
+    MeshRenderingFrameworkAPI::Internal::ILight* light,
+    float* red,
+    float* green,
+    float* blue)
+{
+    if (!light || !red || !green || !blue) {
+        return false;
+    }
+    std::shared_lock lock(mutex);
+    for (const std::pair<MeshRenderingFrameworkAPI::Internal::IMesh* const, Mesh*>& meshEntry : meshes) {
+        if (meshEntry.second && meshEntry.second->GetLightColor(light, red, green, blue)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool RenderManager::SetLightStrength(
+    MeshRenderingFrameworkAPI::Internal::ILight* light,
+    float strength)
+{
+    if (!light) {
+        return false;
+    }
+    std::unique_lock lock(mutex);
+    for (const std::pair<MeshRenderingFrameworkAPI::Internal::IMesh* const, Mesh*>& meshEntry : meshes) {
+        if (meshEntry.second && meshEntry.second->SetLightStrength(light, strength)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool RenderManager::GetLightStrength(
+    MeshRenderingFrameworkAPI::Internal::ILight* light,
+    float* strength)
+{
+    if (!light || !strength) {
+        return false;
+    }
+    std::shared_lock lock(mutex);
+    for (const std::pair<MeshRenderingFrameworkAPI::Internal::IMesh* const, Mesh*>& meshEntry : meshes) {
+        if (meshEntry.second && meshEntry.second->GetLightStrength(light, strength)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool RenderManager::CopyRenderTargetToMesh(Mesh* sourceMesh, RenderTarget* target)
+{
+    if (!sourceMesh || !sourceMesh->mesh || !target || !target->texture ||
+        !presentationDevice || !device || !renderContext) {
+        return false;
+    }
+
+    MeshRenderingFrameworkAPI::Internal::IMesh* outputMesh = sourceMesh->mesh;
+    D3D11_TEXTURE2D_DESC targetDescription{};
+    target->texture->GetDesc(&targetDescription);
+
+    bool needsTexture = !sourceMesh->outputTexture || !outputMesh->texture || !outputMesh->SRV;
+    if (outputMesh->texture) {
+        D3D11_TEXTURE2D_DESC currentDescription{};
+        outputMesh->texture->GetDesc(&currentDescription);
+        needsTexture = needsTexture || currentDescription.Width != targetDescription.Width ||
+                       currentDescription.Height != targetDescription.Height ||
+                       currentDescription.Format != targetDescription.Format;
+    }
+
+    if (needsTexture) {
+        ReleaseResource(outputMesh->SRV);
+        ReleaseResource(outputMesh->texture);
+        ReleaseResource(sourceMesh->outputTexture);
+
+        D3D11_TEXTURE2D_DESC outputDescription = targetDescription;
+        outputDescription.Usage = D3D11_USAGE_DEFAULT;
+        outputDescription.BindFlags = D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE;
+        outputDescription.CPUAccessFlags = 0;
+        outputDescription.MiscFlags = D3D11_RESOURCE_MISC_SHARED;
+
+        HRESULT result = device->CreateTexture2D(
+            &outputDescription,
+            nullptr,
+            &sourceMesh->outputTexture);
+        if (FAILED(result)) {
+            return false;
+        }
+
+        IDXGIResource* sharedResource = nullptr;
+        result = sourceMesh->outputTexture->QueryInterface(
+            __uuidof(IDXGIResource),
+            reinterpret_cast<void**>(&sharedResource));
+        if (FAILED(result)) {
+            ReleaseResource(sourceMesh->outputTexture);
+            return false;
+        }
+
+        HANDLE sharedHandle = nullptr;
+        result = sharedResource->GetSharedHandle(&sharedHandle);
+        ReleaseResource(sharedResource);
+        if (FAILED(result) || !sharedHandle) {
+            ReleaseResource(sourceMesh->outputTexture);
+            return false;
+        }
+
+        result = presentationDevice->OpenSharedResource(
+            sharedHandle,
+            __uuidof(ID3D11Texture2D),
+            reinterpret_cast<void**>(&outputMesh->texture));
+        if (FAILED(result)) {
+            ReleaseResource(sourceMesh->outputTexture);
+            return false;
+        }
+
+        result = presentationDevice->CreateShaderResourceView(
+            outputMesh->texture,
+            nullptr,
+            &outputMesh->SRV);
+        if (FAILED(result)) {
+            ReleaseResource(outputMesh->texture);
+            ReleaseResource(sourceMesh->outputTexture);
+            return false;
+        }
+    }
+
+    renderContext->CopyResource(sourceMesh->outputTexture, target->texture);
+    return true;
+}
+
+bool RenderManager::InitializePipeline()
+{
+    const bool hasAllShadowDepthViews = std::all_of(
+        shadowDepthViews.begin(),
+        shadowDepthViews.end(),
+        [](ID3D11DepthStencilView* view) { return view != nullptr; });
+    if (vertexShader && pixelShader && shadowVertexShader && shadowPixelShader && inputLayout &&
+        constantBuffer && samplerState && shadowSamplerState && materialConstantBuffer &&
+        rasterizerState && shadowRasterizerState && opaqueBlendState && alphaBlendState &&
+        depthWriteState && depthReadState && fallbackWhiteTexture && fallbackNormalTexture &&
+        fallbackBlackTexture && fallbackEnvironmentTexture && shadowTexture && shadowTextureView &&
+        hasAllShadowDepthViews) {
+        return true;
+    }
+    if (!device) {
+        return false;
+    }
+
+    ReleasePipeline();
+    ID3DBlob* vertexByteCode = nullptr;
+    ID3DBlob* pixelByteCode = nullptr;
+    ID3DBlob* shadowVertexByteCode = nullptr;
+    ID3DBlob* shadowPixelByteCode = nullptr;
+    if (!CompileShader(vertexShaderSource, "vs_5_0", &vertexByteCode) ||
+        !CompileShader(pixelShaderSource, "ps_5_0", &pixelByteCode) ||
+        !CompileShader(shadowVertexShaderSource, "vs_5_0", &shadowVertexByteCode) ||
+        !CompileShader(shadowPixelShaderSource, "ps_5_0", &shadowPixelByteCode)) {
+        ReleaseResource(vertexByteCode);
+        ReleaseResource(pixelByteCode);
+        ReleaseResource(shadowVertexByteCode);
+        ReleaseResource(shadowPixelByteCode);
+        return false;
+    }
+
+    HRESULT result = device->CreateVertexShader(
+        vertexByteCode->GetBufferPointer(), vertexByteCode->GetBufferSize(), nullptr, &vertexShader);
+    if (SUCCEEDED(result)) {
+        result = device->CreatePixelShader(
+            pixelByteCode->GetBufferPointer(), pixelByteCode->GetBufferSize(), nullptr, &pixelShader);
+    }
+    if (SUCCEEDED(result)) {
+        result = device->CreateVertexShader(
+            shadowVertexByteCode->GetBufferPointer(),
+            shadowVertexByteCode->GetBufferSize(),
+            nullptr,
+            &shadowVertexShader);
+    }
+    if (SUCCEEDED(result)) {
+        result = device->CreatePixelShader(
+            shadowPixelByteCode->GetBufferPointer(),
+            shadowPixelByteCode->GetBufferSize(),
+            nullptr,
+            &shadowPixelShader);
+    }
+
+    const D3D11_INPUT_ELEMENT_DESC elements[] = {
+        {"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, offsetof(MeshVertex, position), D3D11_INPUT_PER_VERTEX_DATA, 0},
+        {"NORMAL", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, offsetof(MeshVertex, normal), D3D11_INPUT_PER_VERTEX_DATA, 0},
+        {"TANGENT", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, offsetof(MeshVertex, tangent), D3D11_INPUT_PER_VERTEX_DATA, 0},
+        {"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, offsetof(MeshVertex, uv), D3D11_INPUT_PER_VERTEX_DATA, 0},
+        {"COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, offsetof(MeshVertex, color), D3D11_INPUT_PER_VERTEX_DATA, 0}
+    };
+    if (SUCCEEDED(result)) {
+        result = device->CreateInputLayout(
+            elements,
+            static_cast<UINT>(std::size(elements)),
+            vertexByteCode->GetBufferPointer(),
+            vertexByteCode->GetBufferSize(),
+            &inputLayout);
+    }
+    ReleaseResource(vertexByteCode);
+    ReleaseResource(pixelByteCode);
+    ReleaseResource(shadowVertexByteCode);
+    ReleaseResource(shadowPixelByteCode);
+
+    D3D11_BUFFER_DESC constantDescription{};
+    constantDescription.ByteWidth = sizeof(SceneConstants);
+    constantDescription.Usage = D3D11_USAGE_DYNAMIC;
+    constantDescription.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+    constantDescription.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+    if (SUCCEEDED(result)) {
+        result = device->CreateBuffer(&constantDescription, nullptr, &constantBuffer);
+    }
+
+    D3D11_BUFFER_DESC materialConstantDescription{};
+    materialConstantDescription.ByteWidth = sizeof(MeshMaterialConstants);
+    materialConstantDescription.Usage = D3D11_USAGE_DYNAMIC;
+    materialConstantDescription.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+    materialConstantDescription.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+    if (SUCCEEDED(result)) {
+        result = device->CreateBuffer(&materialConstantDescription, nullptr, &materialConstantBuffer);
+    }
+
+    D3D11_SAMPLER_DESC samplerDescription{};
+    samplerDescription.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
+    samplerDescription.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
+    samplerDescription.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
+    samplerDescription.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
+    samplerDescription.MaxLOD = D3D11_FLOAT32_MAX;
+    if (SUCCEEDED(result)) {
+        result = device->CreateSamplerState(&samplerDescription, &samplerState);
+    }
+
+    D3D11_SAMPLER_DESC shadowSamplerDescription{};
+    shadowSamplerDescription.Filter = D3D11_FILTER_COMPARISON_MIN_MAG_LINEAR_MIP_POINT;
+    shadowSamplerDescription.AddressU = D3D11_TEXTURE_ADDRESS_BORDER;
+    shadowSamplerDescription.AddressV = D3D11_TEXTURE_ADDRESS_BORDER;
+    shadowSamplerDescription.AddressW = D3D11_TEXTURE_ADDRESS_BORDER;
+    shadowSamplerDescription.ComparisonFunc = D3D11_COMPARISON_LESS_EQUAL;
+    shadowSamplerDescription.BorderColor[0] = 1.0f;
+    shadowSamplerDescription.BorderColor[1] = 1.0f;
+    shadowSamplerDescription.BorderColor[2] = 1.0f;
+    shadowSamplerDescription.BorderColor[3] = 1.0f;
+    shadowSamplerDescription.MaxLOD = D3D11_FLOAT32_MAX;
+    if (SUCCEEDED(result)) {
+        result = device->CreateSamplerState(&shadowSamplerDescription, &shadowSamplerState);
+    }
+
+    D3D11_RASTERIZER_DESC rasterizerDescription{};
+    rasterizerDescription.FillMode = D3D11_FILL_SOLID;
+    rasterizerDescription.CullMode = D3D11_CULL_NONE;
+    rasterizerDescription.DepthClipEnable = TRUE;
+    rasterizerDescription.ScissorEnable = TRUE;
+    if (SUCCEEDED(result)) {
+        result = device->CreateRasterizerState(&rasterizerDescription, &rasterizerState);
+    }
+
+    D3D11_RASTERIZER_DESC shadowRasterizerDescription = rasterizerDescription;
+    shadowRasterizerDescription.ScissorEnable = FALSE;
+    shadowRasterizerDescription.DepthBias = 100;
+    shadowRasterizerDescription.SlopeScaledDepthBias = 1.0f;
+    shadowRasterizerDescription.DepthBiasClamp = 0.01f;
+    if (SUCCEEDED(result)) {
+        result = device->CreateRasterizerState(&shadowRasterizerDescription, &shadowRasterizerState);
+    }
+
+    D3D11_BLEND_DESC opaqueBlendDescription{};
+    opaqueBlendDescription.RenderTarget[0].RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
+    if (SUCCEEDED(result)) {
+        result = device->CreateBlendState(&opaqueBlendDescription, &opaqueBlendState);
+    }
+
+    D3D11_BLEND_DESC alphaBlendDescription{};
+    D3D11_RENDER_TARGET_BLEND_DESC& targetBlend = alphaBlendDescription.RenderTarget[0];
+    targetBlend.BlendEnable = TRUE;
+    targetBlend.SrcBlend = D3D11_BLEND_SRC_ALPHA;
+    targetBlend.DestBlend = D3D11_BLEND_INV_SRC_ALPHA;
+    targetBlend.BlendOp = D3D11_BLEND_OP_ADD;
+    targetBlend.SrcBlendAlpha = D3D11_BLEND_ONE;
+    targetBlend.DestBlendAlpha = D3D11_BLEND_INV_SRC_ALPHA;
+    targetBlend.BlendOpAlpha = D3D11_BLEND_OP_ADD;
+    targetBlend.RenderTargetWriteMask = D3D11_COLOR_WRITE_ENABLE_ALL;
+    if (SUCCEEDED(result)) {
+        result = device->CreateBlendState(&alphaBlendDescription, &alphaBlendState);
+    }
+
+    D3D11_DEPTH_STENCIL_DESC depthWriteDescription{};
+    depthWriteDescription.DepthEnable = TRUE;
+    depthWriteDescription.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ALL;
+    depthWriteDescription.DepthFunc = D3D11_COMPARISON_LESS_EQUAL;
+    if (SUCCEEDED(result)) {
+        result = device->CreateDepthStencilState(&depthWriteDescription, &depthWriteState);
+    }
+
+    D3D11_DEPTH_STENCIL_DESC depthReadDescription = depthWriteDescription;
+    depthReadDescription.DepthWriteMask = D3D11_DEPTH_WRITE_MASK_ZERO;
+    if (SUCCEEDED(result)) {
+        result = device->CreateDepthStencilState(&depthReadDescription, &depthReadState);
+    }
+
+    if (SUCCEEDED(result)) {
+        result = CreateSolidTexture(device, 0xFFFFFFFF, false, &fallbackWhiteTexture);
+    }
+    if (SUCCEEDED(result)) {
+        result = CreateSolidTexture(device, 0xFFFF8080, false, &fallbackNormalTexture);
+    }
+    if (SUCCEEDED(result)) {
+        result = CreateSolidTexture(device, 0xFF000000, false, &fallbackBlackTexture);
+    }
+    if (SUCCEEDED(result)) {
+        result = CreateSolidTexture(device, 0xFF000000, true, &fallbackEnvironmentTexture);
+    }
+
+    D3D11_TEXTURE2D_DESC shadowTextureDescription{};
+    shadowTextureDescription.Width = shadowMapResolution;
+    shadowTextureDescription.Height = shadowMapResolution;
+    shadowTextureDescription.MipLevels = 1;
+    shadowTextureDescription.ArraySize = static_cast<UINT>(shadowLightCount);
+    shadowTextureDescription.Format = DXGI_FORMAT_R32_TYPELESS;
+    shadowTextureDescription.SampleDesc.Count = 1;
+    shadowTextureDescription.Usage = D3D11_USAGE_DEFAULT;
+    shadowTextureDescription.BindFlags = D3D11_BIND_DEPTH_STENCIL | D3D11_BIND_SHADER_RESOURCE;
+    if (SUCCEEDED(result)) {
+        result = device->CreateTexture2D(&shadowTextureDescription, nullptr, &shadowTexture);
+    }
+
+    for (std::size_t lightIndex = 0; lightIndex < shadowLightCount && SUCCEEDED(result); ++lightIndex) {
+        D3D11_DEPTH_STENCIL_VIEW_DESC depthViewDescription{};
+        depthViewDescription.Format = DXGI_FORMAT_D32_FLOAT;
+        depthViewDescription.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2DARRAY;
+        depthViewDescription.Texture2DArray.MipSlice = 0;
+        depthViewDescription.Texture2DArray.FirstArraySlice = static_cast<UINT>(lightIndex);
+        depthViewDescription.Texture2DArray.ArraySize = 1;
+        result = device->CreateDepthStencilView(
+            shadowTexture,
+            &depthViewDescription,
+            &shadowDepthViews[lightIndex]);
+    }
+
+    D3D11_SHADER_RESOURCE_VIEW_DESC shadowResourceDescription{};
+    shadowResourceDescription.Format = DXGI_FORMAT_R32_FLOAT;
+    shadowResourceDescription.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2DARRAY;
+    shadowResourceDescription.Texture2DArray.MostDetailedMip = 0;
+    shadowResourceDescription.Texture2DArray.MipLevels = 1;
+    shadowResourceDescription.Texture2DArray.FirstArraySlice = 0;
+    shadowResourceDescription.Texture2DArray.ArraySize = static_cast<UINT>(shadowLightCount);
+    if (SUCCEEDED(result)) {
+        result = device->CreateShaderResourceView(
+            shadowTexture,
+            &shadowResourceDescription,
+            &shadowTextureView);
+    }
+
+    if (FAILED(result)) {
+        ReleasePipeline();
+        return false;
+    }
+    return true;
+}
+
+void RenderManager::ReleasePipeline()
+{
+    ReleaseResource(shadowTextureView);
+    for (ID3D11DepthStencilView*& shadowDepthView : shadowDepthViews) {
+        ReleaseResource(shadowDepthView);
+    }
+    ReleaseResource(shadowTexture);
+    ReleaseResource(fallbackEnvironmentTexture);
+    ReleaseResource(fallbackBlackTexture);
+    ReleaseResource(fallbackNormalTexture);
+    ReleaseResource(fallbackWhiteTexture);
+    ReleaseResource(depthReadState);
+    ReleaseResource(depthWriteState);
+    ReleaseResource(alphaBlendState);
+    ReleaseResource(opaqueBlendState);
+    ReleaseResource(shadowRasterizerState);
+    ReleaseResource(rasterizerState);
+    ReleaseResource(shadowSamplerState);
+    ReleaseResource(samplerState);
+    ReleaseResource(materialConstantBuffer);
+    ReleaseResource(constantBuffer);
+    ReleaseResource(inputLayout);
+    ReleaseResource(pixelShader);
+    ReleaseResource(vertexShader);
+    ReleaseResource(shadowPixelShader);
+    ReleaseResource(shadowVertexShader);
+}
+
+bool RenderManager::RenderMesh(Mesh* sourceMesh, RenderTarget* target)
+{
+    if (!sourceMesh || !sourceMesh->IsValid() || !target || !target->initialized ||
+        !renderContext || !InitializePipeline() || !sourceMesh->InitializeGpuResources(device)) {
+        return false;
+    }
+
+    ID3D11RenderTargetView* renderTargetView = target->renderTargetView;
+    renderContext->OMSetRenderTargets(1, &renderTargetView, target->depthStencilView);
+    renderContext->OMSetBlendState(opaqueBlendState, nullptr, 0xFFFFFFFF);
+    renderContext->OMSetDepthStencilState(depthWriteState, 0);
+    renderContext->RSSetState(rasterizerState);
+
+    const D3D11_VIEWPORT viewport{
+        0.0f,
+        0.0f,
+        static_cast<float>(target->width),
+        static_cast<float>(target->height),
+        0.0f,
+        1.0f
+    };
+    const D3D11_RECT scissor{
+        0,
+        0,
+        static_cast<LONG>(target->width),
+        static_cast<LONG>(target->height)
+    };
+    renderContext->RSSetViewports(1, &viewport);
+    renderContext->RSSetScissorRects(1, &scissor);
+
+    renderContext->IASetInputLayout(inputLayout);
+    renderContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+    renderContext->VSSetShader(vertexShader, nullptr, 0);
+    renderContext->PSSetShader(pixelShader, nullptr, 0);
+    renderContext->GSSetShader(nullptr, nullptr, 0);
+    renderContext->HSSetShader(nullptr, nullptr, 0);
+    renderContext->DSSetShader(nullptr, nullptr, 0);
+    renderContext->VSSetConstantBuffers(0, 1, &constantBuffer);
+    renderContext->PSSetConstantBuffers(0, 1, &constantBuffer);
+    renderContext->PSSetConstantBuffers(1, 1, &materialConstantBuffer);
+    renderContext->PSSetSamplers(0, 1, &samplerState);
+
+    const float clearColor[4]{0.0f, 0.0f, 0.0f, 0.0f};
+    renderContext->ClearRenderTargetView(target->renderTargetView, clearColor);
+    renderContext->ClearDepthStencilView(target->depthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
+
+    const float aspect = static_cast<float>(target->width) / static_cast<float>(target->height);
+    constexpr float cameraY = 320.0f;
+    constexpr float subjectY = -500.0f;
+    constexpr float horizontalHalfSpan = 130.0f;
+    constexpr float cameraDistance = cameraY - subjectY;
+    const float verticalHalfSpan = horizontalHalfSpan / aspect;
+
+    const DirectX::XMMATRIX world = GetWorldMatrix(*sourceMesh->mesh);
+    const DirectX::XMMATRIX view = DirectX::XMMatrixLookAtRH(
+        DirectX::XMVectorSet(0.0f, cameraY, 0.0f, 1.0f),
+        DirectX::XMVectorSet(0.0f, subjectY, 0.0f, 1.0f),
+        DirectX::XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f));
+    const DirectX::XMMATRIX projection = DirectX::XMMatrixPerspectiveFovRH(
+        2.0f * std::atan(verticalHalfSpan / cameraDistance), aspect, 1.0f, 10000.0f);
+
+    SceneConstants constants{};
+    DirectX::XMStoreFloat4x4(&constants.world, world);
+    DirectX::XMStoreFloat4x4(
+        &constants.worldViewProjection,
+        world * view * projection);
+    constants.cameraPosition = DirectX::XMFLOAT4(0.0f, cameraY, 0.0f, 1.0f);
+    const std::size_t lightCount = std::min(sourceMesh->lights.size(), shadowLightCount);
+    for (std::size_t lightIndex = 0; lightIndex < lightCount; ++lightIndex) {
+        const MeshLight& light = sourceMesh->lights[lightIndex];
+        constants.lightDirections[lightIndex] = DirectX::XMFLOAT4(
+            light.direction.x,
+            light.direction.y,
+            light.direction.z,
+            0.0f);
+        constants.lightColors[lightIndex] = DirectX::XMFLOAT4(
+            light.color.x,
+            light.color.y,
+            light.color.z,
+            light.strength);
+    }
+    constants.ambientColor = DirectX::XMFLOAT4(0.30f, 0.32f, 0.36f, 1.0f);
+    constants.shadowParameters = DirectX::XMFLOAT4(
+        1.0f / static_cast<float>(shadowMapResolution),
+        1.5f,
+        0.00035f,
+        0.0025f);
+    constants.renderParameters = DirectX::XMFLOAT4(
+        sourceMesh->exposure,
+        static_cast<float>(lightCount),
+        0.0f,
+        0.0f);
+
+    float localShadowRadiusSquared = 0.0f;
+    for (const MeshPart& part : sourceMesh->parts) {
+        for (const MeshVertex& vertex : part.vertices) {
+            const float vertexRadiusSquared =
+                vertex.position[0] * vertex.position[0] +
+                vertex.position[1] * vertex.position[1] +
+                vertex.position[2] * vertex.position[2];
+            localShadowRadiusSquared = std::max(localShadowRadiusSquared, vertexRadiusSquared);
+        }
+    }
+    const float shadowRadius = std::max(
+        std::sqrt(localShadowRadiusSquared) * std::abs(sourceMesh->mesh->scale) * 1.05f,
+        1.0f);
+    const DirectX::XMVECTOR shadowCenter = DirectX::XMVectorSet(
+        sourceMesh->mesh->position.x,
+        sourceMesh->mesh->position.y,
+        sourceMesh->mesh->position.z,
+        1.0f);
+    DirectX::XMMATRIX lightViewProjections[shadowLightCount]{};
+    for (std::size_t lightIndex = 0; lightIndex < lightCount; ++lightIndex) {
+        const DirectX::XMVECTOR lightDirection = DirectX::XMVector3Normalize(
+            DirectX::XMLoadFloat4(&constants.lightDirections[lightIndex]));
+        const float upAlignment = std::abs(DirectX::XMVectorGetX(
+            DirectX::XMVector3Dot(lightDirection, DirectX::XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f))));
+        const DirectX::XMVECTOR lightUp = upAlignment > 0.95f
+            ? DirectX::XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f)
+            : DirectX::XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+        const DirectX::XMVECTOR lightPosition = DirectX::XMVectorAdd(
+            shadowCenter,
+            DirectX::XMVectorScale(lightDirection, shadowRadius * 2.5f));
+        const DirectX::XMMATRIX lightView = DirectX::XMMatrixLookAtRH(
+            lightPosition,
+            shadowCenter,
+            lightUp);
+        const DirectX::XMMATRIX lightProjection = DirectX::XMMatrixOrthographicRH(
+            shadowRadius * 2.0f,
+            shadowRadius * 2.0f,
+            shadowRadius * 0.1f,
+            shadowRadius * 5.0f);
+        lightViewProjections[lightIndex] = lightView * lightProjection;
+        DirectX::XMStoreFloat4x4(
+            &constants.lightViewProjections[lightIndex],
+            lightViewProjections[lightIndex]);
+    }
+
+    std::array<ID3D11ShaderResourceView*, MeshTextureSlotCount> fallbackTextures{
+        fallbackWhiteTexture,
+        fallbackNormalTexture,
+        fallbackBlackTexture,
+        fallbackBlackTexture,
+        fallbackEnvironmentTexture,
+        fallbackWhiteTexture,
+        fallbackBlackTexture,
+        fallbackBlackTexture,
+        fallbackBlackTexture,
+        fallbackWhiteTexture
+    };
+
+    ID3D11ShaderResourceView* noShadowTexture = nullptr;
+    renderContext->PSSetShaderResources(10, 1, &noShadowTexture);
+    renderContext->OMSetBlendState(opaqueBlendState, nullptr, 0xFFFFFFFF);
+    renderContext->OMSetDepthStencilState(depthWriteState, 0);
+    renderContext->RSSetState(shadowRasterizerState);
+    const D3D11_VIEWPORT shadowViewport{
+        0.0f,
+        0.0f,
+        static_cast<float>(shadowMapResolution),
+        static_cast<float>(shadowMapResolution),
+        0.0f,
+        1.0f
+    };
+    renderContext->RSSetViewports(1, &shadowViewport);
+    renderContext->VSSetShader(shadowVertexShader, nullptr, 0);
+    renderContext->PSSetShader(shadowPixelShader, nullptr, 0);
+
+    bool shadowsRendered = true;
+    for (std::size_t lightIndex = 0; lightIndex < lightCount; ++lightIndex) {
+        renderContext->OMSetRenderTargets(0, nullptr, shadowDepthViews[lightIndex]);
+        renderContext->ClearDepthStencilView(
+            shadowDepthViews[lightIndex],
+            D3D11_CLEAR_DEPTH,
+            1.0f,
+            0);
+
+        SceneConstants shadowConstants{};
+        DirectX::XMStoreFloat4x4(
+            &shadowConstants.worldViewProjection,
+            world * lightViewProjections[lightIndex]);
+        D3D11_MAPPED_SUBRESOURCE shadowMapped{};
+        if (FAILED(renderContext->Map(
+                constantBuffer,
+                0,
+                D3D11_MAP_WRITE_DISCARD,
+                0,
+                &shadowMapped))) {
+            shadowsRendered = false;
+            break;
+        }
+        std::memcpy(shadowMapped.pData, &shadowConstants, sizeof(shadowConstants));
+        renderContext->Unmap(constantBuffer, 0);
+        sourceMesh->Draw(renderContext, fallbackTextures.data(), materialConstantBuffer, false);
+        sourceMesh->Draw(renderContext, fallbackTextures.data(), materialConstantBuffer, true);
+    }
+    renderContext->OMSetRenderTargets(0, nullptr, nullptr);
+    if (!shadowsRendered) {
+        renderContext->ClearState();
+        return false;
+    }
+
+    renderContext->OMSetRenderTargets(1, &renderTargetView, target->depthStencilView);
+    renderContext->OMSetBlendState(opaqueBlendState, nullptr, 0xFFFFFFFF);
+    renderContext->OMSetDepthStencilState(depthWriteState, 0);
+    renderContext->RSSetState(rasterizerState);
+    renderContext->RSSetViewports(1, &viewport);
+    renderContext->RSSetScissorRects(1, &scissor);
+    renderContext->VSSetShader(vertexShader, nullptr, 0);
+    renderContext->PSSetShader(pixelShader, nullptr, 0);
+    renderContext->PSSetShaderResources(10, 1, &shadowTextureView);
+    renderContext->PSSetSamplers(1, 1, &shadowSamplerState);
+
+    D3D11_MAPPED_SUBRESOURCE mapped{};
+    bool rendered = false;
+    if (SUCCEEDED(renderContext->Map(constantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mapped))) {
+        std::memcpy(mapped.pData, &constants, sizeof(constants));
+        renderContext->Unmap(constantBuffer, 0);
+        sourceMesh->Draw(renderContext, fallbackTextures.data(), materialConstantBuffer, false);
+        renderContext->OMSetBlendState(alphaBlendState, nullptr, 0xFFFFFFFF);
+        renderContext->OMSetDepthStencilState(depthReadState, 0);
+        sourceMesh->Draw(renderContext, fallbackTextures.data(), materialConstantBuffer, true);
+        renderContext->OMSetRenderTargets(0, nullptr, nullptr);
+        rendered = CopyRenderTargetToMesh(sourceMesh, target);
+    }
+
+    std::array<ID3D11ShaderResourceView*, MeshTextureSlotCount + 1> noTextures{};
+    renderContext->PSSetShaderResources(0, static_cast<UINT>(noTextures.size()), noTextures.data());
+    if (!rendered) {
+        renderContext->ClearState();
+        return false;
+    }
+    return ExecuteCommands();
+}
+
+bool RenderManager::ExecuteCommands()
+{
+    if (!renderContext || !completionQuery) {
+        return false;
+    }
+
+    renderContext->End(completionQuery);
+    renderContext->Flush();
+    HRESULT completionResult = S_FALSE;
+    while (completionResult == S_FALSE) {
+        completionResult = renderContext->GetData(completionQuery, nullptr, 0, 0);
+        if (completionResult == S_FALSE) {
+            SwitchToThread();
+        }
+    }
+    return SUCCEEDED(completionResult);
+}
+
+bool RenderManager::RenderLocked(MeshRenderingFrameworkAPI::Internal::IMesh* outputMesh)
+{
+    if (!outputMesh || !presentationDevice || !device || !renderContext) {
+        return false;
+    }
+
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshIterator = meshes.find(outputMesh);
+    if (meshIterator == meshes.end() || !meshIterator->second) {
+        return false;
+    }
+    meshIterator->second->UpdateAnimation();
+    if (!outputMesh->mustUpdate && !outputMesh->alwaysUpdate) {
+        return outputMesh->SRV != nullptr;
+    }
+
+    const std::string targetKey = RenderTarget::GetKey(outputMesh->width, outputMesh->height);
+    std::map<std::string, RenderTarget*>::iterator targetIterator = renderTarget.find(targetKey);
+    if (targetIterator == renderTarget.end() || !targetIterator->second) {
+        return false;
+    }
+
+    RenderTarget* target = targetIterator->second;
+    if (!target->initialized) {
+        InitRenderTarget(target);
+    }
+    if (!target->initialized || !RenderMesh(meshIterator->second, target)) {
+        return false;
+    }
+
+    outputMesh->mustUpdate = false;
+    return true;
+}
+
+bool RenderManager::Render(MeshRenderingFrameworkAPI::Internal::IMesh* outputMesh)
+{
+    std::unique_lock lock(mutex);
+    return RenderLocked(outputMesh);
+}
+
+void RenderManager::RenderPending()
+{
+    std::unique_lock lock(mutex);
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshIterator = meshes.begin();
+    while (meshIterator != meshes.end()) {
+        MeshRenderingFrameworkAPI::Internal::IMesh* outputMesh = meshIterator->first;
+        ++meshIterator;
+        if (!outputMesh) {
+            continue;
+        }
+
+        if (outputMesh->mustUpdate || outputMesh->alwaysUpdate) {
+            RenderLocked(outputMesh);
+        }
+
+        if (outputMesh->saveNextFrame && outputMesh->savePath && SaveLocked(outputMesh, outputMesh->savePath)) {
+            outputMesh->savePath = nullptr;
+            outputMesh->saveNextFrame = false;
+        }
+        if (outputMesh->deleteAfterSave && !outputMesh->saveNextFrame) {
+            DeleteLocked(outputMesh);
+        }
+    }
+}
+
+void RenderManager::DeleteLocked(MeshRenderingFrameworkAPI::Internal::IMesh* outputMesh)
+{
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshIterator = meshes.find(outputMesh);
+    if (meshIterator == meshes.end()) {
+        return;
+    }
+
+    std::map<std::string, RenderTarget*>::iterator targetIterator;
+    targetIterator = renderTarget.find(RenderTarget::GetKey(outputMesh->width, outputMesh->height));
+    if (targetIterator != renderTarget.end()) {
+        targetIterator->second->numReferences--;
+        if (targetIterator->second->numReferences == 0) {
+            delete targetIterator->second;
+            renderTarget.erase(targetIterator);
+        }
+    }
+
+    Mesh* sourceMesh = meshIterator->second;
+    meshes.erase(meshIterator);
+    delete sourceMesh;
+}
+
+void RenderManager::Delete(MeshRenderingFrameworkAPI::Internal::IMesh* outputMesh)
+{
+    if (!outputMesh) {
+        return;
+    }
+
+    std::unique_lock lock(mutex);
+    DeleteLocked(outputMesh);
+}
+
+void RenderManager::InitRenderTarget(RenderTarget* target)
+{
+    if (!target || !device || target->width == 0 || target->height == 0) {
+        return;
+    }
+
+    target->initialized = false;
+    ReleaseResource(target->depthStencilView);
+    ReleaseResource(target->depthTexture);
+    ReleaseResource(target->renderTargetView);
+    ReleaseResource(target->texture);
+
+    D3D11_TEXTURE2D_DESC colorDescription{};
+    colorDescription.Width = target->width;
+    colorDescription.Height = target->height;
+    colorDescription.MipLevels = 1;
+    colorDescription.ArraySize = 1;
+    colorDescription.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+    colorDescription.SampleDesc.Count = 1;
+    colorDescription.Usage = D3D11_USAGE_DEFAULT;
+    colorDescription.BindFlags = D3D11_BIND_RENDER_TARGET;
+
+    HRESULT result = device->CreateTexture2D(&colorDescription, nullptr, &target->texture);
+    if (SUCCEEDED(result)) {
+        result = device->CreateRenderTargetView(target->texture, nullptr, &target->renderTargetView);
+    }
+
+    D3D11_TEXTURE2D_DESC depthDescription = colorDescription;
+    depthDescription.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+    depthDescription.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+    if (SUCCEEDED(result)) {
+        result = device->CreateTexture2D(&depthDescription, nullptr, &target->depthTexture);
+    }
+    if (SUCCEEDED(result)) {
+        result = device->CreateDepthStencilView(target->depthTexture, nullptr, &target->depthStencilView);
+    }
+
+    if (FAILED(result)) {
+        ReleaseResource(target->depthStencilView);
+        ReleaseResource(target->depthTexture);
+        ReleaseResource(target->renderTargetView);
+        ReleaseResource(target->texture);
+        return;
+    }
+    target->initialized = true;
+}
+
+bool RenderManager::Init(ID3D11Device* newDevice, ID3D11DeviceContext*)
+{
+    std::unique_lock lock(mutex);
+
+    if (presentationDevice == newDevice && device && renderContext && completionQuery) {
+        return InitializePipeline();
+    }
+
+    for (const std::pair<const std::string, RenderTarget*>& entry : renderTarget) {
+        RenderTarget* target = entry.second;
+        target->initialized = false;
+        ReleaseResource(target->depthStencilView);
+        ReleaseResource(target->depthTexture);
+        ReleaseResource(target->renderTargetView);
+        ReleaseResource(target->texture);
+    }
+    for (const std::pair<MeshRenderingFrameworkAPI::Internal::IMesh* const, Mesh*>& entry : meshes) {
+        entry.second->ResetGpuResources();
+    }
+
+    ReleasePipeline();
+    ReleaseResource(completionQuery);
+    ReleaseResource(renderContext);
+    ReleaseResource(device);
+    presentationDevice = newDevice;
+
+    if (!presentationDevice || !CreatePrivateDevice(presentationDevice, &device, &renderContext)) {
+        logger::error("Could not create the private mesh-rendering device");
+        return false;
+    }
+
+    D3D11_QUERY_DESC queryDescription{};
+    queryDescription.Query = D3D11_QUERY_EVENT;
+    HRESULT result = device->CreateQuery(&queryDescription, &completionQuery);
+    if (FAILED(result) || !InitializePipeline()) {
+        logger::error(
+            "Could not initialize the private mesh-rendering pipeline: {:08X}",
+            static_cast<std::uint32_t>(result));
+        ReleasePipeline();
+        ReleaseResource(completionQuery);
+        ReleaseResource(renderContext);
+        ReleaseResource(device);
+        return false;
+    }
+    return true;
+}
+
+bool RenderManager::SaveLocked(MeshRenderingFrameworkAPI::Internal::IMesh* mesh, const char* filename)
+{
+    if (!mesh || !filename || !filename[0]) {
+        return false;
+    }
+
+    if (!RenderLocked(mesh) || !mesh->SRV || !device || !renderContext) {
+        return false;
+    }
+
+    std::map<MeshRenderingFrameworkAPI::Internal::IMesh*, Mesh*>::iterator meshIterator = meshes.find(mesh);
+    if (meshIterator == meshes.end() || !meshIterator->second || !meshIterator->second->outputTexture) {
+        return false;
+    }
+
+    std::filesystem::path path(filename);
+    DirectX::ScratchImage image;
+    const HRESULT captureResult = DirectX::CaptureTexture(
+        device,
+        renderContext,
+        meshIterator->second->outputTexture,
+        image);
+    if (FAILED(captureResult)) {
+        return false;
+    }
+
+    const std::wstring wideName = path.wstring();
+    HRESULT saveResult = E_FAIL;
+    if (_wcsicmp(path.extension().c_str(), L".dds") == 0) {
+        saveResult = DirectX::SaveToDDSFile(
+            image.GetImages(), image.GetImageCount(), image.GetMetadata(), DirectX::DDS_FLAGS_NONE, wideName.c_str());
+    } else {
+        saveResult = DirectX::SaveToWICFile(
+            *image.GetImage(0, 0, 0), DirectX::WIC_FLAGS_FORCE_SRGB, GUID_ContainerFormatPng, wideName.c_str());
+    }
+    return SUCCEEDED(saveResult);
+}
+
+bool RenderManager::Save(MeshRenderingFrameworkAPI::Internal::IMesh* mesh, const char* filename)
+{
+    std::unique_lock lock(mutex);
+    return SaveLocked(mesh, filename);
+}
+
+std::string RenderTarget::GetKey(uint32_t width, uint32_t height)
+{
+    return std::format("{}x{}", width, height);
+}

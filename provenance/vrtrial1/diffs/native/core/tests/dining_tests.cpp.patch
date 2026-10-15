@@ -1,0 +1,18 @@
+--- artclean1/native/core/tests/dining_tests.cpp
++++ vrtrial1/native/core/tests/dining_tests.cpp
+@@ -1,10 +1,15 @@
+ #include "DiningClaims.h"
+ #include "DiningInteraction.h"
++#include "InteractionRuntime.h"
+ #include <iostream>
+ #include <stdexcept>
+ #include <string>
+ 
+ namespace {
++static_assert(meal::activateSlot == 0x37);
++static_assert(meal::activateTextSlot == 0x4C);
++static_assert(meal::DrinkSlot(false) == 0x10F);
++static_assert(meal::DrinkSlot(true) == 0x111);
+ int checks{}, applied{}, finished{}, rolledBack{}, inventory = 4;
+ inn::dining::Claims claims;
+ std::map<std::uint32_t, bool> available{{100, true}, {101, true}};

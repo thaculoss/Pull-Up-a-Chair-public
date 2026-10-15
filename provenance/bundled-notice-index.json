@@ -1,0 +1,77 @@
+[
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/CommonLibSSE-NG-v11/COPYING.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/CommonLibSSE-NG-v11/COPYING.txt",
+    "sha256": "88e345fa43dd839d6c8ddf7898e714d368168d23b010858c79f8384e08d94b9c"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/CommonLibSSE-NG-v11/EXCEPTIONS.md",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/CommonLibSSE-NG-v11/EXCEPTIONS.md",
+    "sha256": "34dec35937240bca4f9f6007ad95b5cbcf1effaa9c1f5547c9b3be738a94c19b"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/CommonLibSSE-NG-hde64.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/CommonLibSSE-NG-hde64.txt",
+    "sha256": "a09260bc337ecf47037ebd199dfd58581b326056f88aa42c8c93644b0a87a68e"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/CommonLibSSE-NG-MIT.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/CommonLibSSE-NG-MIT.txt",
+    "sha256": "40259b5e21218b12be3b53dfd03e2ac995453bc77c418ce4f6546e8269213762"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/DirectXMath.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/DirectXMath.txt",
+    "sha256": "4c42952c3b81c82d92edb974b966854fe4bf7bb516b33e947ad59cc7fe457ef2"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/DirectXTex-MIT.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/DirectXTex-MIT.txt",
+    "sha256": "9906940f61b1f0b533fa7d99baf55178b2808fbe113ea51dfbfad8572ccd5f2b"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/fmt.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/fmt.txt",
+    "sha256": "793fb89cdfb5495a94870dbeb4b7b74608d735b1abc7cd02b2d37920e374e826"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/MeshRenderingFramework-GPL-3.0.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/MeshRenderingFramework-GPL-3.0.txt",
+    "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/rapidcsv.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/rapidcsv.txt",
+    "sha256": "86a7ac98381f3e6c266e7fa34c91cf8c1906aa83af41c3ea4e2d1a4a6ece94b4"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/SKSEMenuFrameworkAPI.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/SKSEMenuFrameworkAPI.txt",
+    "sha256": "40c667d9798c0d75fd0944d6c584f5b98ed56ab44880360e8442ace6cbb563cf"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/spdlog.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Gallery/spdlog.txt",
+    "sha256": "a613b82199861943a3709a3d833106b326676776b6fb2ff41e2f9488f2be6efa"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Plate/PullUpAChairEAS/CommonLibSSE-NG/README.md",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Plate/PullUpAChairEAS/CommonLibSSE-NG/README.md",
+    "sha256": "cf14665d0777a5bbae0da708bfa03e8ed4c0d8652d69058479a7fa31d71a70f4"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Plate/PullUpAChairEAS/minhook.txt",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/Plate/PullUpAChairEAS/minhook.txt",
+    "sha256": "b7061791555cac696e32eb52d1d092f4ca64c78e04cb173add1830fe39245668"
+  },
+  {
+    "original_marker": "00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/SkyPromptAPI/LICENSE",
+    "file": "licenses/sections/00_Core/Documentation/PullUpAChairOrdering/Licenses/Core/SkyPromptAPI/LICENSE",
+    "sha256": "af8f6152101981b49fd4be18cf10987e55ff3aba98ddd92d62b92e376558e0d6"
+  },
+  {
+    "original_marker": "00_Core/Licenses/WenKai/OFL.txt",
+    "file": "licenses/sections/00_Core/Licenses/WenKai/OFL.txt",
+    "sha256": "a5f473dd26828a68fe5adf3e36451ee5cc205c899d9761ed3ea963ddd9abdc17"
+  }
+]

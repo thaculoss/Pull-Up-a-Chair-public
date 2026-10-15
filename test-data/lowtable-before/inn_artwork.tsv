@@ -1,0 +1,21 @@
+# plugin	localLocationID	key	nameEn	nameZh	PNG	u0	v0	u1	v1	contentAspect	clockwiseQuarterTurns
+Skyrim.esm	01F86D	bannered_mare	The Bannered Mare	旗帜母马	01_bannered_mare.png	0.109250399	0.0566188198	0.917862839	0.962519936	0.892605634	0
+Skyrim.esm	01CB8C	sleeping_giant	Sleeping Giant Inn	沉睡巨人	02_sleeping_giant_inn.png	0.187147689	0.0180383315	0.792559188	0.983089064	1.2546729	0
+Skyrim.esm	0200A5	winking_skeever	The Winking Skeever	眨眼雪鼠	03_winking_skeever.png	0.149920255	0.0247208931	0.881977671	0.962519936	0.780612245	0
+Skyrim.esm	020008	four_shields	Four Shields Tavern	四盾酒馆	04_four_shields_tavern.png	0.0183413078	0.187400319	0.980861244	0.851674641	1.44897959	0
+Skyrim.esm	02247E	bee_and_barb	The Bee and Barb	蜜蜂与倒钩	05_bee_and_barb.png	0.0964912281	0.043062201	0.897926635	0.974481659	0.860445205	0
+Skyrim.esm	0209EA	candlehearth	Candlehearth Hall	烛炉大厅	06_candlehearth_hall.png	0.0709728868	0.0311004785	0.929824561	0.955342903	0.929249353	0
+Skyrim.esm	01F30E	silver_blood	Silver-Blood Inn	银血客栈	07_silver_blood_inn.png	0.0462519936	0.0813397129	0.963317384	0.937001595	1.07176142	0
+Skyrim.esm	05CA26	dead_mans_drink	Dead Man's Drink	亡者之饮	08_dead_man_s_drink.png	0.0350877193	0.0645933014	0.968102073	0.955342903	1.04744852	0
+Skyrim.esm	01EB7C	frozen_hearth	The Frozen Hearth	冰冻炉火	09_frozen_hearth.png	0.102073365	0.0295055821	0.868421053	0.98245614	0.8041841	1
+Skyrim.esm	020065	windpeak	Windpeak Inn	风峰客栈	10_windpeak_inn.png	0.0127591707	0.119617225	0.981658692	0.884370016	1.26694473	0
+Skyrim.esm	01EB96	moorside	Moorside Inn	沼泽边客栈	11_moorside_inn.png	0.197767145	0.0183413078	0.777511962	0.980861244	0.602319801	1
+Skyrim.esm	01F883	frostfruit	Frostfruit Inn	霜果客栈	12_frostfruit_inn.png	0.0311004785	0.0127591707	0.939393939	0.95215311	0.966893039	3
+Skyrim.esm	020A02	braidwood	Braidwood Inn	辫木客栈	13_braidwood_inn.png	0.128389155	0.0446570973	0.870813397	0.954545455	0.81595092	0
+Skyrim.esm	0226AA	vilemyr	Vilemyr Inn	维尔迈旅店	14_vilemyr_inn.png	0.31738437	0.0247208931	0.68261563	0.954545455	0.392795883	1
+Skyrim.esm	020054	nightgate	Nightgate Inn	夜门客栈	15_nightgate_inn.png	0.0877192982	0.00956937799	0.911483254	0.988038278	0.841890791	0
+Skyrim.esm	01F7CB	old_hroldan	Old Hroldan Inn	老赫洛丹	16_old_hroldan_inn.png	0.0893141946	0.126794258	0.92185008	0.961722488	0.99713467	0
+Skyrim.esm	02264A	ragged_flagon	The Ragged Flagon	破碎酒壶	17_ragged_flagon.png	0.0701754386	0.0765550239	0.93460925	0.939393939	1.00184843	0
+Skyrim.esm	01F872	drunken_huntsman	The Drunken Huntsman	醉酒猎人	18_drunken_huntsman.png	0.164274322	0.0438596491	0.834130781	0.957735247	0.732984293	0
+Dragonborn.esm	019A24	retching_netch	The Retching Netch	呕吐气母	morrowind_netch.png	0.128248114	0.0583775588	0.818105616	0.964366945	0.688702929	0
+-	000000	recommendation	Innkeeper's Recommendation	老板推荐	black_briar_tankard.png	0.177033493	0.23046252	0.820574163	0.807017544	1.11618257	0

@@ -1,0 +1,12 @@
+--- paper3/preview/main.cpp
++++ artclean1/preview/main.cpp
+@@ -982,7 +982,8 @@
+             log << "HEADING GEOMETRY: center_error=" << centerError
+                 << "; sign_max_side=" << signSide << "\n";
+             if (inn::strings.IsChinese() &&
+-                (centerError > .1f || std::abs(signSide - inn::uiLayout.innSignSize) * scale > .5f))
++                (centerError > .1f || (!session.bundleArt[0].path.empty() &&
++                 std::abs(signSide - inn::uiLayout.innSignSize) * scale > .5f)))
+                 throw std::runtime_error(
+                     "Chinese title is not centered or configured inn sign size was not applied");
+             if (!inn::strings.IsChinese())

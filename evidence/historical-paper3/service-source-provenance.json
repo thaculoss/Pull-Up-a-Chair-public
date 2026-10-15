@@ -1,0 +1,171 @@
+{
+  "current_archive_path": "20_Service/SKSE/Plugins/PullUpAChairService.dll",
+  "sha256": "fc515795c38619c6170feb23877597966ede89e9bc1c780da985e4aea262d4c7",
+  "original_build_binary": "pull-up-a-chair-0.9-beta-20261013\\build-service\\Release\\PullUpAChairService.dll",
+  "original_build_binary_exact_match": true,
+  "original_cmake_home_directory": "pull-up-a-chair-0.9-beta-20261013/native/service",
+  "source_files": [
+    {
+      "path": "native/service/CMakeLists.txt",
+      "sha256": "533c6597f61dedd8cc4009e7edadb15a013fd239c088f4f066a7c0fcc42cc8f3",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/CMakeLists.txt",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/CMakeLists.txt",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/include/InnServiceAPI.h",
+      "sha256": "f03591cb89c68b78b889442f32ff7bfb8d82723a267bdc06c817a97617201550",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/include/InnServiceAPI.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/include/InnServiceAPI.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/include/InnServiceBackend.h",
+      "sha256": "82c1a103fe19e7ac17f6b2a2e2e1701e2e781b40c15b5bab2e6dd9b34d318584",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/include/InnServiceBackend.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/include/InnServiceBackend.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/BindingPolicy.h",
+      "sha256": "8dc855d86b96cc260a3279ec1e4c0a0d12678172e4990b2411087467402b61de",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/BindingPolicy.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/BindingPolicy.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/BindingStore.h",
+      "sha256": "e56f06b6dc5afebb9d2a49276c67ad49ad1849bfe2d64076fde713e570954094",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/BindingStore.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/BindingStore.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/BindingUI.cpp",
+      "sha256": "1c9d3cb538d9d7e87e39c83560dbdafbc5bfdf85bf2fc28384531ba3eec25f85",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/BindingUI.cpp",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/BindingUI.cpp",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/BindingUI.h",
+      "sha256": "2e51664d4894a57f2d916ce522bfa60c17b424db3b1bc95b4f4cfa57afd30d64",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/BindingUI.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/BindingUI.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/Localization.h",
+      "sha256": "2e6a83d3bc5856dc9d726309c7c05ee2c6982bbd18a0afbfccdb16fcd16f1553",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/Localization.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/Localization.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/main.cpp",
+      "sha256": "2eb2831e34bf4d9338dd81633797be84b6699f13f13ec116e833a24c99a874a8",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/main.cpp",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/main.cpp",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/MigrationPolicy.h",
+      "sha256": "fa36e45a5ad9daca65ab5a44571b4fb4ba9626ee0a41f3daf9fdedbf05e7911b",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/MigrationPolicy.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/MigrationPolicy.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/PCH.h",
+      "sha256": "e413996fd36ea7050d9350443b9cad4e1588fb182c1aeb0fe38a06d05d6ca2d9",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/PCH.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/PCH.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/RecordedSounds.h",
+      "sha256": "7b60272d1a5b6f28780db24885fb81a064b22a24e1b78cd1bbd169010c4b99fd",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/RecordedSounds.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/RecordedSounds.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/RuntimePolicy.h",
+      "sha256": "eb22b89d16d45d52f9c5c78716a375df8371102b3c4a74ae1a167ad88d1f8a9a",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/RuntimePolicy.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/RuntimePolicy.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/ServiceManager.cpp",
+      "sha256": "1b50b2bd64ab033ccdb40ce6fcaeacf2f4ac568867bbed99fb3d6916666c5467",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/ServiceManager.cpp",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/ServiceManager.cpp",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/ServiceManager.h",
+      "sha256": "705e4ee959dc7d85d36bbf2984879d10338cfd3e56ed40d62013b2bbf4d82a33",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/ServiceManager.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/ServiceManager.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/ServicePolicy.h",
+      "sha256": "be05e07f1e15ddd037f7b7fc2343c9a25035b964385a125b67dc1c950fc91bc4",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/ServicePolicy.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/ServicePolicy.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/Settings.cpp",
+      "sha256": "0054accf64a761dd15399871599b732f8d5210c2015342510ab3e001aa29033c",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/Settings.cpp",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/Settings.cpp",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/Settings.h",
+      "sha256": "f832b38d3f7c9f924bf3cadad74090913fc919c0ae6cb499b2c3a4f2b0826313",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/Settings.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/Settings.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/SettingsUiLayout.h",
+      "sha256": "f6420cf12ec918a0d2aa86b2c5dca9db699c7b582ef72fabbb883c47fa44c384",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/SettingsUiLayout.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/SettingsUiLayout.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/SettingsUiWidgets.h",
+      "sha256": "afdd7cf117296e563acaed19dfb75eda07a6cb671b18cbd8d3cd035124814cca",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/SettingsUiWidgets.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/SettingsUiWidgets.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/Supply.cpp",
+      "sha256": "9471506bc8eb83673ccd30ebf5f965fe39dfbbb2a5d46f6e2abb16460586f3db",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/Supply.cpp",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/Supply.cpp",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/src/Supply.h",
+      "sha256": "5ae4bf5126c9367152eead8e6d7cc01d58a0cabb8ec8002b531b11fd82b3f22f",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/src/Supply.h",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/src/Supply.h",
+      "original_manifest_matches": true
+    },
+    {
+      "path": "native/service/tests/service_tests.cpp",
+      "sha256": "636146b017980943fe3ac7acf428b087cbbe964057bfeb1b98a8e5807c0440b5",
+      "original_source": "pull-up-a-chair-0.9-beta-20261013/native/service/tests/service_tests.cpp",
+      "original_release_manifest_entry": "20_Service/Source/NativeService/tests/service_tests.cpp",
+      "original_manifest_matches": true
+    }
+  ],
+  "rebuild_scope": "Exact original source mirror and build provenance; fresh compiler rebuild may differ in PE timestamps/debug paths."
+}

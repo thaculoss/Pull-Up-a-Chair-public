@@ -1,0 +1,31 @@
+{
+  "archive_sha256": "fbdff8fe999e04cbcea7aeae1773b02142f06b6e436fac0254edc4ef5c71a26a",
+  "all_five_files_byte_identical": true,
+  "files": [
+    {
+      "archive_path": "00_Core/Pull up a chair Ordering.esp",
+      "sha256": "2df28849e4742fcc66c5affc4cf54efeaa9fd5660f626fce1ce2aeb7be0ff4c9",
+      "matches_release": true
+    },
+    {
+      "archive_path": "00_Core/SEQ/Pull up a chair Ordering.seq",
+      "sha256": "81c8bf65bfc3307c444f593599c1fc58e61a0687cff014f48c0db21358f9465b",
+      "matches_release": true
+    },
+    {
+      "archive_path": "20_Service/Pull up a chair Service.esp",
+      "sha256": "17e725c9839941734a80444228ec85b26e48a8ac29ba33343d6f72addd3fc6f6",
+      "matches_release": true
+    },
+    {
+      "archive_path": "20_Service/SEQ/Pull up a chair Service.seq",
+      "sha256": "004be5580012efcdec118fce2444cf2dab6a4709d71924066ed03b59a19969de",
+      "matches_release": true
+    },
+    {
+      "archive_path": "45_ChattyNPCs/Pull up a chair - Chatty NPCs Patch.esp",
+      "sha256": "1cdce518b9701b3dfc6c89d385d69e0880067e43e98fa9c3786c8b60142543f8",
+      "matches_release": true
+    }
+  ]
+}

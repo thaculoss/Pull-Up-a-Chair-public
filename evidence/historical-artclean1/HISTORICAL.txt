@@ -1,0 +1,3 @@
+These are original artclean1 results and documents, not vrtrial1 results.
+They retain the 62-asset provenance and previous runtime restrictions.
+Current instructions and validation live at the current source/materials roots.
